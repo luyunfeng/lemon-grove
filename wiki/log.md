@@ -40,3 +40,13 @@
 - 更新: AGENTS.md、CLAUDE.md、README.md、skills/llm-wiki/SKILL.md、wiki/concepts/knowledge-base-design.md、tools/lint.py、wiki/log.md
 - 验证: 内容扫描、图片目视检查与 lint；发布快照不携带旧 Git 历史
 - 分支: wiki/20261001-sanitize-private-info
+
+
+## [2026-10-02] wiki | 保存柠檬林站点源码
+- 分诊: 站点源码归档与恢复入口
+- 新建: apps/lemon-grove/（42 个源码文件，包含 GitHub 内容发布版本）
+- 更新: README.md, wiki/log.md
+- 内容版本: GitHub main 提交 d21eec3e56599f90c5bef6bdd2f6f482be20edf5，31 页知识内容、24 个标签
+- 源码版本: 5078374d99a4683174480acd47e9793202153a9e，仅迁移文件快照；依赖下载地址规范为公共 npm 源，锁定版本和校验值不变
+- 验证: 网站 56 项测试、类型检查、构建和 3 项页面/接口检查通过
+- 分支: wiki/20261002-lemon-grove-site-source
