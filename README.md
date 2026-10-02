@@ -12,6 +12,7 @@ CLAUDE.md          Claude Code 入口（@AGENTS.md）
 raw/               原始资料底稿（一级目录，不分类；图片放 raw/assets/；文件名不带日期，头部不写作者和来源）
 wiki/              知识页：index.md 知识地图、log.md 写入日志、overview.md 概览
   concepts/ entities/ roadmaps/ syntheses/   一页一个知识点或工具；头部的 tags / entities 用来找关联，正文不放站内链接
+apps/lemon-grove/  柠檬林站点的完整源码、依赖锁文件、测试与 GitHub 内容发布版本
 templates/         页面模板
 tools/lint.py      只读体检脚本
 tools/related.py   按页面、标签或实体列出相关页面
@@ -33,3 +34,19 @@ python3 tools/lint.py                    # 头部四项 / 标签词表 / 实体 
 python3 tools/related.py --tag verification   # 按标签找相关页面（也可以 --entity 或传一个页面路径）
 grep "^## \[" wiki/log.md | tail -5      # 最近 5 次写入
 ```
+
+## 柠檬林站点源码
+
+站点完整源码保存在 `apps/lemon-grove/`，包括页面、服务端读取逻辑、依赖锁文件、测试和构建配置。运行与内容同步说明见 `apps/lemon-grove/README.md`。
+
+恢复与本地开发（Node.js >=22.13.0）：
+
+```bash
+cd apps/lemon-grove
+npm ci
+npm run dev
+```
+
+验证和构建使用 `npm test`、`npx tsc --noEmit`、`npm run build`。后续代码变更通过 PR 维护此目录，发布时使用同一份已验证的源码；`.openai/hosting.json` 保留现有 Site 身份。
+
+知识内容继续从 GitHub 的 `main` 分支同步。默认展示 `app/knowledge-publication.json` 中记录的 GitHub 发布版本；新内容合入后需要再次同步发布。可选的实时读取配置见站点 README。仓库不保存运行凭据、依赖安装目录或构建产物。
