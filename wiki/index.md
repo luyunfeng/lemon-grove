@@ -20,6 +20,7 @@
 - [提示词中的置信度](concepts/confidence-in-prompts.md) — 让模型输出置信度，用来自我校准、决策路由和聚焦人工验证
 - [Agent 工具接口（CLI 优先，MCP 作薄适配层）](concepts/agent-tool-interface.md) — CLI 是 Agent 最好用的工具接口，MCP 作薄适配层；后端也要为 CLI 设计
 - [Agent 原生文档（Agent-Native-Doc）](concepts/agent-native-doc.md) — 写给 Agent 读的仓库文档：只写代码推不出来的领域知识
+- [理解工件（Understanding Artifacts）](concepts/understanding-artifacts.md) — 让模型把产出重新表征成受控语言、图、交互网页、讲解视频，帮人建立理解；可丢弃的定制工件因此变得合理
 
 ## Agent Skills
 - [Agent Skill](concepts/agent-skill.md) — 按需加载的专家能力包：何时值得做、怎么加载、装在哪里
