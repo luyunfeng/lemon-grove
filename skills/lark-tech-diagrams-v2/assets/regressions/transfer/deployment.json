@@ -1,0 +1,145 @@
+{
+  "diagram_type": "deployment",
+  "title": "遥测采集服务 · 部署实例",
+  "subtitle": "独立示意模型 · 非生产事实",
+  "nodes": [
+    {
+      "id": "ingress",
+      "label": "telemetry-gw-01",
+      "kind": "instance",
+      "role": "orange",
+      "rank": 0,
+      "group": "edge",
+      "lines": [],
+      "artifact": "MQTT Gateway",
+      "runtime": "Edge VM / Linux"
+    },
+    {
+      "id": "collector1",
+      "label": "collector-01",
+      "kind": "instance",
+      "role": "blue",
+      "rank": 1,
+      "group": "app",
+      "lines": [],
+      "artifact": "telemetry-collector:example",
+      "runtime": "Pod / node-a"
+    },
+    {
+      "id": "collector2",
+      "label": "collector-02",
+      "kind": "instance",
+      "role": "blue",
+      "rank": 1,
+      "group": "app",
+      "lines": [],
+      "artifact": "telemetry-collector:example",
+      "runtime": "Pod / node-b"
+    },
+    {
+      "id": "stream",
+      "label": "stream-01",
+      "kind": "instance",
+      "role": "purple",
+      "rank": 2,
+      "group": "data",
+      "lines": [],
+      "artifact": "Kafka",
+      "runtime": "VM / stream-host"
+    },
+    {
+      "id": "archive",
+      "label": "archive-01",
+      "kind": "instance",
+      "role": "teal",
+      "rank": 2,
+      "group": "data",
+      "lines": [],
+      "artifact": "S3 compatible storage",
+      "runtime": "Storage / archive-host"
+    }
+  ],
+  "edges": [
+    {
+      "id": "td1",
+      "source": "ingress",
+      "target": "collector1",
+      "label": "MQTT/TLS :8883",
+      "kind": "flow"
+    },
+    {
+      "id": "td2",
+      "source": "ingress",
+      "target": "collector2",
+      "label": "MQTT/TLS :8883",
+      "kind": "flow"
+    },
+    {
+      "id": "td3",
+      "source": "collector1",
+      "target": "stream",
+      "label": "Kafka/TLS :9093",
+      "kind": "flow"
+    },
+    {
+      "id": "td4",
+      "source": "collector2",
+      "target": "stream",
+      "label": "Kafka/TLS :9093",
+      "kind": "flow"
+    },
+    {
+      "id": "td5",
+      "source": "collector1",
+      "target": "archive",
+      "label": "HTTPS :443",
+      "kind": "flow"
+    },
+    {
+      "id": "td6",
+      "source": "collector2",
+      "target": "archive",
+      "label": "HTTPS :443",
+      "kind": "flow"
+    }
+  ],
+  "groups": [
+    {
+      "id": "edge",
+      "label": "采集接入运行区",
+      "kind": "deployment-region",
+      "role": "orange"
+    },
+    {
+      "id": "app",
+      "label": "采集容器运行区",
+      "kind": "deployment-region",
+      "role": "blue"
+    },
+    {
+      "id": "data",
+      "label": "流与归档运行区",
+      "kind": "deployment-region",
+      "role": "teal"
+    }
+  ],
+  "network_label": "遥测示例网络 · 部署边界",
+  "legend": [
+    {
+      "role": "orange",
+      "label": "节点：入口代理"
+    },
+    {
+      "role": "blue",
+      "label": "节点：服务实例"
+    },
+    {
+      "role": "purple",
+      "label": "节点：消息中间件"
+    },
+    {
+      "role": "teal",
+      "label": "节点：持久化存储"
+    }
+  ]
+}

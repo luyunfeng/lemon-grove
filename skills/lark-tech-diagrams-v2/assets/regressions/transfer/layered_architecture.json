@@ -1,0 +1,144 @@
+{
+  "diagram_type": "layered_architecture",
+  "title": "出版工作台 · 职责分层",
+  "subtitle": "独立示意模型 · 非生产事实",
+  "nodes": [
+    {
+      "id": "web",
+      "label": "编辑工作台",
+      "kind": "module",
+      "role": "blue",
+      "rank": 0,
+      "group": "presentation",
+      "responsibility": "提交稿件和发行指令",
+      "technology": "Web UI",
+      "lines": []
+    },
+    {
+      "id": "handler",
+      "label": "发行请求适配器",
+      "kind": "module",
+      "role": "blue",
+      "rank": 0,
+      "group": "presentation",
+      "responsibility": "转译发行请求",
+      "technology": "HTTP Controller",
+      "lines": []
+    },
+    {
+      "id": "usecase",
+      "label": "发行作品用例",
+      "kind": "module",
+      "role": "purple",
+      "rank": 1,
+      "group": "application",
+      "responsibility": "编排一次作品发行",
+      "technology": "Application Service",
+      "lines": []
+    },
+    {
+      "id": "domain",
+      "label": "发行授权规则",
+      "kind": "module",
+      "role": "orange",
+      "rank": 2,
+      "group": "domain",
+      "responsibility": "检查批准范围与发行资格",
+      "technology": "Domain Model",
+      "lines": []
+    },
+    {
+      "id": "repo",
+      "label": "授权记录适配器",
+      "kind": "module",
+      "role": "teal",
+      "rank": 3,
+      "group": "infrastructure",
+      "responsibility": "检索已批准的授权记录",
+      "technology": "SQL Repository",
+      "lines": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "tl1",
+      "source": "web",
+      "target": "handler",
+      "label": "提交发行指令",
+      "kind": "flow"
+    },
+    {
+      "id": "tl2",
+      "source": "handler",
+      "target": "usecase",
+      "label": "执行发行用例",
+      "kind": "flow"
+    },
+    {
+      "id": "tl3",
+      "source": "usecase",
+      "target": "domain",
+      "label": "核验发行资格",
+      "kind": "flow"
+    },
+    {
+      "id": "tl4",
+      "source": "domain",
+      "target": "repo",
+      "label": "查询授权记录",
+      "kind": "flow"
+    }
+  ],
+  "groups": [
+    {
+      "id": "presentation",
+      "label": "接入层",
+      "kind": "layer",
+      "role": "blue",
+      "order": 0,
+      "responsibility": "请求与展示"
+    },
+    {
+      "id": "application",
+      "label": "应用层",
+      "kind": "layer",
+      "role": "purple",
+      "order": 1,
+      "responsibility": "用例编排"
+    },
+    {
+      "id": "domain",
+      "label": "领域层",
+      "kind": "layer",
+      "role": "orange",
+      "order": 2,
+      "responsibility": "业务不变量"
+    },
+    {
+      "id": "infrastructure",
+      "label": "基础设施层",
+      "kind": "layer",
+      "role": "teal",
+      "order": 3,
+      "responsibility": "存储实现"
+    }
+  ],
+  "legend": [
+    {
+      "role": "blue",
+      "label": "接入"
+    },
+    {
+      "role": "purple",
+      "label": "用例"
+    },
+    {
+      "role": "orange",
+      "label": "领域"
+    },
+    {
+      "role": "teal",
+      "label": "基础设施"
+    }
+  ]
+}

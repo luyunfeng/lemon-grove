@@ -1,0 +1,106 @@
+{
+  "diagram_type": "flowchart",
+  "title": "文件导入的校验与落库",
+  "subtitle": "示意模型 · 以图型语义表达业务逻辑",
+  "nodes": [
+    {
+      "id": "receive",
+      "label": "接收文件",
+      "kind": "action",
+      "role": "blue"
+    },
+    {
+      "id": "parse",
+      "label": "解析文件",
+      "kind": "action",
+      "role": "purple"
+    },
+    {
+      "id": "valid",
+      "label": "格式有效？",
+      "kind": "decision",
+      "role": "amber"
+    },
+    {
+      "id": "save",
+      "label": "保存记录",
+      "kind": "action",
+      "role": "teal"
+    },
+    {
+      "id": "reject",
+      "label": "返回错误清单",
+      "kind": "action",
+      "role": "rose"
+    },
+    {
+      "id": "done",
+      "label": "返回导入结果",
+      "kind": "action",
+      "role": "green"
+    },
+    {
+      "id": "unique",
+      "label": "记录未重复？",
+      "kind": "decision",
+      "role": "amber"
+    },
+    {
+      "id": "reuse",
+      "label": "返回已有导入记录",
+      "kind": "action",
+      "role": "slate"
+    }
+  ],
+  "edges": [
+    {
+      "id": "f1",
+      "source": "receive",
+      "target": "parse",
+      "label": "读取内容",
+      "kind": "flow"
+    },
+    {
+      "id": "f2",
+      "source": "parse",
+      "target": "valid",
+      "label": "校验字段",
+      "kind": "flow"
+    },
+    {
+      "id": "f3",
+      "source": "valid",
+      "target": "unique",
+      "label": "格式有效",
+      "kind": "flow"
+    },
+    {
+      "id": "f4",
+      "source": "valid",
+      "target": "reject",
+      "label": "否",
+      "kind": "flow"
+    },
+    {
+      "id": "f5",
+      "source": "save",
+      "target": "done",
+      "label": "保存成功",
+      "kind": "flow"
+    },
+    {
+      "id": "f6",
+      "source": "unique",
+      "target": "save",
+      "label": "是",
+      "kind": "flow"
+    },
+    {
+      "id": "f7",
+      "source": "unique",
+      "target": "reuse",
+      "label": "否",
+      "kind": "flow"
+    }
+  ]
+}

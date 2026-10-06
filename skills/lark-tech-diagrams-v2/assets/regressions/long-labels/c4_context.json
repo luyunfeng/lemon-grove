@@ -1,0 +1,132 @@
+{
+  "diagram_type": "c4_context",
+  "title": "预约平台 · C4 系统上下文 · 长标签可读性",
+  "subtitle": "独立示意模型 · 非生产事实",
+  "nodes": [
+    {
+      "id": "reader",
+      "label": "预约用户 / Responsibility Boundary",
+      "kind": "person",
+      "role": "blue",
+      "rank": 0,
+      "group": "",
+      "responsibility": "预约时段并查看结果",
+      "technology": "",
+      "lines": [
+        "边界内职责与协作约束说明 / explicit responsibility and collaboration contract"
+      ]
+    },
+    {
+      "id": "operator",
+      "label": "场馆管理员 / Responsibility Boundary",
+      "kind": "person",
+      "role": "orange",
+      "rank": 0,
+      "group": "",
+      "responsibility": "维护开放时段",
+      "technology": "",
+      "lines": [
+        "边界内职责与协作约束说明 / explicit responsibility and collaboration contract"
+      ]
+    },
+    {
+      "id": "booking",
+      "label": "预约平台 / Responsibility Boundary",
+      "kind": "system",
+      "role": "purple",
+      "rank": 1,
+      "group": "booking-system",
+      "responsibility": "协调预约、名额与通知",
+      "technology": "",
+      "lines": [
+        "边界内职责与协作约束说明 / explicit responsibility and collaboration contract"
+      ]
+    },
+    {
+      "id": "identity",
+      "label": "身份提供系统 / Responsibility Boundary",
+      "kind": "external",
+      "role": "slate",
+      "rank": 2,
+      "group": "",
+      "responsibility": "验证用户身份",
+      "technology": "",
+      "lines": [
+        "边界内职责与协作约束说明 / explicit responsibility and collaboration contract"
+      ]
+    },
+    {
+      "id": "message",
+      "label": "消息投递系统 / Responsibility Boundary",
+      "kind": "external",
+      "role": "teal",
+      "rank": 2,
+      "group": "",
+      "responsibility": "投递预约确认",
+      "technology": "",
+      "lines": [
+        "边界内职责与协作约束说明 / explicit responsibility and collaboration contract"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "cx1",
+      "source": "reader",
+      "target": "booking",
+      "label": "申请预约 / explicit contract",
+      "kind": "flow"
+    },
+    {
+      "id": "cx2",
+      "source": "operator",
+      "target": "booking",
+      "label": "维护可用时段 / explicit contract",
+      "kind": "flow"
+    },
+    {
+      "id": "cx3",
+      "source": "booking",
+      "target": "identity",
+      "label": "校验身份 / explicit contract",
+      "kind": "flow"
+    },
+    {
+      "id": "cx4",
+      "source": "booking",
+      "target": "message",
+      "label": "发送确认消息 / explicit contract",
+      "kind": "flow"
+    }
+  ],
+  "groups": [
+    {
+      "id": "booking-system",
+      "label": "预约平台 / Ownership",
+      "kind": "system-boundary",
+      "role": "purple"
+    }
+  ],
+  "legend": [
+    {
+      "role": "blue",
+      "label": "访客"
+    },
+    {
+      "role": "orange",
+      "label": "业务管理员"
+    },
+    {
+      "role": "purple",
+      "label": "目标系统"
+    },
+    {
+      "role": "slate",
+      "label": "身份服务"
+    },
+    {
+      "role": "teal",
+      "label": "消息服务"
+    }
+  ]
+}

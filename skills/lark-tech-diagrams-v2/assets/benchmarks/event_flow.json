@@ -1,0 +1,110 @@
+{
+  "diagram_type": "event_flow",
+  "title": "订单事件 · 独立订阅与失败出口",
+  "subtitle": "示意模型 · 每个订阅独立投递与确认；失败消息进入死信主题",
+  "nodes": [
+    {
+      "id": "checkout",
+      "label": "订单服务",
+      "kind": "publisher",
+      "role": "blue",
+      "lines": [
+        "事务提交后发布领域事件"
+      ]
+    },
+    {
+      "id": "orders",
+      "label": "orders.placed",
+      "kind": "topic",
+      "role": "purple",
+      "event_type": "OrderPlaced",
+      "delivery_mode": "fanout",
+      "lines": [
+        "持久化主题 · OrderPlaced"
+      ]
+    },
+    {
+      "id": "billing",
+      "label": "计费订阅者",
+      "kind": "subscriber",
+      "role": "teal",
+      "lines": [
+        "subscription: billing",
+        "幂等处理后独立确认"
+      ]
+    },
+    {
+      "id": "stock",
+      "label": "库存订阅者",
+      "kind": "subscriber",
+      "role": "teal",
+      "lines": [
+        "subscription: stock",
+        "失败达到阈值后转移死信"
+      ]
+    },
+    {
+      "id": "dlq",
+      "label": "orders.stock.dead",
+      "kind": "dead_letter",
+      "role": "rose",
+      "lines": [
+        "失败事件、原因与原订阅信息"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "publish",
+      "source": "checkout",
+      "target": "orders",
+      "kind": "publish",
+      "label": "发布 OrderPlaced",
+      "event_type": "OrderPlaced"
+    },
+    {
+      "id": "billing-delivery",
+      "source": "orders",
+      "target": "billing",
+      "kind": "deliver",
+      "label": "OrderPlaced · billing",
+      "event_type": "OrderPlaced",
+      "subscription": "billing"
+    },
+    {
+      "id": "stock-delivery",
+      "source": "orders",
+      "target": "stock",
+      "kind": "deliver",
+      "label": "OrderPlaced · stock",
+      "event_type": "OrderPlaced",
+      "subscription": "stock"
+    },
+    {
+      "id": "billing-ack",
+      "source": "billing",
+      "target": "orders",
+      "kind": "ack",
+      "label": "billing 消费确认",
+      "acknowledges": "billing-delivery"
+    },
+    {
+      "id": "stock-ack",
+      "source": "stock",
+      "target": "orders",
+      "kind": "ack",
+      "label": "stock 消费确认",
+      "acknowledges": "stock-delivery"
+    },
+    {
+      "id": "stock-dead",
+      "source": "stock",
+      "target": "dlq",
+      "kind": "dead_letter",
+      "label": "重试耗尽 · 原事件与失败原因",
+      "event_type": "OrderPlaced",
+      "failed_delivery": "stock-delivery"
+    }
+  ],
+  "case_variant": "baseline"
+}

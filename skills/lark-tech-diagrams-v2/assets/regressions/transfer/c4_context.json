@@ -1,0 +1,114 @@
+{
+  "diagram_type": "c4_context",
+  "title": "数字出版平台 · C4 上下文",
+  "subtitle": "独立示意模型 · 非生产事实",
+  "nodes": [
+    {
+      "id": "author",
+      "label": "内容作者",
+      "kind": "person",
+      "role": "blue",
+      "rank": 0,
+      "group": "",
+      "responsibility": "上传稿件并申请发布",
+      "technology": "",
+      "lines": []
+    },
+    {
+      "id": "editor",
+      "label": "内容编辑",
+      "kind": "person",
+      "role": "orange",
+      "rank": 0,
+      "group": "",
+      "responsibility": "审校稿件并批准发布",
+      "technology": "",
+      "lines": []
+    },
+    {
+      "id": "publishing",
+      "label": "数字出版平台",
+      "kind": "system",
+      "role": "purple",
+      "rank": 1,
+      "group": "publishing-system",
+      "responsibility": "管理稿件、审校与发行",
+      "technology": "",
+      "lines": []
+    },
+    {
+      "id": "rights",
+      "label": "版权登记系统",
+      "kind": "external",
+      "role": "slate",
+      "rank": 2,
+      "group": "",
+      "responsibility": "验证作品授权范围",
+      "technology": "",
+      "lines": []
+    },
+    {
+      "id": "catalog",
+      "label": "发行目录系统",
+      "kind": "external",
+      "role": "teal",
+      "rank": 2,
+      "group": "",
+      "responsibility": "接收已批准的作品目录",
+      "technology": "",
+      "lines": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "tx1",
+      "source": "author",
+      "target": "publishing",
+      "label": "提交稿件",
+      "kind": "flow"
+    },
+    {
+      "id": "tx2",
+      "source": "editor",
+      "target": "publishing",
+      "label": "批准发行",
+      "kind": "flow"
+    },
+    {
+      "id": "tx3",
+      "source": "publishing",
+      "target": "rights",
+      "label": "核验作品版权",
+      "kind": "flow"
+    },
+    {
+      "id": "tx4",
+      "source": "publishing",
+      "target": "catalog",
+      "label": "发布作品目录",
+      "kind": "flow"
+    }
+  ],
+  "groups": [
+    {
+      "id": "publishing-system",
+      "label": "数字出版平台",
+      "kind": "system-boundary",
+      "role": "purple"
+    }
+  ],
+  "legend": [
+    {
+      "role": "blue",
+      "label": "使用者"
+    },
+    {
+      "role": "purple",
+      "label": "关注系统"
+    },
+    {
+      "role": "slate",
+      "label": "外部依赖"
+    }
+  ]
+}

@@ -62,3 +62,10 @@
 - 新建: wiki/concepts/llm-serving-cache.md
 - 更新: wiki/index.md, AGENTS.md（新增 inference 标签）
 - 分支: wiki/20261006-llm-serving-cache
+
+## [2026-10-06] schema | 收录两版技术绘图 Skill 与安装说明
+- 新建: skills/lark-architecture-diagrams/, skills/lark-tech-diagrams-v2/, skills/README.md
+- 说明: 保留 V1.1.0 旧版参考，推荐 V2.3.0；附安装、使用、工具边界和验证说明
+- 处理: 去掉仓库副本中的个人应用与目录配置，保留必要字体与许可
+- 更新: README.md, tools/lint.py（公开官方工具引用的识别）, wiki/log.md
+- 分支: wiki/20261006-technical-diagram-skills

@@ -1,0 +1,172 @@
+{
+  "diagram_type": "er",
+  "title": "图书馆借阅 · 馆藏与借阅关系",
+  "subtitle": "迁移样例 · 馆藏副本、读者、借阅与续借记录",
+  "nodes": [
+    {
+      "id": "book",
+      "label": "书目 Book",
+      "rank": 0,
+      "role": "blue",
+      "fields": [
+        {
+          "name": "book_id",
+          "key": "PK",
+          "type": "uuid"
+        },
+        {
+          "name": "isbn",
+          "key": "",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "id": "copy",
+      "label": "馆藏副本 BookCopy",
+      "rank": 1,
+      "role": "teal",
+      "fields": [
+        {
+          "name": "copy_id",
+          "key": "PK",
+          "type": "uuid"
+        },
+        {
+          "name": "book_id",
+          "key": "FK",
+          "type": "uuid"
+        },
+        {
+          "name": "shelf",
+          "key": "",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "id": "reader",
+      "label": "读者 Reader",
+      "rank": 1,
+      "role": "blue",
+      "fields": [
+        {
+          "name": "reader_id",
+          "key": "PK",
+          "type": "uuid"
+        },
+        {
+          "name": "name",
+          "key": "",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "id": "loan",
+      "label": "借阅 Loan",
+      "rank": 2,
+      "role": "purple",
+      "fields": [
+        {
+          "name": "loan_id",
+          "key": "PK",
+          "type": "uuid"
+        },
+        {
+          "name": "copy_id",
+          "key": "FK",
+          "type": "uuid"
+        },
+        {
+          "name": "reader_id",
+          "key": "FK",
+          "type": "uuid"
+        },
+        {
+          "name": "due_at",
+          "key": "",
+          "type": "timestamp"
+        }
+      ]
+    },
+    {
+      "id": "renewal",
+      "label": "续借 Renewal",
+      "rank": 3,
+      "role": "orange",
+      "fields": [
+        {
+          "name": "renewal_id",
+          "key": "PK",
+          "type": "uuid"
+        },
+        {
+          "name": "loan_id",
+          "key": "FK",
+          "type": "uuid"
+        },
+        {
+          "name": "new_due_at",
+          "key": "",
+          "type": "timestamp"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "book-copy",
+      "source": "book",
+      "target": "copy",
+      "label": "包含馆藏副本",
+      "kind": "relationship",
+      "source_field": "book_id",
+      "target_field": "book_id",
+      "cardinality": {
+        "source": "1",
+        "target": "0..*"
+      }
+    },
+    {
+      "id": "copy-loan",
+      "source": "copy",
+      "target": "loan",
+      "label": "产生历史借阅",
+      "kind": "relationship",
+      "source_field": "copy_id",
+      "target_field": "copy_id",
+      "cardinality": {
+        "source": "1",
+        "target": "0..*"
+      }
+    },
+    {
+      "id": "reader-loan",
+      "source": "reader",
+      "target": "loan",
+      "label": "申请借阅",
+      "kind": "relationship",
+      "source_field": "reader_id",
+      "target_field": "reader_id",
+      "cardinality": {
+        "source": "1",
+        "target": "0..*"
+      }
+    },
+    {
+      "id": "loan-renewal",
+      "source": "loan",
+      "target": "renewal",
+      "label": "记录续借",
+      "kind": "relationship",
+      "source_field": "loan_id",
+      "target_field": "loan_id",
+      "cardinality": {
+        "source": "1",
+        "target": "0..*"
+      }
+    }
+  ],
+  "case_variant": "transfer"
+}

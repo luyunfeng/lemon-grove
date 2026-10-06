@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2702.2903 906" width="2702.2903" height="906"><defs><marker id="arrow-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#CBA02E"/></marker><marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#4675F5"/></marker><marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#30A698"/></marker><marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#35A56D"/></marker><marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#E98655"/></marker><marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#9870DA"/></marker><marker id="arrow-rose" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#CC6B80"/></marker><marker id="arrow-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#697C96"/></marker><marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#30A698"/></marker></defs><rect x="0" y="0" width="2702.2903" height="906" fill="#FCFDFE"/><line x1="1191.14515" y1="42" x2="1351.14515" y2="42" stroke="#4675F5" stroke-width="6" stroke-linecap="round"/>
+<line x1="1351.14515" y1="42" x2="1511.14515" y2="42" stroke="#30A698" stroke-width="6" stroke-linecap="round"/>
+<text x="1351.14515" y="88" font-family="Noto Sans SC" font-size="36" font-weight="bold" fill="#253149" text-anchor="middle">异步任务交付平台 · 数据关系</text>
+<text x="1351.14515" y="124" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#71809A" text-anchor="middle">示意模型 · 颜色表达职责，关系按图型语法绘制</text>
+<polyline data-edge-id="r1" data-source="tenant" data-target="task" points="380,274.0 696.0,274.0 696.0,354.0 816.0,354.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round"/>
+<polyline data-edge-id="r2" data-source="task" data-target="attempt" points="1141.5763000000002,274.0 1457.5763000000002,274.0 1457.5763000000002,314.0 1577.5763000000002,314.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round"/>
+<polyline data-edge-id="r3" data-source="attempt" data-target="artifact" points="1886.2903000000001,274.0 1970.2903000000001,274.0 1970.2903000000001,310.0 2322.2903,310.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round"/>
+<polyline data-edge-id="r4" data-source="tenant" data-target="endpoint" points="380,314.0 660.0,314.0 660.0,662.0 816.0,662.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round"/>
+<polyline data-edge-id="r5" data-source="task" data-target="delivery" points="1141.5763000000002,314.0 1421.5763000000002,314.0 1421.5763000000002,618.0 1577.5763000000002,618.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round"/>
+<polyline data-edge-id="r6" data-source="endpoint" data-target="delivery" points="1141.5763000000002,622.0 1385.5763000000002,622.0 1385.5763000000002,658.0 1577.5763000000002,658.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round"/>
+<g data-node-id="tenant">
+<rect x="80" y="210" width="300" height="168" rx="14" fill="#F0F5FE" stroke="#4675F5" stroke-width="1.9"/>
+<text x="98" y="239.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#2D4F9A" text-anchor="start">租户 Tenant</text>
+</g>
+<rect x="81" y="254" width="298" height="80" fill="#F0F5FE" stroke="none"/>
+<text x="98" y="305.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">PK tenant_id uuid</text>
+<rect x="81" y="334" width="298" height="36" fill="#FFFFFF" stroke="none"/>
+<text x="98" y="363.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">name text</text>
+<line x1="80" y1="254" x2="380" y2="254" stroke="#4675F5" stroke-width="1.3299999999999998" fill="none"/>
+<rect x="80" y="210" width="300" height="168" rx="14" fill="none" stroke="#4675F5" stroke-width="1.9"/>
+<g data-node-id="task">
+<rect x="816.0" y="210" width="325.57630000000006" height="208" rx="14" fill="#F0F5FE" stroke="#4675F5" stroke-width="1.9"/>
+<text x="834.0" y="239.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#2D4F9A" text-anchor="start">任务 Task</text>
+</g>
+<rect x="817.0" y="254" width="323.57630000000006" height="80" fill="#F0F5FE" stroke="none"/>
+<text x="834.0" y="305.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">PK task_id uuid</text>
+<rect x="817.0" y="334" width="323.57630000000006" height="40" fill="#FFFFFF" stroke="none"/>
+<text x="834.0" y="365.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">FK tenant_id uuid</text>
+<rect x="817.0" y="374" width="323.57630000000006" height="36" fill="#F0F5FE" stroke="none"/>
+<text x="834.0" y="403.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">status text</text>
+<line x1="816.0" y1="254" x2="1141.5763000000002" y2="254" stroke="#4675F5" stroke-width="1.3299999999999998" fill="none"/>
+<rect x="816.0" y="210" width="325.57630000000006" height="208" rx="14" fill="none" stroke="#4675F5" stroke-width="1.9"/>
+<g data-node-id="attempt">
+<rect x="1577.5763000000002" y="210" width="308.71400000000006" height="168" rx="14" fill="#F7F2FC" stroke="#9870DA" stroke-width="1.9"/>
+<text x="1595.5763000000002" y="239.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#7047AE" text-anchor="start">执行 Attempt</text>
+</g>
+<rect x="1578.5763000000002" y="254" width="306.71400000000006" height="40" fill="#F7F2FC" stroke="none"/>
+<text x="1595.5763000000002" y="285.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">PK attempt_id uuid</text>
+<rect x="1578.5763000000002" y="294" width="306.71400000000006" height="40" fill="#FFFFFF" stroke="none"/>
+<text x="1595.5763000000002" y="325.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">FK task_id uuid</text>
+<rect x="1578.5763000000002" y="334" width="306.71400000000006" height="36" fill="#F7F2FC" stroke="none"/>
+<text x="1595.5763000000002" y="363.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">started_at timestamp</text>
+<line x1="1577.5763000000002" y1="254" x2="1886.2903000000001" y2="254" stroke="#9870DA" stroke-width="1.3299999999999998" fill="none"/>
+<rect x="1577.5763000000002" y="210" width="308.71400000000006" height="168" rx="14" fill="none" stroke="#9870DA" stroke-width="1.9"/>
+<g data-node-id="artifact">
+<rect x="2322.2903" y="210" width="300" height="164" rx="14" fill="#EDF8F5" stroke="#30A698" stroke-width="1.9"/>
+<text x="2340.2903" y="239.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#1E756C" text-anchor="start">交付物 Artifact</text>
+</g>
+<rect x="2323.2903" y="254" width="298" height="36" fill="#EDF8F5" stroke="none"/>
+<text x="2340.2903" y="283.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">PK artifact_id uuid</text>
+<rect x="2323.2903" y="290" width="298" height="40" fill="#FFFFFF" stroke="none"/>
+<text x="2340.2903" y="321.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">FK attempt_id uuid</text>
+<rect x="2323.2903" y="330" width="298" height="36" fill="#EDF8F5" stroke="none"/>
+<text x="2340.2903" y="359.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">object_key text</text>
+<line x1="2322.2903" y1="254" x2="2622.2903" y2="254" stroke="#30A698" stroke-width="1.3299999999999998" fill="none"/>
+<rect x="2322.2903" y="210" width="300" height="164" rx="14" fill="none" stroke="#30A698" stroke-width="1.9"/>
+<g data-node-id="endpoint">
+<rect x="816.0" y="558" width="325.57630000000006" height="168" rx="14" fill="#FFF5ED" stroke="#E98655" stroke-width="1.9"/>
+<text x="834.0" y="587.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#A6532F" text-anchor="start">回调端点 Endpoint</text>
+</g>
+<rect x="817.0" y="602" width="323.57630000000006" height="40" fill="#FFF5ED" stroke="none"/>
+<text x="834.0" y="633.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">PK endpoint_id uuid</text>
+<rect x="817.0" y="642" width="323.57630000000006" height="40" fill="#FFFFFF" stroke="none"/>
+<text x="834.0" y="673.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">FK tenant_id uuid</text>
+<rect x="817.0" y="682" width="323.57630000000006" height="36" fill="#FFF5ED" stroke="none"/>
+<text x="834.0" y="711.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">url text</text>
+<line x1="816.0" y1="602" x2="1141.5763000000002" y2="602" stroke="#E98655" stroke-width="1.3299999999999998" fill="none"/>
+<rect x="816.0" y="558" width="325.57630000000006" height="168" rx="14" fill="none" stroke="#E98655" stroke-width="1.9"/>
+<g data-node-id="delivery">
+<rect x="1577.5763000000002" y="518" width="308.71400000000006" height="204" rx="14" fill="#FFF5ED" stroke="#E98655" stroke-width="1.9"/>
+<text x="1595.5763000000002" y="547.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#A6532F" text-anchor="start">通知投递 Delivery</text>
+</g>
+<rect x="1578.5763000000002" y="562" width="306.71400000000006" height="36" fill="#FFF5ED" stroke="none"/>
+<text x="1595.5763000000002" y="591.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">PK delivery_id uuid</text>
+<rect x="1578.5763000000002" y="598" width="306.71400000000006" height="40" fill="#FFFFFF" stroke="none"/>
+<text x="1595.5763000000002" y="629.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">FK task_id uuid</text>
+<rect x="1578.5763000000002" y="638" width="306.71400000000006" height="40" fill="#FFF5ED" stroke="none"/>
+<text x="1595.5763000000002" y="669.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">FK endpoint_id uuid</text>
+<rect x="1578.5763000000002" y="678" width="306.71400000000006" height="36" fill="#FFFFFF" stroke="none"/>
+<text x="1595.5763000000002" y="707.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">status text</text>
+<line x1="1577.5763000000002" y1="562" x2="1886.2903000000001" y2="562" stroke="#E98655" stroke-width="1.3299999999999998" fill="none"/>
+<rect x="1577.5763000000002" y="518" width="308.71400000000006" height="204" rx="14" fill="none" stroke="#E98655" stroke-width="1.9"/>
+<line x1="389" y1="268.0" x2="389" y2="280.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="396" y1="268.0" x2="396" y2="280.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<text x="423" y="264.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">1</text>
+<line x1="798.0" y1="354.0" x2="814.0" y2="360.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="798.0" y1="354.0" x2="814.0" y2="354.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="798.0" y1="354.0" x2="814.0" y2="348.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<circle cx="787.0" cy="354.0" r="5" fill="#FFFFFF" stroke="#697C96" stroke-width="1.9"/>
+<text x="773.0" y="344.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">0..*</text>
+<line x1="1150.5763000000002" y1="268.0" x2="1150.5763000000002" y2="280.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="1157.5763000000002" y1="268.0" x2="1157.5763000000002" y2="280.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<text x="1184.5763000000002" y="264.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">1</text>
+<line x1="1559.5763000000002" y1="314.0" x2="1575.5763000000002" y2="320.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="1559.5763000000002" y1="314.0" x2="1575.5763000000002" y2="314.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="1559.5763000000002" y1="314.0" x2="1575.5763000000002" y2="308.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<circle cx="1548.5763000000002" cy="314.0" r="5" fill="#FFFFFF" stroke="#697C96" stroke-width="1.9"/>
+<text x="1534.5763000000002" y="304.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">0..*</text>
+<line x1="1895.2903000000001" y1="268.0" x2="1895.2903000000001" y2="280.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="1902.2903000000001" y1="268.0" x2="1902.2903000000001" y2="280.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<text x="1929.2903000000001" y="264.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">1</text>
+<line x1="2304.2903" y1="310.0" x2="2320.2903" y2="316.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="2304.2903" y1="310.0" x2="2320.2903" y2="310.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="2304.2903" y1="310.0" x2="2320.2903" y2="304.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<circle cx="2293.2903" cy="310.0" r="5" fill="#FFFFFF" stroke="#697C96" stroke-width="1.9"/>
+<text x="2279.2903" y="300.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">0..*</text>
+<line x1="389" y1="308.0" x2="389" y2="320.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="396" y1="308.0" x2="396" y2="320.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<text x="423" y="304.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">1</text>
+<line x1="798.0" y1="662.0" x2="814.0" y2="668.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="798.0" y1="662.0" x2="814.0" y2="662.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="798.0" y1="662.0" x2="814.0" y2="656.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<circle cx="787.0" cy="662.0" r="5" fill="#FFFFFF" stroke="#697C96" stroke-width="1.9"/>
+<text x="773.0" y="652.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">0..*</text>
+<line x1="1150.5763000000002" y1="308.0" x2="1150.5763000000002" y2="320.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="1157.5763000000002" y1="308.0" x2="1157.5763000000002" y2="320.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<text x="1184.5763000000002" y="304.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">1</text>
+<line x1="1559.5763000000002" y1="618.0" x2="1575.5763000000002" y2="624.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="1559.5763000000002" y1="618.0" x2="1575.5763000000002" y2="618.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="1559.5763000000002" y1="618.0" x2="1575.5763000000002" y2="612.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<circle cx="1548.5763000000002" cy="618.0" r="5" fill="#FFFFFF" stroke="#697C96" stroke-width="1.9"/>
+<text x="1534.5763000000002" y="608.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">0..*</text>
+<line x1="1150.5763000000002" y1="616.0" x2="1150.5763000000002" y2="628.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="1157.5763000000002" y1="616.0" x2="1157.5763000000002" y2="628.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<text x="1184.5763000000002" y="612.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">1</text>
+<line x1="1559.5763000000002" y1="658.0" x2="1575.5763000000002" y2="664.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="1559.5763000000002" y1="658.0" x2="1575.5763000000002" y2="658.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="1559.5763000000002" y1="658.0" x2="1575.5763000000002" y2="652.0" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<circle cx="1548.5763000000002" cy="658.0" r="5" fill="#FFFFFF" stroke="#697C96" stroke-width="1.9"/>
+<text x="1534.5763000000002" y="648.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">0..*</text>
+<text x="52" y="851" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="start">PK 主键 · FK 外键</text>
+<line x1="291.5734375" y1="845" x2="371.5734375" y2="845" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="300.5734375" y1="839" x2="300.5734375" y2="851" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="307.5734375" y1="839" x2="307.5734375" y2="851" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<text x="334.5734375" y="835" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">1</text>
+<text x="386.5734375" y="851" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="start">恰好一个</text>
+<line x1="539.5734375" y1="845" x2="619.5734375" y2="845" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="557.5734375" y1="845" x2="541.5734375" y2="839" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="557.5734375" y1="845" x2="541.5734375" y2="845" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="557.5734375" y1="845" x2="541.5734375" y2="851" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<circle cx="568.5734375" cy="845" r="5" fill="#FFFFFF" stroke="#697C96" stroke-width="1.9"/>
+<text x="582.5734375" y="835" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">0..*</text>
+<text x="634.5734375" y="851" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="start">零个或多个</text>
+<rect x="511.0" y="241.0" width="54.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="538.0" y="264.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">拥有</text>
+<rect x="1250.5763000000002" y="241.0" width="98.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1299.5763000000002" y="264.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">执行记录</text>
+<rect x="2119.2903" y="277.0" width="54.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="2146.2903" y="300.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">产出</text>
+<rect x="665.0" y="471.0" width="54.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="692.0" y="494.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">配置</text>
+<rect x="1426.5763000000002" y="449.0" width="54.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1453.5763000000002" y="472.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">触发</text>
+<rect x="1236.5763000000002" y="589.0" width="54.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1263.5763000000002" y="612.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">接收</text></svg>

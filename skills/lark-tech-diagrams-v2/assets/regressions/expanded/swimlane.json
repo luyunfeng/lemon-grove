@@ -1,0 +1,153 @@
+{
+  "diagram_type": "swimlane",
+  "title": "借阅申请的职责交接",
+  "subtitle": "示意模型 · 以图型语义表达业务逻辑",
+  "nodes": [
+    {
+      "id": "request",
+      "label": "提交借阅申请",
+      "kind": "action",
+      "role": "blue",
+      "lane": "reader"
+    },
+    {
+      "id": "check",
+      "label": "核对借阅资格",
+      "kind": "action",
+      "role": "blue",
+      "lane": "desk"
+    },
+    {
+      "id": "eligible",
+      "label": "资格符合？",
+      "kind": "decision",
+      "role": "amber",
+      "lane": "desk"
+    },
+    {
+      "id": "deny",
+      "label": "接收拒绝原因",
+      "kind": "action",
+      "role": "rose",
+      "lane": "reader"
+    },
+    {
+      "id": "reserve",
+      "label": "锁定可借副本",
+      "kind": "action",
+      "role": "purple",
+      "lane": "stock"
+    },
+    {
+      "id": "handover",
+      "label": "办理借出",
+      "kind": "action",
+      "role": "teal",
+      "lane": "desk"
+    },
+    {
+      "id": "receive",
+      "label": "领取图书",
+      "kind": "action",
+      "role": "green",
+      "lane": "reader"
+    },
+    {
+      "id": "available",
+      "label": "副本可借？",
+      "kind": "decision",
+      "role": "amber",
+      "lane": "stock"
+    },
+    {
+      "id": "wait",
+      "label": "登记预约等待",
+      "kind": "action",
+      "role": "purple",
+      "lane": "desk"
+    }
+  ],
+  "edges": [
+    {
+      "id": "l1",
+      "source": "request",
+      "target": "check",
+      "label": "申请信息",
+      "kind": "flow"
+    },
+    {
+      "id": "l2",
+      "source": "check",
+      "target": "eligible",
+      "label": "资格结果",
+      "kind": "flow"
+    },
+    {
+      "id": "l3",
+      "source": "eligible",
+      "target": "deny",
+      "label": "否",
+      "kind": "flow"
+    },
+    {
+      "id": "l4",
+      "source": "eligible",
+      "target": "available",
+      "label": "是",
+      "kind": "flow"
+    },
+    {
+      "id": "l5",
+      "source": "reserve",
+      "target": "handover",
+      "label": "副本已锁定",
+      "kind": "flow"
+    },
+    {
+      "id": "l6",
+      "source": "handover",
+      "target": "receive",
+      "label": "借出确认",
+      "kind": "flow"
+    },
+    {
+      "id": "l7",
+      "source": "available",
+      "target": "reserve",
+      "label": "是",
+      "kind": "flow"
+    },
+    {
+      "id": "l8",
+      "source": "available",
+      "target": "wait",
+      "label": "否",
+      "kind": "flow"
+    },
+    {
+      "id": "l9",
+      "source": "wait",
+      "target": "deny",
+      "label": "告知暂不可借",
+      "kind": "flow"
+    }
+  ],
+  "orientation": "horizontal",
+  "lanes": [
+    {
+      "id": "reader",
+      "label": "读者",
+      "role": "blue"
+    },
+    {
+      "id": "desk",
+      "label": "借阅台",
+      "role": "teal"
+    },
+    {
+      "id": "stock",
+      "label": "馆藏系统",
+      "role": "purple"
+    }
+  ]
+}

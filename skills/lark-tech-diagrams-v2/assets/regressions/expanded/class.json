@@ -1,0 +1,207 @@
+{
+  "diagram_type": "class",
+  "title": "异步任务交付平台 · 领域类模型",
+  "subtitle": "扩展模型 · 新增 JavaScript 执行器与交付物元数据",
+  "nodes": [
+    {
+      "id": "executor",
+      "label": "«interface» Executor",
+      "lines": [],
+      "rank": 0,
+      "group": "",
+      "role": "purple",
+      "fields": [],
+      "methods": [
+        "+ execute(task): Result"
+      ]
+    },
+    {
+      "id": "python",
+      "label": "PythonExecutor",
+      "lines": [],
+      "rank": 1,
+      "group": "",
+      "role": "purple",
+      "fields": [
+        "- timeout: int"
+      ],
+      "methods": [
+        "+ execute(task): Result"
+      ]
+    },
+    {
+      "id": "task",
+      "label": "Task",
+      "lines": [],
+      "rank": 0,
+      "group": "",
+      "role": "blue",
+      "fields": [
+        "- id: UUID",
+        "- status: TaskStatus"
+      ],
+      "methods": [
+        "+ start(): Attempt",
+        "+ complete(): void"
+      ]
+    },
+    {
+      "id": "attempt",
+      "label": "Attempt",
+      "lines": [],
+      "rank": 1,
+      "group": "",
+      "role": "blue",
+      "fields": [
+        "- sequence: int",
+        "- startedAt: Instant"
+      ],
+      "methods": [
+        "+ finish(): void"
+      ]
+    },
+    {
+      "id": "artifact",
+      "label": "Artifact",
+      "lines": [],
+      "rank": 2,
+      "group": "",
+      "role": "teal",
+      "fields": [
+        "- key: str",
+        "- checksum: str"
+      ],
+      "methods": [
+        "+ verify(): bool"
+      ]
+    },
+    {
+      "id": "service",
+      "label": "TaskService",
+      "lines": [],
+      "rank": 2,
+      "group": "",
+      "role": "orange",
+      "fields": [
+        "- executor: Executor"
+      ],
+      "methods": [
+        "+ submit(): Task",
+        "+ run(task): void"
+      ]
+    },
+    {
+      "id": "base",
+      "label": "BaseExecutor",
+      "lines": [],
+      "role": "purple",
+      "rank": 0,
+      "fields": [
+        "# retries: int"
+      ],
+      "methods": [
+        "+ execute(task): Result"
+      ]
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScriptExecutor",
+      "role": "purple",
+      "fields": [
+        "- memoryLimit: int"
+      ],
+      "methods": [
+        "+ execute(task): Result"
+      ]
+    },
+    {
+      "id": "metadata",
+      "label": "ArtifactMetadata",
+      "role": "teal",
+      "fields": [
+        "- contentType: str"
+      ],
+      "methods": [
+        "+ serialize(): bytes"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "c1",
+      "source": "python",
+      "target": "executor",
+      "label": "实现执行契约",
+      "kind": "realization"
+    },
+    {
+      "id": "c2",
+      "source": "task",
+      "target": "attempt",
+      "label": "执行记录",
+      "kind": "composition",
+      "cardinality": {
+        "source": "1",
+        "target": "0..*"
+      }
+    },
+    {
+      "id": "c3",
+      "source": "attempt",
+      "target": "artifact",
+      "label": "产出",
+      "kind": "association",
+      "cardinality": {
+        "source": "1",
+        "target": "0..*"
+      }
+    },
+    {
+      "id": "c4",
+      "source": "service",
+      "target": "executor",
+      "label": "调用",
+      "kind": "dependency"
+    },
+    {
+      "id": "c5",
+      "source": "service",
+      "target": "task",
+      "label": "管理",
+      "kind": "association"
+    },
+    {
+      "id": "c6",
+      "source": "python",
+      "target": "base",
+      "label": "继承公共重试能力",
+      "kind": "inheritance"
+    },
+    {
+      "id": "c7",
+      "source": "javascript",
+      "target": "executor",
+      "label": "实现执行契约",
+      "kind": "realization"
+    },
+    {
+      "id": "c8",
+      "source": "javascript",
+      "target": "base",
+      "label": "继承公共重试能力",
+      "kind": "inheritance"
+    },
+    {
+      "id": "c9",
+      "source": "artifact",
+      "target": "metadata",
+      "label": "持有值对象",
+      "kind": "composition",
+      "cardinality": {
+        "source": "1",
+        "target": "1"
+      }
+    }
+  ],
+  "case_variant": "expanded"
+}

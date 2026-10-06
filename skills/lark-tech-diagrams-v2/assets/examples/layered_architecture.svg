@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1831.12" width="1200" height="1831.12"><defs><marker id="arrow-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#CBA02E"/></marker><marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#4675F5"/></marker><marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#30A698"/></marker><marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#35A56D"/></marker><marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#E98655"/></marker><marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#9870DA"/></marker><marker id="arrow-rose" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#CC6B80"/></marker><marker id="arrow-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#697C96"/></marker><marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#30A698"/></marker></defs><rect x="0" y="0" width="1200" height="1831.12" fill="#FCFDFE"/><rect x="80" y="152" width="964.0" height="306.78" rx="14" fill="#F0F5FE" stroke="#91AFF0" stroke-width="1.4" stroke-opacity="1"/>
+<text x="98" y="182" font-family="Noto Sans SC" font-size="22" font-weight="bold" fill="#2D4F9A" text-anchor="start">接入层 · 请求与展示</text>
+<rect x="80" y="522.78" width="964.0" height="306.78" rx="14" fill="#F7F2FC" stroke="#BDA1E7" stroke-width="1.4" stroke-opacity="1"/>
+<text x="98" y="552.78" font-family="Noto Sans SC" font-size="22" font-weight="bold" fill="#7047AE" text-anchor="start">应用层 · 用例编排</text>
+<rect x="80" y="893.56" width="964.0" height="306.78" rx="14" fill="#FFF5ED" stroke="#EFB18C" stroke-width="1.4" stroke-opacity="1"/>
+<text x="98" y="923.56" font-family="Noto Sans SC" font-size="22" font-weight="bold" fill="#A6532F" text-anchor="start">领域层 · 业务不变量</text>
+<rect x="80" y="1264.34" width="964.0" height="306.78" rx="14" fill="#EDF8F5" stroke="#78C4B8" stroke-width="1.4" stroke-opacity="1"/>
+<text x="98" y="1294.34" font-family="Noto Sans SC" font-size="22" font-weight="bold" fill="#1E756C" text-anchor="start">基础设施层 · 存储实现</text>
+<line x1="440.0" y1="42" x2="600.0" y2="42" stroke="#4675F5" stroke-width="6" stroke-linecap="round"/>
+<line x1="600.0" y1="42" x2="760.0" y2="42" stroke="#30A698" stroke-width="6" stroke-linecap="round"/>
+<text x="600.0" y="88" font-family="Noto Sans SC" font-size="36" font-weight="bold" fill="#253149" text-anchor="middle">预约系统 · 职责分层 · 扩展结构</text>
+<text x="600.0" y="124" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#71809A" text-anchor="middle">独立示意模型 · 非生产事实</text>
+<polyline data-edge-id="ly1" data-source="web" data-target="handler" points="418,373.39 706.0,373.39" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="ly2" data-source="handler" data-target="usecase" points="840.5,440.78 840.5,572.78 258.0,572.78 258.0,632.78" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="ly3" data-source="usecase" data-target="domain" points="258.0,811.56 258.0,892.56 536.5,892.56 536.5,1003.56" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="ly4" data-source="domain" data-target="repo" points="562.0,1182.34 562.0,1374.34" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="ly5" data-source="handler" data-target="cancel" points="891.5,440.78 891.5,521.78 866.0,521.78 866.0,632.78" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="ly6" data-source="cancel" data-target="domain" points="866.0,811.56 866.0,943.56 587.5,943.56 587.5,1003.56" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<g data-node-id="web">
+<rect x="98" y="262" width="320" height="178.77999999999997" rx="14" fill="#F0F5FE" stroke="#4675F5" stroke-width="1.9"/>
+<line x1="116" y1="306.0" x2="400" y2="306.0" stroke="#91AFF0" stroke-width="1"/>
+<text x="116" y="291.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#2D4F9A" text-anchor="start">预约页面</text>
+<text x="116" y="340.5" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">«module» 层内模块</text>
+<text x="116" y="370.86" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">采集用户意图</text>
+<text x="116" y="401.22" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">Web UI</text>
+</g>
+<g data-node-id="handler">
+<rect x="706.0" y="262" width="320" height="178.77999999999997" rx="14" fill="#F0F5FE" stroke="#4675F5" stroke-width="1.9"/>
+<line x1="724.0" y1="306.0" x2="1008.0" y2="306.0" stroke="#91AFF0" stroke-width="1"/>
+<text x="724.0" y="291.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#2D4F9A" text-anchor="start">请求协调器</text>
+<text x="724.0" y="340.5" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">«module» 层内模块</text>
+<text x="724.0" y="370.86" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">转译请求并调用用例</text>
+<text x="724.0" y="401.22" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">HTTP Controller</text>
+</g>
+<g data-node-id="usecase">
+<rect x="98" y="632.78" width="320" height="178.77999999999997" rx="14" fill="#F7F2FC" stroke="#9870DA" stroke-width="1.9"/>
+<line x1="116" y1="676.78" x2="400" y2="676.78" stroke="#BDA1E7" stroke-width="1"/>
+<text x="116" y="661.78" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#7047AE" text-anchor="start">提交预约用例</text>
+<text x="116" y="711.28" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">«module» 层内模块</text>
+<text x="116" y="741.64" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">编排一次预约事务</text>
+<text x="116" y="772.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">Application Service</text>
+</g>
+<g data-node-id="domain">
+<rect x="402.0" y="1003.56" width="320" height="178.77999999999997" rx="14" fill="#FFF5ED" stroke="#E98655" stroke-width="1.9"/>
+<line x1="420.0" y1="1047.56" x2="704.0" y2="1047.56" stroke="#EFB18C" stroke-width="1"/>
+<text x="420.0" y="1032.56" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#A6532F" text-anchor="start">名额领域服务</text>
+<text x="420.0" y="1082.06" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">«module» 层内模块</text>
+<text x="420.0" y="1112.4199999999998" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">维护容量不变量</text>
+<text x="420.0" y="1142.7799999999997" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">Domain Model</text>
+</g>
+<g data-node-id="repo">
+<rect x="402.0" y="1374.34" width="320" height="178.77999999999997" rx="14" fill="#EDF8F5" stroke="#30A698" stroke-width="1.9"/>
+<line x1="420.0" y1="1418.34" x2="704.0" y2="1418.34" stroke="#78C4B8" stroke-width="1"/>
+<text x="420.0" y="1403.34" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#1E756C" text-anchor="start">预约存储适配器</text>
+<text x="420.0" y="1452.84" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">«module» 层内模块</text>
+<text x="420.0" y="1483.1999999999998" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">提供事务与持久化</text>
+<text x="420.0" y="1513.5599999999997" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">SQL Repository</text>
+</g>
+<g data-node-id="cancel">
+<rect x="706.0" y="632.78" width="320" height="178.77999999999997" rx="14" fill="#F7F2FC" stroke="#9870DA" stroke-width="1.9"/>
+<line x1="724.0" y1="676.78" x2="1008.0" y2="676.78" stroke="#BDA1E7" stroke-width="1"/>
+<text x="724.0" y="661.78" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#7047AE" text-anchor="start">取消预约用例</text>
+<text x="724.0" y="711.28" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">«module» 层内模块</text>
+<text x="724.0" y="741.64" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">撤销预约并释放名额</text>
+<text x="724.0" y="772.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">Application Service</text>
+</g>
+<text x="52" y="1719.12" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#71809A" text-anchor="start">自上而下为职责层级；箭头表示依赖，被依赖方是箭头终点</text>
+<rect x="52" y="1760.12" width="16" height="16" rx="3" fill="#4675F5"/>
+<text x="77" y="1776.12" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#71809A" text-anchor="start">接入</text>
+<rect x="156.0" y="1760.12" width="16" height="16" rx="3" fill="#9870DA"/>
+<text x="181.0" y="1776.12" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#71809A" text-anchor="start">用例</text>
+<rect x="260.0" y="1760.12" width="16" height="16" rx="3" fill="#E98655"/>
+<text x="285.0" y="1776.12" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#71809A" text-anchor="start">领域</text>
+<rect x="364.0" y="1760.12" width="16" height="16" rx="3" fill="#30A698"/>
+<text x="389.0" y="1776.12" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#71809A" text-anchor="start">基础设施</text>
+<rect x="491.0" y="340.39" width="142.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="562.0" y="363.39" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">提交页面输入</text>
+<rect x="478.25" y="581.78" width="142.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="549.25" y="604.78" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">执行提交用例</text>
+<rect x="389.5" y="949.93" width="142.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="460.5" y="972.93" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">校验名额规则</text>
+<rect x="567.0" y="1318.94" width="142.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="638.0" y="1341.94" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">调用存储接口</text>
+<rect x="871.0" y="579.15" width="142.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="942.0" y="602.15" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">执行取消用例</text>
+<rect x="655.75" y="952.56" width="142.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="726.75" y="975.56" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">校验释放条件</text></svg>

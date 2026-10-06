@@ -1,0 +1,87 @@
+{
+  "diagram_type": "state",
+  "title": "工单生命周期",
+  "subtitle": "示意模型 · 以图型语义表达业务逻辑；状态机在创建时建立",
+  "nodes": [
+    {
+      "id": "initial",
+      "label": "",
+      "kind": "initial",
+      "role": "slate"
+    },
+    {
+      "id": "new",
+      "label": "待分派",
+      "kind": "waiting",
+      "role": "purple"
+    },
+    {
+      "id": "active",
+      "label": "处理中",
+      "kind": "active",
+      "role": "blue"
+    },
+    {
+      "id": "review",
+      "label": "待验收",
+      "kind": "waiting",
+      "role": "amber"
+    },
+    {
+      "id": "closed",
+      "label": "已关闭",
+      "kind": "success",
+      "role": "teal"
+    },
+    {
+      "id": "final",
+      "label": "",
+      "kind": "final",
+      "role": "slate"
+    }
+  ],
+  "edges": [
+    {
+      "id": "s1",
+      "source": "initial",
+      "target": "new",
+      "label": "/ 保存工单",
+      "kind": "flow"
+    },
+    {
+      "id": "s2",
+      "source": "new",
+      "target": "active",
+      "label": "分派 [负责人有效]",
+      "kind": "flow"
+    },
+    {
+      "id": "s3",
+      "source": "active",
+      "target": "review",
+      "label": "提交 / 请求验收",
+      "kind": "flow"
+    },
+    {
+      "id": "s4",
+      "source": "review",
+      "target": "active",
+      "label": "驳回 / 补充处理",
+      "kind": "feedback"
+    },
+    {
+      "id": "s5",
+      "source": "review",
+      "target": "closed",
+      "label": "通过 / 关闭工单",
+      "kind": "flow"
+    },
+    {
+      "id": "s6",
+      "source": "closed",
+      "target": "final",
+      "label": "归档完成",
+      "kind": "flow"
+    }
+  ]
+}

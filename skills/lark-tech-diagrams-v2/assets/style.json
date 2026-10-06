@@ -1,0 +1,90 @@
+{
+  "name": "semantic-soft-refined",
+  "body_font": 22,
+  "title_font": 36,
+  "node_font": 24,
+  "node_header": 44,
+  "panel_header": 42,
+  "row_height": 36,
+  "padding": 18,
+  "margin": 52,
+  "gap_x": 90,
+  "gap_y": 64,
+  "stroke": 1.9,
+  "label_font": 20,
+  "label_background": true,
+  "radius": 14,
+  "canvas_fill": "#FCFDFE",
+  "ink": "#3F4F69",
+  "muted": "#71809A",
+  "palette": {
+    "blue": [
+      "#4675F5",
+      "#F0F5FE"
+    ],
+    "teal": [
+      "#30A698",
+      "#EDF8F5"
+    ],
+    "purple": [
+      "#9870DA",
+      "#F7F2FC"
+    ],
+    "orange": [
+      "#E98655",
+      "#FFF5ED"
+    ],
+    "amber": [
+      "#CBA02E",
+      "#FFFAE9"
+    ],
+    "green": [
+      "#35A56D",
+      "#EEF9F2"
+    ],
+    "slate": [
+      "#697C96",
+      "#F4F6FA"
+    ],
+    "rose": [
+      "#CC6B80",
+      "#FDF2F5"
+    ],
+    "cyan": [
+      "#30A698",
+      "#EDF8F5"
+    ]
+  },
+  "native_regular_width_factor": 1.1,
+  "native_bold_width_factor": 1.36,
+  "crossing_gap": 12,
+  "swimlane_gap_x": 112,
+  "sequence_label_font": 22,
+  "swimlane_label_font": 22,
+  "soft_cards": true,
+  "title_centered": true,
+  "title_ink": "#253149",
+  "panel_border_width": 1.4,
+  "text_colors": {
+    "blue": "#2D4F9A",
+    "teal": "#1E756C",
+    "purple": "#7047AE",
+    "orange": "#A6532F",
+    "amber": "#866018",
+    "green": "#257647",
+    "slate": "#3C4F6D",
+    "rose": "#973D57",
+    "cyan": "#1E756C"
+  },
+  "border_colors": {
+    "blue": "#91AFF0",
+    "teal": "#78C4B8",
+    "purple": "#BDA1E7",
+    "orange": "#EFB18C",
+    "amber": "#DDC279",
+    "green": "#88C8A3",
+    "slate": "#BBC6D8",
+    "rose": "#DBA1B0",
+    "cyan": "#78C4B8"
+  }
+}

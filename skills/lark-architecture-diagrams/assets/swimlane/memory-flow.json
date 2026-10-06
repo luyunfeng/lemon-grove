@@ -1,0 +1,602 @@
+{
+  "title": "Claude Code 记忆流程 · 谁在何时读写",
+  "diagram_type": "swimlane",
+  "style_version": "1.0.0",
+  "canvas": [
+    2600,
+    1720
+  ],
+  "lanes": [
+    {
+      "id": "user",
+      "title": "用户 / 维护者",
+      "y": 240,
+      "height": 190
+    },
+    {
+      "id": "runtime",
+      "title": "Claude Code / 上下文管理",
+      "y": 450,
+      "height": 250
+    },
+    {
+      "id": "claude",
+      "title": "Claude / 推理与 / 工具执行",
+      "y": 720,
+      "height": 460
+    },
+    {
+      "id": "files",
+      "title": "本地持久文件 / 被读写的资源",
+      "y": 1200,
+      "height": 270
+    }
+  ],
+  "visual_map": {
+    "color": "职责归属，不表示成功失败",
+    "horizontal": "流程阶段由左至右",
+    "lanes": "用户、上下文管理、Claude 执行、本地文件资源",
+    "edges": "实线为本轮动作或数据交接，长虚线为本轮循环，点线为下一会话重新启动"
+  },
+  "nodes": [
+    {
+      "id": "start",
+      "title": "开启会话",
+      "detail": [
+        "提出本轮目标"
+      ],
+      "lane": "user",
+      "stage": 1,
+      "bounds": [
+        330,
+        270,
+        310,
+        125
+      ]
+    },
+    {
+      "id": "feedback",
+      "title": "纠正 / 补充偏好",
+      "detail": [
+        "可在会话中随时提出"
+      ],
+      "lane": "user",
+      "stage": 2,
+      "bounds": [
+        1100,
+        270,
+        350,
+        125
+      ]
+    },
+    {
+      "id": "next",
+      "title": "下一会话",
+      "detail": [
+        "独立启动；不以新增为前提"
+      ],
+      "lane": "user",
+      "stage": 1,
+      "bounds": [
+        2220,
+        270,
+        310,
+        125
+      ]
+    },
+    {
+      "id": "load",
+      "title": "读取启动资料",
+      "detail": [
+        "CLAUDE.md / 规则",
+        "MEMORY.md 入口"
+      ],
+      "lane": "runtime",
+      "stage": 1,
+      "bounds": [
+        330,
+        500,
+        330,
+        150
+      ]
+    },
+    {
+      "id": "assemble",
+      "title": "组装当前上下文",
+      "detail": [
+        "规则、索引与用户输入"
+      ],
+      "lane": "runtime",
+      "stage": 2,
+      "bounds": [
+        820,
+        510,
+        340,
+        140
+      ]
+    },
+    {
+      "id": "execute",
+      "title": "执行 / 继续任务",
+      "detail": [
+        "推理并调用工具"
+      ],
+      "lane": "claude",
+      "stage": 2,
+      "bounds": [
+        820,
+        800,
+        320,
+        130
+      ]
+    },
+    {
+      "id": "need",
+      "title": "需要主题细节？",
+      "detail": [],
+      "lane": "claude",
+      "stage": "条件判断",
+      "shape": "diamond",
+      "bounds": [
+        1200.0,
+        775.0,
+        300,
+        180
+      ]
+    },
+    {
+      "id": "read-topic",
+      "title": "工具读取主题",
+      "detail": [
+        "由 Claude 选择所需笔记"
+      ],
+      "lane": "claude",
+      "stage": 3,
+      "bounds": [
+        1200,
+        1030,
+        330,
+        120
+      ]
+    },
+    {
+      "id": "value",
+      "title": "有跨会话价值？",
+      "detail": [
+        "判断是否值得保存"
+      ],
+      "lane": "claude",
+      "stage": "条件判断",
+      "shape": "diamond",
+      "bounds": [
+        1730.0,
+        775.0,
+        340,
+        180
+      ]
+    },
+    {
+      "id": "write",
+      "title": "保存有用经验",
+      "detail": [
+        "写主题笔记",
+        "维护 MEMORY.md 索引"
+      ],
+      "lane": "claude",
+      "stage": 5,
+      "bounds": [
+        2220,
+        790,
+        310,
+        160
+      ]
+    },
+    {
+      "id": "continue",
+      "title": "继续本轮任务",
+      "detail": [
+        "继续处理目标与新输入"
+      ],
+      "lane": "claude",
+      "stage": 4,
+      "bounds": [
+        1730,
+        1030,
+        340,
+        120
+      ]
+    },
+    {
+      "id": "startup-data",
+      "title": "启动文件 · 读出结果",
+      "detail": [
+        "持久指令 + 记忆入口索引"
+      ],
+      "lane": "files",
+      "stage": 1,
+      "bounds": [
+        330,
+        1280,
+        400,
+        130
+      ]
+    },
+    {
+      "id": "topic-data",
+      "title": "主题笔记 · 读出结果",
+      "detail": [
+        "返回所需详细内容"
+      ],
+      "lane": "files",
+      "stage": 3,
+      "bounds": [
+        1230,
+        1280,
+        350,
+        130
+      ]
+    },
+    {
+      "id": "persist",
+      "title": "主题笔记与索引已持久化",
+      "detail": [
+        "供未来会话读取"
+      ],
+      "lane": "files",
+      "stage": 5,
+      "bounds": [
+        2150,
+        1280,
+        380,
+        130
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "e01",
+      "source": "start",
+      "target": "load",
+      "label": "开启",
+      "kind": "flow",
+      "points": [
+        [
+          480,
+          395
+        ],
+        [
+          480,
+          500
+        ]
+      ]
+    },
+    {
+      "id": "e02",
+      "source": "load",
+      "target": "startup-data",
+      "label": "请求规则与索引",
+      "kind": "flow",
+      "points": [
+        [
+          460,
+          650
+        ],
+        [
+          460,
+          1280
+        ]
+      ]
+    },
+    {
+      "id": "e03",
+      "source": "startup-data",
+      "target": "assemble",
+      "label": "返回启动资料",
+      "kind": "flow",
+      "points": [
+        [
+          730,
+          1340
+        ],
+        [
+          780,
+          1340
+        ],
+        [
+          780,
+          580
+        ],
+        [
+          820,
+          580
+        ]
+      ]
+    },
+    {
+      "id": "e04",
+      "source": "assemble",
+      "target": "execute",
+      "label": "交给 Claude",
+      "kind": "flow",
+      "points": [
+        [
+          980,
+          650
+        ],
+        [
+          980,
+          800
+        ]
+      ]
+    },
+    {
+      "id": "e05",
+      "source": "feedback",
+      "target": "assemble",
+      "label": "加入当前输入",
+      "kind": "flow",
+      "points": [
+        [
+          1275,
+          395
+        ],
+        [
+          1275,
+          470
+        ],
+        [
+          1100,
+          470
+        ],
+        [
+          1100,
+          510
+        ]
+      ]
+    },
+    {
+      "id": "e06",
+      "source": "execute",
+      "target": "need",
+      "label": "判断",
+      "kind": "flow",
+      "points": [
+        [
+          1140,
+          865
+        ],
+        [
+          1200,
+          865
+        ]
+      ]
+    },
+    {
+      "id": "e07",
+      "source": "need",
+      "target": "value",
+      "label": "否：直接推进",
+      "kind": "flow",
+      "points": [
+        [
+          1500,
+          865
+        ],
+        [
+          1730,
+          865
+        ]
+      ]
+    },
+    {
+      "id": "e08",
+      "source": "need",
+      "target": "read-topic",
+      "label": "是：按需读",
+      "kind": "flow",
+      "points": [
+        [
+          1350,
+          955
+        ],
+        [
+          1350,
+          1030
+        ]
+      ]
+    },
+    {
+      "id": "e09",
+      "source": "read-topic",
+      "target": "topic-data",
+      "label": "请求主题内容",
+      "kind": "flow",
+      "points": [
+        [
+          1350,
+          1150
+        ],
+        [
+          1350,
+          1280
+        ]
+      ]
+    },
+    {
+      "id": "e10",
+      "source": "topic-data",
+      "target": "execute",
+      "label": "读入细节，继续任务",
+      "kind": "loop",
+      "points": [
+        [
+          1230,
+          1340
+        ],
+        [
+          1180,
+          1340
+        ],
+        [
+          1180,
+          978
+        ],
+        [
+          980,
+          978
+        ],
+        [
+          980,
+          930
+        ]
+      ]
+    },
+    {
+      "id": "e11",
+      "source": "value",
+      "target": "write",
+      "label": "是：保存",
+      "kind": "flow",
+      "points": [
+        [
+          2070,
+          865
+        ],
+        [
+          2220,
+          865
+        ]
+      ]
+    },
+    {
+      "id": "e12",
+      "source": "value",
+      "target": "continue",
+      "label": "否：不写记忆",
+      "kind": "flow",
+      "points": [
+        [
+          1900,
+          955
+        ],
+        [
+          1900,
+          1030
+        ]
+      ]
+    },
+    {
+      "id": "e13",
+      "source": "write",
+      "target": "persist",
+      "label": "写主题及索引",
+      "kind": "flow",
+      "points": [
+        [
+          2380,
+          950
+        ],
+        [
+          2380,
+          1280
+        ]
+      ]
+    },
+    {
+      "id": "e14",
+      "source": "persist",
+      "target": "continue",
+      "label": "保存后继续",
+      "kind": "loop",
+      "points": [
+        [
+          2150,
+          1340
+        ],
+        [
+          2120,
+          1340
+        ],
+        [
+          2120,
+          1090
+        ],
+        [
+          2070,
+          1090
+        ]
+      ]
+    },
+    {
+      "id": "e15",
+      "source": "continue",
+      "target": "execute",
+      "label": "本轮循环",
+      "kind": "loop",
+      "points": [
+        [
+          1900,
+          1150
+        ],
+        [
+          1900,
+          1170
+        ],
+        [
+          760,
+          1170
+        ],
+        [
+          760,
+          865
+        ],
+        [
+          820,
+          865
+        ]
+      ]
+    },
+    {
+      "id": "e16",
+      "source": "next",
+      "target": "load",
+      "label": "下一会话：重新加载已有文件（即使本轮无新增）",
+      "kind": "next",
+      "points": [
+        [
+          2375,
+          270
+        ],
+        [
+          2375,
+          220
+        ],
+        [
+          305,
+          220
+        ],
+        [
+          305,
+          575
+        ],
+        [
+          330,
+          575
+        ]
+      ]
+    }
+  ],
+  "notes": [
+    "本地文件是被读写的资源，不自主判断",
+    "按需读取与选择性保存均由 Claude 决定",
+    "运行时启动加载规则与索引",
+    "下一会话可加载已有笔记，不依赖本轮新增",
+    "保存可在会话中发生，不要求每轮保存或人工审批",
+    "/compact 管理当前上下文，不直接写长期记忆"
+  ],
+  "basis": "用户已确认的 Claude Code 记忆泳道图；业务内容核对于2026-10-02，仅作为视觉语法参考。",
+  "source_refs": [
+    "https://code.claude.com/docs/en/memory",
+    "https://code.claude.com/docs/en/how-claude-code-works"
+  ]
+}

@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="1480" viewBox="0 0 2200 1480">
+<rect x="0" y="0" width="2200" height="1480" rx="0" fill="#FFFFFF" stroke="none" stroke-width="1" />
+<text x="48" y="80" text-anchor="start" font-family="Noto Sans SC" font-size="40" font-weight="700" fill="#243247">A · 泳道图｜颜色对应责任，位置对应交接</text>
+<text x="48" y="123" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#64748B">AI研发任务交付 · 说明性示例，非真实生产系统模型</text>
+<text x="48" y="193" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#243247">责任角色 ↓</text>
+<rect x="340" y="164" width="300" height="44" rx="6" fill="#F1F3F6" stroke="none" stroke-width="1" />
+<text x="358" y="194" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#243247">01 目标与登记</text>
+<rect x="980" y="164" width="300" height="44" rx="6" fill="#F1F3F6" stroke="none" stroke-width="1" />
+<text x="998" y="194" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#243247">02 执行与自测</text>
+<rect x="1350" y="164" width="300" height="44" rx="6" fill="#F1F3F6" stroke="none" stroke-width="1" />
+<text x="1368" y="194" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#243247">03 产物与评审</text>
+<rect x="1800" y="164" width="300" height="44" rx="6" fill="#F1F3F6" stroke="none" stroke-width="1" />
+<text x="1818" y="194" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#243247">04 判断与交付</text>
+<rect x="48" y="240" width="2104" height="220" rx="12" fill="#EFF6FF" stroke="none" stroke-width="1" />
+<rect x="48" y="240" width="182" height="220" rx="12" fill="#2563EB" stroke="none" stroke-width="1" />
+<text x="72" y="295" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#FFFFFF">01</text>
+<text x="72" y="351" text-anchor="start" font-family="Noto Sans SC" font-size="27" font-weight="700" fill="#FFFFFF">需求方</text>
+<text x="72" y="391" text-anchor="start" font-family="Noto Sans SC" font-size="20" font-weight="400" fill="#FFFFFF">责任泳道</text>
+<rect x="48" y="480" width="2104" height="220" rx="12" fill="#F5F0FF" stroke="none" stroke-width="1" />
+<rect x="48" y="480" width="182" height="220" rx="12" fill="#7C3AED" stroke="none" stroke-width="1" />
+<text x="72" y="535" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#FFFFFF">02</text>
+<text x="72" y="591" text-anchor="start" font-family="Noto Sans SC" font-size="27" font-weight="700" fill="#FFFFFF">任务编排</text>
+<text x="72" y="631" text-anchor="start" font-family="Noto Sans SC" font-size="20" font-weight="400" fill="#FFFFFF">责任泳道</text>
+<rect x="48" y="720" width="2104" height="220" rx="12" fill="#EAFBF6" stroke="none" stroke-width="1" />
+<rect x="48" y="720" width="182" height="220" rx="12" fill="#0F9D92" stroke="none" stroke-width="1" />
+<text x="72" y="775" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#FFFFFF">03</text>
+<text x="72" y="831" text-anchor="start" font-family="Noto Sans SC" font-size="27" font-weight="700" fill="#FFFFFF">执行Agent</text>
+<text x="72" y="871" text-anchor="start" font-family="Noto Sans SC" font-size="20" font-weight="400" fill="#FFFFFF">责任泳道</text>
+<rect x="48" y="960" width="2104" height="220" rx="12" fill="#FFF6E4" stroke="none" stroke-width="1" />
+<rect x="48" y="960" width="182" height="220" rx="12" fill="#DC8B12" stroke="none" stroke-width="1" />
+<text x="72" y="1015" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#FFFFFF">04</text>
+<text x="72" y="1071" text-anchor="start" font-family="Noto Sans SC" font-size="27" font-weight="700" fill="#FFFFFF">审阅者</text>
+<text x="72" y="1111" text-anchor="start" font-family="Noto Sans SC" font-size="20" font-weight="400" fill="#FFFFFF">责任泳道</text>
+<polyline data-edge-id="e01" data-source="goal" data-target="register" points="600,342 780,342 780,520" fill="none" stroke="#526176" stroke-width="2.5" stroke-linejoin="round" />
+<polygon points="780,520 785,508 775,508" fill="#526176" />
+<polyline data-edge-id="e02" data-source="register" data-target="execute" points="910,582 1130,582 1130,760" fill="none" stroke="#526176" stroke-width="2.5" stroke-linejoin="round" />
+<polygon points="1130,760 1135,748 1125,748" fill="#526176" />
+<polyline data-edge-id="e03" data-source="execute" data-target="artifact" points="1280,822 1350,822" fill="none" stroke="#526176" stroke-width="2.5" stroke-linejoin="round" />
+<polygon points="1350,822 1338,817 1338,827" fill="#526176" />
+<polyline data-edge-id="e04" data-source="artifact" data-target="review" points="1490,885 1490,1000" fill="none" stroke="#526176" stroke-width="2.5" stroke-linejoin="round" />
+<polygon points="1490,1000 1495,988 1485,988" fill="#526176" />
+<polyline data-edge-id="e05" data-source="review" data-target="decision" points="1630,1070 1730,1070" fill="none" stroke="#526176" stroke-width="2.5" stroke-linejoin="round" />
+<polygon points="1730,1070 1718,1065 1718,1075" fill="#526176" />
+<polyline data-edge-id="e06" data-source="decision" data-target="delivery" points="1860,970 1860,445 1960,445 1960,405" fill="none" stroke="#526176" stroke-width="2.5" stroke-linejoin="round" />
+<polygon points="1960,405 1955,417 1965,417" fill="#526176" />
+<polyline data-edge-id="e07" data-source="decision" data-target="refine" points="1860,1170 1860,1230 280,1230 280,582 340,582" fill="none" stroke="#526176" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="10 7" />
+<polygon points="340,582 328,577 328,587" fill="#526176" />
+<polyline data-edge-id="e08" data-source="refine" data-target="execute" points="470,645 470,682 940,682 940,822 980,822" fill="none" stroke="#526176" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="10 7" />
+<polygon points="980,822 968,817 968,827" fill="#526176" />
+<g data-node-id="goal">
+<rect x="340" y="280" width="260" height="125" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.5" />
+<rect x="340" y="280" width="260" height="54" rx="10" fill="#2563EB" stroke="none" stroke-width="1" />
+<text x="360" y="317" text-anchor="start" font-family="Noto Sans SC" font-size="28" font-weight="700" fill="#FFFFFF">提交目标</text>
+<text x="360" y="374" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">说明目标与验收标准</text>
+</g>
+<g data-node-id="register">
+<rect x="650" y="520" width="260" height="125" rx="10" fill="#EDE2FF" stroke="#7C3AED" stroke-width="1.5" />
+<rect x="650" y="520" width="260" height="54" rx="10" fill="#7C3AED" stroke="none" stroke-width="1" />
+<text x="670" y="557" text-anchor="start" font-family="Noto Sans SC" font-size="28" font-weight="700" fill="#FFFFFF">登记任务</text>
+<text x="670" y="614" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">记录目标与执行要求</text>
+</g>
+<g data-node-id="execute">
+<rect x="980" y="760" width="300" height="125" rx="10" fill="#CFF3EA" stroke="#0F9D92" stroke-width="1.5" />
+<rect x="980" y="760" width="300" height="54" rx="10" fill="#0F9D92" stroke="none" stroke-width="1" />
+<text x="1000" y="797" text-anchor="start" font-family="Noto Sans SC" font-size="28" font-weight="700" fill="#FFFFFF">执行 / 自测</text>
+<text x="1000" y="854" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">实现任务并检查结果</text>
+</g>
+<g data-node-id="artifact">
+<rect x="1350" y="760" width="280" height="125" rx="10" fill="#CFF3EA" stroke="#0F9D92" stroke-width="1.5" />
+<rect x="1350" y="760" width="280" height="54" rx="10" fill="#0F9D92" stroke="none" stroke-width="1" />
+<text x="1370" y="797" text-anchor="start" font-family="Noto Sans SC" font-size="28" font-weight="700" fill="#FFFFFF">提交产物</text>
+<text x="1370" y="854" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">产物与自测记录</text>
+</g>
+<g data-node-id="review">
+<rect x="1350" y="1000" width="280" height="125" rx="10" fill="#FFE9BE" stroke="#DC8B12" stroke-width="1.5" />
+<rect x="1350" y="1000" width="280" height="54" rx="10" fill="#DC8B12" stroke="none" stroke-width="1" />
+<text x="1370" y="1037" text-anchor="start" font-family="Noto Sans SC" font-size="28" font-weight="700" fill="#FFFFFF">评审</text>
+<text x="1370" y="1094" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">检查产物与自测证据</text>
+</g>
+<g data-node-id="decision">
+<polygon points="1860,970 1990,1070 1860,1170 1730,1070" fill="#FFE9BE" stroke="#DC8B12" stroke-width="3" />
+<text x="1860" y="1062" text-anchor="middle" font-family="Noto Sans SC" font-size="30" font-weight="700" fill="#243247">通过？</text>
+<text x="1860" y="1096" text-anchor="middle" font-family="Noto Sans SC" font-size="20" font-weight="400" fill="#243247">核对验收标准</text>
+</g>
+<g data-node-id="delivery">
+<rect x="1810" y="280" width="300" height="125" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.5" />
+<rect x="1810" y="280" width="300" height="54" rx="10" fill="#2563EB" stroke="none" stroke-width="1" />
+<text x="1830" y="317" text-anchor="start" font-family="Noto Sans SC" font-size="28" font-weight="700" fill="#FFFFFF">接收交付</text>
+<text x="1830" y="374" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">接收产物与验收结果</text>
+</g>
+<g data-node-id="refine">
+<rect x="340" y="520" width="260" height="125" rx="10" fill="#EDE2FF" stroke="#7C3AED" stroke-width="1.5" />
+<rect x="340" y="520" width="260" height="54" rx="10" fill="#7C3AED" stroke="none" stroke-width="1" />
+<text x="360" y="557" text-anchor="start" font-family="Noto Sans SC" font-size="28" font-weight="700" fill="#FFFFFF">补充要求</text>
+<text x="360" y="614" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">澄清评审指出的缺口</text>
+</g>
+<text x="799" y="430" text-anchor="start" font-family="Noto Sans SC" font-size="20" font-weight="400" fill="#526176">目标交接</text>
+<text x="1148" y="689" text-anchor="start" font-family="Noto Sans SC" font-size="20" font-weight="400" fill="#526176">执行要求</text>
+<text x="1510" y="943" text-anchor="start" font-family="Noto Sans SC" font-size="20" font-weight="400" fill="#526176">产物交接</text>
+<text x="1882" y="914" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="700" fill="#243247">通过</text>
+<text x="1882" y="1206" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="700" fill="#243247">退回</text>
+<text x="690" y="673" text-anchor="start" font-family="Noto Sans SC" font-size="20" font-weight="400" fill="#526176">补充后重做</text>
+<text x="650" y="1266" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#526176">退回回路：评审缺口 → 编排补充要求 → 执行Agent重新执行与自测</text>
+<text x="48" y="1333" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="700" fill="#243247">读图规则</text>
+<text x="230" y="1333" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">横向位置＝步骤顺序；跨泳道箭头＝责任交接；矩形＝动作；菱形＝条件判断。</text>
+<rect x="48" y="1371" width="22" height="22" rx="4" fill="#2563EB" stroke="none" stroke-width="1" />
+<text x="82" y="1390" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">需求方</text>
+<rect x="358" y="1371" width="22" height="22" rx="4" fill="#7C3AED" stroke="none" stroke-width="1" />
+<text x="392" y="1390" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">任务编排</text>
+<rect x="668" y="1371" width="22" height="22" rx="4" fill="#0F9D92" stroke="none" stroke-width="1" />
+<text x="702" y="1390" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">执行Agent</text>
+<rect x="978" y="1371" width="22" height="22" rx="4" fill="#DC8B12" stroke="none" stroke-width="1" />
+<text x="1012" y="1390" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">审阅者</text>
+<text x="48" y="1441" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#526176">颜色仅表示责任角色，不表示成功、失败或警告。</text>
+<line x1="1360" y1="1383" x2="1422" y2="1383" stroke="#526176" stroke-width="2.5" />
+<text x="1440" y="1390" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">实线＝正常推进</text>
+<line x1="1770" y1="1383" x2="1832" y2="1383" stroke="#526176" stroke-width="2.5" stroke-dasharray="10 7" />
+<text x="1850" y="1390" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">虚线＝退回重做</text>
+</svg>

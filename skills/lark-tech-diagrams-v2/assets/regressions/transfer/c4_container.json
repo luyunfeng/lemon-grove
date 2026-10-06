@@ -1,0 +1,115 @@
+{
+  "diagram_type": "c4_container",
+  "title": "数字出版平台 · C4 容器",
+  "subtitle": "独立示意模型 · 非生产事实",
+  "nodes": [
+    {
+      "id": "author",
+      "label": "内容作者",
+      "kind": "person",
+      "role": "slate",
+      "rank": 0,
+      "group": "",
+      "responsibility": "编写并提交稿件",
+      "technology": "",
+      "lines": []
+    },
+    {
+      "id": "editorweb",
+      "label": "在线编辑器",
+      "kind": "container",
+      "role": "blue",
+      "rank": 1,
+      "group": "publishing-system",
+      "responsibility": "提供稿件编辑与预览",
+      "technology": "TypeScript / Browser",
+      "lines": []
+    },
+    {
+      "id": "api",
+      "label": "稿件管理 API",
+      "kind": "container",
+      "role": "purple",
+      "rank": 2,
+      "group": "publishing-system",
+      "responsibility": "保存稿件版本并申请发行",
+      "technology": "Go / HTTP",
+      "lines": []
+    },
+    {
+      "id": "blob",
+      "label": "稿件对象存储",
+      "kind": "container",
+      "role": "teal",
+      "rank": 3,
+      "group": "publishing-system",
+      "responsibility": "保存正文、封面与附件",
+      "technology": "S3 compatible API",
+      "lines": [],
+      "storage": true
+    },
+    {
+      "id": "catalog",
+      "label": "发行目录系统",
+      "kind": "external",
+      "role": "orange",
+      "rank": 4,
+      "group": "",
+      "responsibility": "接收获准发行作品",
+      "technology": "HTTPS",
+      "lines": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "tc1",
+      "source": "author",
+      "target": "editorweb",
+      "label": "编辑稿件",
+      "kind": "flow"
+    },
+    {
+      "id": "tc2",
+      "source": "editorweb",
+      "target": "api",
+      "label": "HTTPS / 提交稿件",
+      "kind": "flow"
+    },
+    {
+      "id": "tc3",
+      "source": "api",
+      "target": "blob",
+      "label": "S3 / 保存作品版本",
+      "kind": "flow"
+    },
+    {
+      "id": "tc4",
+      "source": "api",
+      "target": "catalog",
+      "label": "HTTPS / 发行目录登记",
+      "kind": "flow"
+    }
+  ],
+  "groups": [
+    {
+      "id": "publishing-system",
+      "label": "数字出版平台",
+      "kind": "system-boundary",
+      "role": "blue"
+    }
+  ],
+  "legend": [
+    {
+      "role": "blue",
+      "label": "交互容器"
+    },
+    {
+      "role": "purple",
+      "label": "业务容器"
+    },
+    {
+      "role": "teal",
+      "label": "存储容器"
+    }
+  ]
+}

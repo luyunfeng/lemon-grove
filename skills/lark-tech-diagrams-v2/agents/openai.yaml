@@ -1,0 +1,6 @@
+interface:
+  display_name: "飞书技术绘图 V2"
+  short_description: "十六类技术图：复现demo风格，SVG绘图与飞书工具解耦"
+  default_prompt: "使用 $lark-tech-diagrams-v2 将逻辑画成符合demo风格的技术图并检查；用户要求飞书时再交接现有飞书工具。"
+policy:
+  allow_implicit_invocation: true

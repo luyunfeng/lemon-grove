@@ -1,0 +1,133 @@
+{
+  "version": "2.3.0",
+  "templates": [
+    {
+      "type": "c4_context",
+      "name": "C4上下文",
+      "spec": "assets/benchmarks/c4_context.json",
+      "reference_svg": "assets/examples/c4_context.svg",
+      "reference_png": "assets/previews/c4_context.png",
+      "svg_sha256": "ec1480cbc2d93cb84ef08664934124dfd43949f0ad878d674f38cfb5f9b6b143"
+    },
+    {
+      "type": "c4_container",
+      "name": "C4容器",
+      "spec": "assets/benchmarks/c4_container.json",
+      "reference_svg": "assets/examples/c4_container.svg",
+      "reference_png": "assets/previews/c4_container.png",
+      "svg_sha256": "8d3351b589b29a4a78b14e297b085a11a6b3f76cf732740baf798984d731b46f"
+    },
+    {
+      "type": "c4_component",
+      "name": "C4组件",
+      "spec": "assets/benchmarks/c4_component.json",
+      "reference_svg": "assets/examples/c4_component.svg",
+      "reference_png": "assets/previews/c4_component.png",
+      "svg_sha256": "aac6badc56b13101f605b66ff57a34249d54a1578ae7857798efaeafe5a7476c"
+    },
+    {
+      "type": "layered_architecture",
+      "name": "分层架构",
+      "spec": "assets/benchmarks/layered_architecture.json",
+      "reference_svg": "assets/examples/layered_architecture.svg",
+      "reference_png": "assets/previews/layered_architecture.png",
+      "svg_sha256": "12a1121752162842f4ad2a8a106a52967d3963fe209fdeab3cb6c7c60d81a400"
+    },
+    {
+      "type": "deployment",
+      "name": "部署",
+      "spec": "assets/benchmarks/deployment.json",
+      "reference_svg": "assets/examples/deployment.svg",
+      "reference_png": "assets/previews/deployment.png",
+      "svg_sha256": "f6a3e88300bc74273e48502e08197c99fa735fb846d3581f5cc8b09935e26b47"
+    },
+    {
+      "type": "network_topology",
+      "name": "网络拓扑",
+      "spec": "assets/benchmarks/network_topology.json",
+      "reference_svg": "assets/examples/network_topology.svg",
+      "reference_png": "assets/previews/network_topology.png",
+      "svg_sha256": "4db7a2be8c33c4cc861be671067273685144554d866d76d5103320b4eef5a69d"
+    },
+    {
+      "type": "flowchart",
+      "name": "流程",
+      "spec": "assets/benchmarks/flowchart.json",
+      "reference_svg": "assets/examples/flowchart.svg",
+      "reference_png": "assets/previews/flowchart.png",
+      "svg_sha256": "e091f02975cc9fc37d06f48817cd7a2b6d1f287e60a319929e4053a33819c500"
+    },
+    {
+      "type": "swimlane",
+      "name": "泳道",
+      "spec": "assets/benchmarks/swimlane.json",
+      "reference_svg": "assets/examples/swimlane.svg",
+      "reference_png": "assets/previews/swimlane.png",
+      "svg_sha256": "89c2c0d08a2e030abcff35363ea388c68b361516cfa2209dfd40465caa62ba8e"
+    },
+    {
+      "type": "sequence",
+      "name": "时序",
+      "spec": "assets/benchmarks/sequence.json",
+      "reference_svg": "assets/examples/sequence.svg",
+      "reference_png": "assets/previews/sequence.png",
+      "svg_sha256": "8768cba56f7c9a6af1bdffff9c0a19cbde56a7ebc35f5f6f4779386fae404f41"
+    },
+    {
+      "type": "state",
+      "name": "状态机",
+      "spec": "assets/benchmarks/state.json",
+      "reference_svg": "assets/examples/state.svg",
+      "reference_png": "assets/previews/state.png",
+      "svg_sha256": "ac1df69203fac82713d51334061b82a4865fb061e3e91b4ea80503141574c7c2"
+    },
+    {
+      "type": "activity",
+      "name": "活动",
+      "spec": "assets/benchmarks/activity.json",
+      "reference_svg": "assets/examples/activity.svg",
+      "reference_png": "assets/previews/activity.png",
+      "svg_sha256": "8a8b5649e9ed8731ccc5de29b2868a24c4879df40801f067a0d3cc77a77eba57"
+    },
+    {
+      "type": "er",
+      "name": "ER",
+      "spec": "assets/benchmarks/er.json",
+      "reference_svg": "assets/examples/er.svg",
+      "reference_png": "assets/previews/er.png",
+      "svg_sha256": "5fa216e05f2bd2e66b3b4e61fd0be473785a8e825ec30b5b9cdf95f2344f8ecc"
+    },
+    {
+      "type": "class",
+      "name": "UML类",
+      "spec": "assets/benchmarks/class.json",
+      "reference_svg": "assets/examples/class.svg",
+      "reference_png": "assets/previews/class.png",
+      "svg_sha256": "f24c1b6d9d0247ea7df57aa53de1c631f17306939bd9dbf91c280bd86dbd4c78"
+    },
+    {
+      "type": "dataflow",
+      "name": "数据流",
+      "spec": "assets/benchmarks/dataflow.json",
+      "reference_svg": "assets/examples/dataflow.svg",
+      "reference_png": "assets/previews/dataflow.png",
+      "svg_sha256": "fbd2fa4117da02e185b6126e39d68f4a62e796e5e7fd4f66d2fa8a237c27a702"
+    },
+    {
+      "type": "dependency",
+      "name": "模块依赖",
+      "spec": "assets/benchmarks/dependency.json",
+      "reference_svg": "assets/examples/dependency.svg",
+      "reference_png": "assets/previews/dependency.png",
+      "svg_sha256": "bca6e758f3fbaf4d504cc6c66530aa08c08cadb904ee5abfaf332b3af442af98"
+    },
+    {
+      "type": "event_flow",
+      "name": "事件消息流",
+      "spec": "assets/benchmarks/event_flow.json",
+      "reference_svg": "assets/examples/event_flow.svg",
+      "reference_png": "assets/previews/event_flow.png",
+      "svg_sha256": "36ff701db218e13d4fe40dbb2aaa9308b06a64b908fec3067e7089953f0d3977"
+    }
+  ]
+}

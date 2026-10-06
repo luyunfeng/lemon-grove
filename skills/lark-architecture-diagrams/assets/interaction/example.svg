@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2100" height="1570" viewBox="0 0 2100 1570">
+<rect x="0" y="0" width="2100" height="1570" rx="0" fill="#FFFFFF" stroke="none" stroke-width="1.6" />
+<text x="60" y="88" text-anchor="start" font-family="Noto Sans SC" font-size="40" font-weight="600" fill="#243247">C · 交互图｜颜色对应参与方，纵向对应时间</text>
+<text x="60" y="132" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="400" fill="#58677B">AI研发任务交付 · 说明性示例 · 仅通过评审后交付</text>
+<rect x="150" y="870" width="1820" height="435" rx="0" fill="#F8FAFC" stroke="#708096" stroke-width="1.8" data-fragment="alt" />
+<polyline points="150,1090 1970,1090" stroke="#708096" stroke-width="1.6" fill="none" stroke-dasharray="8 6" data-operand-separator="true" />
+<rect x="150" y="870" width="75" height="42" rx="0" fill="#E2E8F0" stroke="#708096" stroke-width="1.6" />
+<text x="166" y="900" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="600" fill="#243247">alt</text>
+<text x="176" y="944" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="600" fill="#243247">[通过]</text>
+<text x="176" y="1134" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="600" fill="#243247">[退回]</text>
+<text x="95" y="543" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#66758A">时</text>
+<text x="95" y="578" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#66758A">间</text>
+<polyline points="106,605 106,815" stroke="#66758A" stroke-width="2" fill="none" />
+<polygon points="106,827 100,813 112,813" fill="#66758A" />
+<g data-node-id="requester">
+<rect x="115" y="185" width="370" height="132" rx="12" fill="#EFF6FF" stroke="#2563EB" stroke-width="2" />
+<rect x="115" y="185" width="370" height="68" rx="0" fill="#2563EB" stroke="none" stroke-width="0" />
+<text x="300" y="230" text-anchor="middle" font-family="Noto Sans SC" font-size="29" font-weight="600" fill="#FFFFFF">需求方</text>
+<text x="300" y="289" text-anchor="middle" font-family="Noto Sans SC" font-size="23" font-weight="400" fill="#243247">提出目标 · 接收交付</text>
+</g>
+<polyline points="300,317 300,1320" stroke="#2563EB" stroke-width="2" fill="none" stroke-dasharray="8 8" data-lifeline="requester" />
+<g data-node-id="orchestrator">
+<rect x="615" y="185" width="370" height="132" rx="12" fill="#F5F0FF" stroke="#7C3AED" stroke-width="2" />
+<rect x="615" y="185" width="370" height="68" rx="0" fill="#7C3AED" stroke="none" stroke-width="0" />
+<text x="800" y="230" text-anchor="middle" font-family="Noto Sans SC" font-size="29" font-weight="600" fill="#FFFFFF">编排服务</text>
+<text x="800" y="289" text-anchor="middle" font-family="Noto Sans SC" font-size="23" font-weight="400" fill="#243247">受理 · 派发 · 汇总</text>
+</g>
+<polyline points="800,317 800,1320" stroke="#7C3AED" stroke-width="2" fill="none" stroke-dasharray="8 8" data-lifeline="orchestrator" />
+<g data-node-id="agent">
+<rect x="1115" y="185" width="370" height="132" rx="12" fill="#EAFBF6" stroke="#0F9D92" stroke-width="2" />
+<rect x="1115" y="185" width="370" height="68" rx="0" fill="#0F9D92" stroke="none" stroke-width="0" />
+<text x="1300" y="230" text-anchor="middle" font-family="Noto Sans SC" font-size="29" font-weight="600" fill="#FFFFFF">执行Agent</text>
+<text x="1300" y="289" text-anchor="middle" font-family="Noto Sans SC" font-size="23" font-weight="400" fill="#243247">执行任务 · 提供证据</text>
+</g>
+<polyline points="1300,317 1300,1320" stroke="#0F9D92" stroke-width="2" fill="none" stroke-dasharray="8 8" data-lifeline="agent" />
+<g data-node-id="reviewer">
+<rect x="1615" y="185" width="370" height="132" rx="12" fill="#FFF6E4" stroke="#DC8B12" stroke-width="2" />
+<rect x="1615" y="185" width="370" height="68" rx="0" fill="#DC8B12" stroke="none" stroke-width="0" />
+<text x="1800" y="230" text-anchor="middle" font-family="Noto Sans SC" font-size="29" font-weight="600" fill="#FFFFFF">评审服务</text>
+<text x="1800" y="289" text-anchor="middle" font-family="Noto Sans SC" font-size="23" font-weight="400" fill="#243247">评审证据 · 给出结论</text>
+</g>
+<polyline points="1800,317 1800,1320" stroke="#DC8B12" stroke-width="2" fill="none" stroke-dasharray="8 8" data-lifeline="reviewer" />
+<rect x="290" y="355" width="20" height="105" rx="0" fill="#EFF6FF" stroke="#2563EB" stroke-width="2" data-activation="requester" data-scope="common" />
+<rect x="790" y="380" width="20" height="80" rx="0" fill="#F5F0FF" stroke="#7C3AED" stroke-width="2" data-activation="orchestrator" data-scope="common" />
+<rect x="790" y="525" width="20" height="345" rx="0" fill="#F5F0FF" stroke="#7C3AED" stroke-width="2" data-activation="orchestrator" data-scope="common" />
+<rect x="1290" y="550" width="20" height="200" rx="0" fill="#EAFBF6" stroke="#0F9D92" stroke-width="2" data-activation="agent" data-scope="common" />
+<rect x="1302" y="685" width="20" height="35" rx="0" fill="#EAFBF6" stroke="#0F9D92" stroke-width="2" data-activation="agent" data-scope="nested" />
+<rect x="1790" y="830" width="20" height="40" rx="0" fill="#FFF6E4" stroke="#DC8B12" stroke-width="2" data-activation="reviewer" data-scope="common" />
+<rect x="790" y="870" width="20" height="160" rx="0" fill="#F5F0FF" stroke="#7C3AED" stroke-width="2" data-activation="orchestrator" data-scope="通过" />
+<rect x="1790" y="870" width="20" height="80" rx="0" fill="#FFF6E4" stroke="#DC8B12" stroke-width="2" data-activation="reviewer" data-scope="通过" />
+<rect x="790" y="1090" width="20" height="180" rx="0" fill="#F5F0FF" stroke="#7C3AED" stroke-width="2" data-activation="orchestrator" data-scope="退回" />
+<rect x="1790" y="1090" width="20" height="60" rx="0" fill="#FFF6E4" stroke="#DC8B12" stroke-width="2" data-activation="reviewer" data-scope="退回" />
+<rect x="1290" y="1230" width="20" height="50" rx="0" fill="#EAFBF6" stroke="#0F9D92" stroke-width="2" data-activation="agent" data-scope="退回" />
+<polyline points="310,380 790,380" stroke="#243247" stroke-width="2.2" fill="none" data-edge-id="e01" data-source="requester" data-target="orchestrator" data-message-order="1" data-kind="request" />
+<polygon points="790,380 776,373 776,387" fill="#243247" />
+<text x="344" y="361" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="500" fill="#243247" data-message-label="e01">01  提交目标</text>
+<polyline points="790,460 310,460" stroke="#243247" stroke-width="2.2" fill="none" stroke-dasharray="9 7" data-edge-id="e02" data-source="orchestrator" data-target="requester" data-message-order="2" data-kind="return" />
+<polyline points="323,453 310,460 323,467" stroke="#243247" stroke-width="2.2" fill="none" />
+<text x="344" y="441" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="500" fill="#243247" data-message-label="e02">02  返回 task_id</text>
+<text x="344" y="493" text-anchor="start" font-family="Noto Sans SC" font-size="21" font-weight="400" fill="#58677B">受理 ≠ 完成</text>
+<polyline points="810,550 1290,550" stroke="#243247" stroke-width="2.2" fill="none" data-edge-id="e03" data-source="orchestrator" data-target="agent" data-message-order="3" data-kind="request" />
+<polygon points="1290,550 1276,543 1276,557" fill="#243247" />
+<text x="844" y="531" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="500" fill="#243247" data-message-label="e03">03  派发任务</text>
+<polyline points="1310,620 1485,620 1485,685 1322,685" stroke="#243247" stroke-width="2.2" fill="none" data-edge-id="e04" data-source="agent" data-target="agent" data-message-order="4" data-kind="self" />
+<polygon points="1322,685 1336,678 1336,692" fill="#243247" />
+<text x="1340" y="601" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="500" fill="#243247" data-message-label="e04">04  执行与自测</text>
+<polyline points="1290,750 810,750" stroke="#243247" stroke-width="2.2" fill="none" stroke-dasharray="9 7" data-edge-id="e05" data-source="agent" data-target="orchestrator" data-message-order="5" data-kind="return" />
+<polyline points="823,743 810,750 823,757" stroke="#243247" stroke-width="2.2" fill="none" />
+<text x="844" y="731" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="500" fill="#243247" data-message-label="e05">05  产物 + 测试证据</text>
+<polyline points="810,830 1790,830" stroke="#243247" stroke-width="2.2" fill="none" data-edge-id="e06" data-source="orchestrator" data-target="reviewer" data-message-order="6" data-kind="request" />
+<polygon points="1790,830 1776,823 1776,837" fill="#243247" />
+<text x="844" y="811" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="500" fill="#243247" data-message-label="e06">06  请求评审</text>
+<polyline points="1790,950 810,950" stroke="#243247" stroke-width="2.2" fill="none" stroke-dasharray="9 7" data-edge-id="e07" data-source="reviewer" data-target="orchestrator" data-message-order="7" data-kind="return" />
+<polyline points="823,943 810,950 823,957" stroke="#243247" stroke-width="2.2" fill="none" />
+<text x="1420" y="931" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="500" fill="#243247" data-message-label="e07">07  通过</text>
+<polyline points="790,1030 300,1030" stroke="#243247" stroke-width="2.2" fill="none" data-edge-id="e08" data-source="orchestrator" data-target="requester" data-message-order="8" data-kind="notification" />
+<polyline points="313,1023 300,1030 313,1037" stroke="#243247" stroke-width="2.2" fill="none" />
+<text x="344" y="1011" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="500" fill="#243247" data-message-label="e08">08  通知交付 / 交付产物</text>
+<polyline points="1790,1150 810,1150" stroke="#243247" stroke-width="2.2" fill="none" stroke-dasharray="9 7" data-edge-id="e09" data-source="reviewer" data-target="orchestrator" data-message-order="9" data-kind="return" />
+<polyline points="823,1143 810,1150 823,1157" stroke="#243247" stroke-width="2.2" fill="none" />
+<text x="1420" y="1131" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="500" fill="#243247" data-message-label="e09">09  修改意见</text>
+<polyline points="810,1230 1290,1230" stroke="#243247" stroke-width="2.2" fill="none" data-edge-id="e10" data-source="orchestrator" data-target="agent" data-message-order="10" data-kind="request" />
+<polygon points="1290,1230 1276,1223 1276,1237" fill="#243247" />
+<text x="844" y="1211" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="500" fill="#243247" data-message-label="e10">10  补充约束后重试</text>
+<text x="180" y="1349" text-anchor="start" font-family="Noto Sans SC" font-size="21" font-weight="400" fill="#58677B">退回分支仅展示重试发起，后续执行省略；不表示任务完成。</text>
+<text x="60" y="1411" text-anchor="start" font-family="Noto Sans SC" font-size="23" font-weight="600" fill="#243247">颜色 = 参与方</text>
+<rect x="270" y="1389" width="24" height="24" rx="0" fill="#2563EB" stroke="none" stroke-width="1.6" />
+<text x="308" y="1411" text-anchor="start" font-family="Noto Sans SC" font-size="23" font-weight="400" fill="#243247">需求方</text>
+<rect x="660" y="1389" width="24" height="24" rx="0" fill="#7C3AED" stroke="none" stroke-width="1.6" />
+<text x="698" y="1411" text-anchor="start" font-family="Noto Sans SC" font-size="23" font-weight="400" fill="#243247">编排服务</text>
+<rect x="1050" y="1389" width="24" height="24" rx="0" fill="#0F9D92" stroke="none" stroke-width="1.6" />
+<text x="1088" y="1411" text-anchor="start" font-family="Noto Sans SC" font-size="23" font-weight="400" fill="#243247">执行Agent</text>
+<rect x="1440" y="1389" width="24" height="24" rx="0" fill="#DC8B12" stroke="none" stroke-width="1.6" />
+<text x="1478" y="1411" text-anchor="start" font-family="Noto Sans SC" font-size="23" font-weight="400" fill="#243247">评审服务</text>
+<polyline points="65,1460 145,1460" stroke="#243247" stroke-width="2.2" fill="none" />
+<polygon points="145,1460 131,1453 131,1467" fill="#243247" />
+<text x="165" y="1468" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">实线实心：同步请求</text>
+<polyline points="580,1460 660,1460" stroke="#243247" stroke-width="2.2" fill="none" stroke-dasharray="9 7" />
+<polyline points="647,1453 660,1460 647,1467" stroke="#243247" stroke-width="2.2" fill="none" />
+<text x="680" y="1468" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">虚线开口：响应 / 返回</text>
+<polyline points="1140,1460 1220,1460" stroke="#243247" stroke-width="2.2" fill="none" />
+<polyline points="1207,1453 1220,1460 1207,1467" stroke="#243247" stroke-width="2.2" fill="none" />
+<text x="1240" y="1468" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">实线开口：异步通知</text>
+<rect x="1730" y="1443" width="18" height="34" rx="0" fill="#F5F0FF" stroke="#7C3AED" stroke-width="2" />
+<text x="1764" y="1468" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">窄框：激活区间</text>
+<text x="60" y="1530" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#58677B">虚线生命线表示参与方随时间的延续；alt 两个条件分支互斥；消息自上而下阅读。</text>
+</svg>

@@ -1,0 +1,117 @@
+{
+  "diagram_type": "sequence",
+  "title": "库存预留与异步拣货",
+  "subtitle": "示意模型 · 以图型语义表达业务逻辑",
+  "nodes": [
+    {
+      "id": "client",
+      "label": "订单服务",
+      "kind": "action",
+      "role": "blue"
+    },
+    {
+      "id": "api",
+      "label": "预留接口",
+      "kind": "action",
+      "role": "teal"
+    },
+    {
+      "id": "auth",
+      "label": "库存服务",
+      "kind": "action",
+      "role": "purple"
+    },
+    {
+      "id": "queue",
+      "label": "拣货队列",
+      "kind": "action",
+      "role": "orange"
+    },
+    {
+      "id": "worker",
+      "label": "仓库执行器",
+      "kind": "action",
+      "role": "green"
+    }
+  ],
+  "edges": [
+    {
+      "id": "m1",
+      "source": "client",
+      "target": "api",
+      "label": "请求预留商品",
+      "kind": "sync"
+    },
+    {
+      "id": "m2",
+      "source": "api",
+      "target": "auth",
+      "label": "尝试预留库存",
+      "kind": "sync"
+    },
+    {
+      "id": "m3",
+      "source": "auth",
+      "target": "api",
+      "label": "预留结果",
+      "kind": "return"
+    },
+    {
+      "id": "m4",
+      "source": "api",
+      "target": "queue",
+      "label": "发布拣货任务",
+      "kind": "async"
+    },
+    {
+      "id": "m5",
+      "source": "api",
+      "target": "client",
+      "label": "返回预留单号",
+      "kind": "return"
+    },
+    {
+      "id": "m6",
+      "source": "queue",
+      "target": "worker",
+      "label": "投递拣货任务",
+      "kind": "async"
+    },
+    {
+      "id": "m7",
+      "source": "api",
+      "target": "client",
+      "label": "返回库存不足",
+      "kind": "return"
+    }
+  ],
+  "branches": [
+    {
+      "kind": "alt",
+      "operands": [
+        {
+          "guard": "[预留成功]",
+          "start": "m4",
+          "end": "m6"
+        },
+        {
+          "guard": "[库存不足]",
+          "start": "m7",
+          "end": "m7"
+        }
+      ]
+    }
+  ],
+  "activations": [
+    {
+      "participant": "api",
+      "start": "m1",
+      "end": "m7"
+    },
+    {
+      "participant": "auth",
+      "start": "m2",
+      "end": "m3"
+    }
+  ]
+}

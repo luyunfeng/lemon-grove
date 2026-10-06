@@ -1,0 +1,118 @@
+{
+  "diagram_type": "swimlane",
+  "title": "维修工单的跨角色交接",
+  "subtitle": "示意模型 · 以图型语义表达业务逻辑",
+  "nodes": [
+    {
+      "id": "request",
+      "label": "提交设备报修",
+      "kind": "action",
+      "role": "blue",
+      "lane": "reader"
+    },
+    {
+      "id": "check",
+      "label": "核对服务范围",
+      "kind": "action",
+      "role": "blue",
+      "lane": "desk"
+    },
+    {
+      "id": "eligible",
+      "label": "属于服务范围？",
+      "kind": "decision",
+      "role": "amber",
+      "lane": "desk"
+    },
+    {
+      "id": "deny",
+      "label": "接收拒单原因",
+      "kind": "action",
+      "role": "rose",
+      "lane": "reader"
+    },
+    {
+      "id": "reserve",
+      "label": "安排维修人员",
+      "kind": "action",
+      "role": "purple",
+      "lane": "stock"
+    },
+    {
+      "id": "handover",
+      "label": "确认维修完成",
+      "kind": "action",
+      "role": "teal",
+      "lane": "desk"
+    },
+    {
+      "id": "receive",
+      "label": "接收完工回执",
+      "kind": "action",
+      "role": "green",
+      "lane": "reader"
+    }
+  ],
+  "edges": [
+    {
+      "id": "l1",
+      "source": "request",
+      "target": "check",
+      "label": "报修信息",
+      "kind": "flow"
+    },
+    {
+      "id": "l2",
+      "source": "check",
+      "target": "eligible",
+      "label": "核对结果",
+      "kind": "flow"
+    },
+    {
+      "id": "l3",
+      "source": "eligible",
+      "target": "deny",
+      "label": "否",
+      "kind": "flow"
+    },
+    {
+      "id": "l4",
+      "source": "eligible",
+      "target": "reserve",
+      "label": "是",
+      "kind": "flow"
+    },
+    {
+      "id": "l5",
+      "source": "reserve",
+      "target": "handover",
+      "label": "维修完成",
+      "kind": "flow"
+    },
+    {
+      "id": "l6",
+      "source": "handover",
+      "target": "receive",
+      "label": "回执通知",
+      "kind": "flow"
+    }
+  ],
+  "orientation": "vertical",
+  "lanes": [
+    {
+      "id": "reader",
+      "label": "报修人",
+      "role": "blue"
+    },
+    {
+      "id": "desk",
+      "label": "服务台",
+      "role": "teal"
+    },
+    {
+      "id": "stock",
+      "label": "维修班组",
+      "role": "purple"
+    }
+  ]
+}

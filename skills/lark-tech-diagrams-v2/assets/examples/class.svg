@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2292.9803 1294" width="2292.9803" height="1294"><defs><marker id="arrow-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#CBA02E"/></marker><marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#4675F5"/></marker><marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#30A698"/></marker><marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#35A56D"/></marker><marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#E98655"/></marker><marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#9870DA"/></marker><marker id="arrow-rose" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#CC6B80"/></marker><marker id="arrow-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#697C96"/></marker><marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#30A698"/></marker></defs><rect x="0" y="0" width="2292.9803" height="1294" fill="#FCFDFE"/><line x1="986.4901500000001" y1="42" x2="1146.49015" y2="42" stroke="#4675F5" stroke-width="6" stroke-linecap="round"/>
+<line x1="1146.49015" y1="42" x2="1306.49015" y2="42" stroke="#30A698" stroke-width="6" stroke-linecap="round"/>
+<text x="1146.49015" y="88" font-family="Noto Sans SC" font-size="36" font-weight="bold" fill="#253149" text-anchor="middle">异步任务交付平台 · 领域类模型</text>
+<text x="1146.49015" y="124" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#71809A" text-anchor="middle">示意模型 · 颜色表达职责，关系按图型语法绘制</text>
+<polyline data-edge-id="c1" data-source="python" data-target="executor" points="542.4901500000001,650 542.4901500000001,394 796.4901500000001,394 796.4901500000001,334" fill="none" stroke="#697C96" stroke-width="1.9" stroke-dasharray="7,5" stroke-linejoin="round"/>
+<polygon points="796.4901500000001,334 786.4901500000001,354.0 806.4901500000001,354.0" fill="#FFFFFF" stroke="#697C96" stroke-width="1.9"/>
+<polyline data-edge-id="c2" data-source="task" data-target="attempt" points="2062.9803,442 2062.9803,582" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round"/>
+<polygon points="2062.9803,442 2055.9803,452.0 2062.9803,462.0 2069.9803,452.0" fill="#697C96" stroke="#697C96" stroke-width="1.9"/>
+<polyline data-edge-id="c3" data-source="attempt" data-target="artifact" points="2062.9803,778 2062.9803,918" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round"/>
+<line x1="2068.9803" y1="906.0" x2="2062.9803" y2="918" stroke="#697C96" stroke-width="1.9"/>
+<line x1="2056.9803" y1="906.0" x2="2062.9803" y2="918" stroke="#697C96" stroke-width="1.9"/>
+<polyline data-edge-id="c4" data-source="service" data-target="executor" points="1292.9803000000002,330.0 1232.9803000000002,330.0 1232.9803000000002,294.0 972.9803,294.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-dasharray="7,5" stroke-linejoin="round"/>
+<line x1="984.9803" y1="300.0" x2="972.9803" y2="294.0" stroke="#697C96" stroke-width="1.9"/>
+<line x1="984.9803" y1="288.0" x2="972.9803" y2="294.0" stroke="#697C96" stroke-width="1.9"/>
+<polyline data-edge-id="c5" data-source="service" data-target="task" points="1592.9803000000002,330.0 1652.9803000000002,330.0 1652.9803000000002,348.0 1912.9803000000002,348.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round"/>
+<line x1="1900.9803000000002" y1="342.0" x2="1912.9803000000002" y2="348.0" stroke="#697C96" stroke-width="1.9"/>
+<line x1="1900.9803000000002" y1="354.0" x2="1912.9803000000002" y2="348.0" stroke="#697C96" stroke-width="1.9"/>
+<polyline data-edge-id="c6" data-source="python" data-target="base" points="510.4901500000001,650 510.4901500000001,430 230.0,430 230.0,370" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round"/>
+<polygon points="230.0,370 220.0,390.0 240.0,390.0" fill="#FFFFFF" stroke="#697C96" stroke-width="1.9"/>
+<g data-node-id="executor">
+<rect x="620.0" y="210" width="352.98030000000006" height="124" rx="14" fill="#F7F2FC" stroke="#9870DA" stroke-width="1.9"/>
+<text x="638.0" y="239.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#7047AE" text-anchor="start">«interface» Executor</text>
+</g>
+<rect x="621.0" y="254" width="350.98030000000006" height="36" fill="#F7F2FC" stroke="none"/>
+<line x1="620.0" y1="272.0" x2="972.9803" y2="272.0" stroke="#9870DA" stroke-width="1" fill="none"/>
+<rect x="621.0" y="290" width="350.98030000000006" height="36" fill="#F7F2FC" stroke="none"/>
+<text x="638.0" y="319.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">+ execute(task): Result</text>
+<line x1="620.0" y1="254" x2="972.9803" y2="254" stroke="#9870DA" stroke-width="1.3299999999999998" fill="none"/>
+<rect x="620.0" y="210" width="352.98030000000006" height="124" rx="14" fill="none" stroke="#9870DA" stroke-width="1.9"/>
+<g data-node-id="python">
+<rect x="376.49015" y="650" width="300" height="160" rx="14" fill="#F7F2FC" stroke="#9870DA" stroke-width="1.9"/>
+<text x="394.49015" y="679.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#7047AE" text-anchor="start">PythonExecutor</text>
+</g>
+<rect x="377.49015" y="694" width="298" height="36" fill="#F7F2FC" stroke="none"/>
+<text x="394.49015" y="723.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">- timeout: int</text>
+<rect x="377.49015" y="730" width="298" height="36" fill="#F7F2FC" stroke="none"/>
+<line x1="376.49015" y1="748.0" x2="676.4901500000001" y2="748.0" stroke="#9870DA" stroke-width="1" fill="none"/>
+<rect x="377.49015" y="766" width="298" height="36" fill="#F7F2FC" stroke="none"/>
+<text x="394.49015" y="795.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">+ execute(task): Result</text>
+<line x1="376.49015" y1="694" x2="676.4901500000001" y2="694" stroke="#9870DA" stroke-width="1.3299999999999998" fill="none"/>
+<rect x="376.49015" y="650" width="300" height="160" rx="14" fill="none" stroke="#9870DA" stroke-width="1.9"/>
+<g data-node-id="task">
+<rect x="1912.9803000000002" y="210" width="300" height="232" rx="14" fill="#F0F5FE" stroke="#4675F5" stroke-width="1.9"/>
+<text x="1930.9803000000002" y="239.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#2D4F9A" text-anchor="start">Task</text>
+</g>
+<rect x="1913.9803000000002" y="254" width="298" height="36" fill="#F0F5FE" stroke="none"/>
+<text x="1930.9803000000002" y="283.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">- id: UUID</text>
+<rect x="1913.9803000000002" y="290" width="298" height="36" fill="#F0F5FE" stroke="none"/>
+<text x="1930.9803000000002" y="319.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">- status: TaskStatus</text>
+<rect x="1913.9803000000002" y="326" width="298" height="36" fill="#F0F5FE" stroke="none"/>
+<line x1="1912.9803000000002" y1="344.0" x2="2212.9803" y2="344.0" stroke="#4675F5" stroke-width="1" fill="none"/>
+<rect x="1913.9803000000002" y="362" width="298" height="36" fill="#F0F5FE" stroke="none"/>
+<text x="1930.9803000000002" y="391.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">+ start(): Attempt</text>
+<rect x="1913.9803000000002" y="398" width="298" height="36" fill="#F0F5FE" stroke="none"/>
+<text x="1930.9803000000002" y="427.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">+ complete(): void</text>
+<line x1="1912.9803000000002" y1="254" x2="2212.9803" y2="254" stroke="#4675F5" stroke-width="1.3299999999999998" fill="none"/>
+<rect x="1912.9803000000002" y="210" width="300" height="232" rx="14" fill="none" stroke="#4675F5" stroke-width="1.9"/>
+<g data-node-id="attempt">
+<rect x="1912.9803000000002" y="582" width="300" height="196" rx="14" fill="#F0F5FE" stroke="#4675F5" stroke-width="1.9"/>
+<text x="1930.9803000000002" y="611.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#2D4F9A" text-anchor="start">Attempt</text>
+</g>
+<rect x="1913.9803000000002" y="626" width="298" height="36" fill="#F0F5FE" stroke="none"/>
+<text x="1930.9803000000002" y="655.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">- sequence: int</text>
+<rect x="1913.9803000000002" y="662" width="298" height="36" fill="#F0F5FE" stroke="none"/>
+<text x="1930.9803000000002" y="691.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">- startedAt: Instant</text>
+<rect x="1913.9803000000002" y="698" width="298" height="36" fill="#F0F5FE" stroke="none"/>
+<line x1="1912.9803000000002" y1="716.0" x2="2212.9803" y2="716.0" stroke="#4675F5" stroke-width="1" fill="none"/>
+<rect x="1913.9803000000002" y="734" width="298" height="36" fill="#F0F5FE" stroke="none"/>
+<text x="1930.9803000000002" y="763.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">+ finish(): void</text>
+<line x1="1912.9803000000002" y1="626" x2="2212.9803" y2="626" stroke="#4675F5" stroke-width="1.3299999999999998" fill="none"/>
+<rect x="1912.9803000000002" y="582" width="300" height="196" rx="14" fill="none" stroke="#4675F5" stroke-width="1.9"/>
+<g data-node-id="artifact">
+<rect x="1912.9803000000002" y="918" width="300" height="196" rx="14" fill="#EDF8F5" stroke="#30A698" stroke-width="1.9"/>
+<text x="1930.9803000000002" y="947.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#1E756C" text-anchor="start">Artifact</text>
+</g>
+<rect x="1913.9803000000002" y="962" width="298" height="36" fill="#EDF8F5" stroke="none"/>
+<text x="1930.9803000000002" y="991.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">- key: str</text>
+<rect x="1913.9803000000002" y="998" width="298" height="36" fill="#EDF8F5" stroke="none"/>
+<text x="1930.9803000000002" y="1027.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">- checksum: str</text>
+<rect x="1913.9803000000002" y="1034" width="298" height="36" fill="#EDF8F5" stroke="none"/>
+<line x1="1912.9803000000002" y1="1052.0" x2="2212.9803" y2="1052.0" stroke="#30A698" stroke-width="1" fill="none"/>
+<rect x="1913.9803000000002" y="1070" width="298" height="36" fill="#EDF8F5" stroke="none"/>
+<text x="1930.9803000000002" y="1099.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">+ verify(): bool</text>
+<line x1="1912.9803000000002" y1="962" x2="2212.9803" y2="962" stroke="#30A698" stroke-width="1.3299999999999998" fill="none"/>
+<rect x="1912.9803000000002" y="918" width="300" height="196" rx="14" fill="none" stroke="#30A698" stroke-width="1.9"/>
+<g data-node-id="service">
+<rect x="1292.9803000000002" y="210" width="300" height="196" rx="14" fill="#FFF5ED" stroke="#E98655" stroke-width="1.9"/>
+<text x="1310.9803000000002" y="239.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#A6532F" text-anchor="start">TaskService</text>
+</g>
+<rect x="1293.9803000000002" y="254" width="298" height="36" fill="#FFF5ED" stroke="none"/>
+<text x="1310.9803000000002" y="283.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">- executor: Executor</text>
+<rect x="1293.9803000000002" y="290" width="298" height="36" fill="#FFF5ED" stroke="none"/>
+<line x1="1292.9803000000002" y1="308.0" x2="1592.9803000000002" y2="308.0" stroke="#E98655" stroke-width="1" fill="none"/>
+<rect x="1293.9803000000002" y="326" width="298" height="36" fill="#FFF5ED" stroke="none"/>
+<text x="1310.9803000000002" y="355.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">+ submit(): Task</text>
+<rect x="1293.9803000000002" y="362" width="298" height="36" fill="#FFF5ED" stroke="none"/>
+<text x="1310.9803000000002" y="391.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">+ run(task): void</text>
+<line x1="1292.9803000000002" y1="254" x2="1592.9803000000002" y2="254" stroke="#E98655" stroke-width="1.3299999999999998" fill="none"/>
+<rect x="1292.9803000000002" y="210" width="300" height="196" rx="14" fill="none" stroke="#E98655" stroke-width="1.9"/>
+<g data-node-id="base">
+<rect x="80.0" y="210" width="300" height="160" rx="14" fill="#F7F2FC" stroke="#9870DA" stroke-width="1.9"/>
+<text x="98.0" y="239.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#7047AE" text-anchor="start">BaseExecutor</text>
+</g>
+<rect x="81.0" y="254" width="298" height="36" fill="#F7F2FC" stroke="none"/>
+<text x="98.0" y="283.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start"># retries: int</text>
+<rect x="81.0" y="290" width="298" height="36" fill="#F7F2FC" stroke="none"/>
+<line x1="80.0" y1="308.0" x2="380.0" y2="308.0" stroke="#9870DA" stroke-width="1" fill="none"/>
+<rect x="81.0" y="326" width="298" height="36" fill="#F7F2FC" stroke="none"/>
+<text x="98.0" y="355.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">+ execute(task): Result</text>
+<line x1="80.0" y1="254" x2="380.0" y2="254" stroke="#9870DA" stroke-width="1.3299999999999998" fill="none"/>
+<rect x="80.0" y="210" width="300" height="160" rx="14" fill="none" stroke="#9870DA" stroke-width="1.9"/>
+<text x="2076.9803" y="474" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="start">1</text>
+<text x="2076.9803" y="550" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="start">0..*</text>
+<text x="2076.9803" y="810" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="start">1</text>
+<text x="2076.9803" y="886" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="start">0..*</text>
+<line x1="52" y1="1233" x2="100" y2="1233" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="100" y1="1223" x2="120" y2="1233" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="120" y1="1233" x2="100" y2="1243" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="100" y1="1243" x2="100" y2="1223" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<text x="137" y="1239" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="start">继承</text>
+<line x1="231.0" y1="1233" x2="279.0" y2="1233" stroke="#697C96" stroke-width="1.9" stroke-dasharray="7,5" fill="none"/>
+<line x1="279.0" y1="1223" x2="299.0" y2="1233" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="299.0" y1="1233" x2="279.0" y2="1243" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="279.0" y1="1243" x2="279.0" y2="1223" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<text x="316.0" y="1239" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="start">实现</text>
+<line x1="410.0" y1="1233" x2="478.0" y2="1233" stroke="#697C96" stroke-width="1.9" stroke-dasharray="7,5" fill="none"/>
+<line x1="466.0" y1="1227" x2="478.0" y2="1233" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="478.0" y1="1233" x2="466.0" y2="1239" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<text x="495.0" y="1239" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="start">依赖</text>
+<line x1="609.0" y1="1233" x2="657.0" y2="1233" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="589.0" y1="1233" x2="599.0" y2="1226" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="599.0" y1="1226" x2="609.0" y2="1233" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="609.0" y1="1233" x2="599.0" y2="1240" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="599.0" y1="1240" x2="589.0" y2="1233" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="592.0" y1="1230.9" x2="592.0" y2="1235.1" stroke="#697C96" stroke-width="3" fill="none"/>
+<line x1="594.0" y1="1229.5" x2="594.0" y2="1236.5" stroke="#697C96" stroke-width="3" fill="none"/>
+<line x1="596.0" y1="1228.1" x2="596.0" y2="1237.9" stroke="#697C96" stroke-width="3" fill="none"/>
+<line x1="598.0" y1="1226.7" x2="598.0" y2="1239.3" stroke="#697C96" stroke-width="3" fill="none"/>
+<line x1="600.0" y1="1226.7" x2="600.0" y2="1239.3" stroke="#697C96" stroke-width="3" fill="none"/>
+<line x1="602.0" y1="1228.1" x2="602.0" y2="1237.9" stroke="#697C96" stroke-width="3" fill="none"/>
+<line x1="604.0" y1="1229.5" x2="604.0" y2="1236.5" stroke="#697C96" stroke-width="3" fill="none"/>
+<line x1="606.0" y1="1230.9" x2="606.0" y2="1235.1" stroke="#697C96" stroke-width="3" fill="none"/>
+<text x="674.0" y="1239" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="start">组合</text>
+<line x1="788.0" y1="1233" x2="836.0" y2="1233" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="768.0" y1="1233" x2="778.0" y2="1226" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="778.0" y1="1226" x2="788.0" y2="1233" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="788.0" y1="1233" x2="778.0" y2="1240" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<line x1="778.0" y1="1240" x2="768.0" y2="1233" stroke="#697C96" stroke-width="1.9" fill="none"/>
+<text x="853.0" y="1239" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="start">聚合：菱形为整体端</text>
+<rect x="547.4901500000001" y="505.0" width="142.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="618.4901500000001" y="528.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">实现执行契约</text>
+<rect x="1959.9803000000002" y="495.0" width="98.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="2008.9803000000002" y="518.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">执行记录</text>
+<rect x="2003.9803000000002" y="831.0" width="54.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="2030.9803000000002" y="854.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">产出</text>
+<rect x="1075.9803000000002" y="261.0" width="54.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1102.9803000000002" y="284.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">调用</text>
+<rect x="1755.9803000000002" y="315.0" width="54.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1782.9803000000002" y="338.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">管理</text>
+<rect x="277.24507500000004" y="397" width="186.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="370.24507500000004" y="420" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">继承公共重试能力</text></svg>

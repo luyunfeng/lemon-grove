@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2714.2790625 1068.56" width="2714.2790625" height="1068.56"><defs><marker id="arrow-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#CBA02E"/></marker><marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#4675F5"/></marker><marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#30A698"/></marker><marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#35A56D"/></marker><marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#E98655"/></marker><marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#9870DA"/></marker><marker id="arrow-rose" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#CC6B80"/></marker><marker id="arrow-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#697C96"/></marker><marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#30A698"/></marker></defs><rect x="0" y="0" width="2714.2790625" height="1068.56" fill="#FCFDFE"/><rect x="713.6734375" y="152" width="1920.6056249999997" height="656.56" rx="14" fill="#F4F6FA" stroke="#BBC6D8" stroke-width="1.4" stroke-opacity="1"/>
+<text x="731.6734375" y="182" font-family="Noto Sans SC" font-size="22" font-weight="bold" fill="#3C4F6D" text-anchor="start">预约平台 / 预约 API · 容器边界</text>
+<line x1="1197.13953125" y1="42" x2="1357.13953125" y2="42" stroke="#4675F5" stroke-width="6" stroke-linecap="round"/>
+<line x1="1357.13953125" y1="42" x2="1517.13953125" y2="42" stroke="#30A698" stroke-width="6" stroke-linecap="round"/>
+<text x="1357.13953125" y="88" font-family="Noto Sans SC" font-size="36" font-weight="bold" fill="#253149" text-anchor="middle">预约 API · C4 组件 · 扩展结构</text>
+<text x="1357.13953125" y="124" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#71809A" text-anchor="middle">独立示意模型 · 非生产事实</text>
+<polyline data-edge-id="cp1" data-source="web" data-target="handler" points="400,373.39 460,373.39 460,375.0 731.6734375,375.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="cp2" data-source="handler" data-target="policy" points="1138.7596875,324.0 1359.433125,324.0 1359.433125,373.39 1470.433125,373.39" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="cp3" data-source="policy" data-target="repo" points="1877.519375,373.39 2209.1928125,373.39" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="cp4" data-source="handler" data-target="publisher" points="1138.7596875,375.0 1308.433125,375.0 1308.433125,591.78 1928.519375,591.78 1928.519375,723.17 2209.1928125,723.17" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="cp5" data-source="handler" data-target="idempotency" points="1138.7596875,426.0 1257.433125,426.0 1257.433125,723.17 1470.433125,723.17" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<g data-node-id="web">
+<rect x="80" y="262" width="320" height="178.77999999999997" rx="14" fill="#F4F6FA" stroke="#697C96" stroke-width="1.9"/>
+<line x1="98" y1="306.0" x2="382" y2="306.0" stroke="#BBC6D8" stroke-width="1"/>
+<text x="98" y="291.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#3C4F6D" text-anchor="start">预约 Web 应用</text>
+<text x="98" y="340.5" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">[Container]</text>
+<text x="98" y="370.86" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">提交预约请求</text>
+<text x="98" y="401.22" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">Browser</text>
+</g>
+<g data-node-id="handler">
+<rect x="731.6734375" y="262" width="407.08625" height="182.0" rx="14" fill="#F0F5FE" stroke="#4675F5" stroke-width="1.9"/>
+<line x1="749.6734375" y1="306.0" x2="1120.7596875" y2="306.0" stroke="#91AFF0" stroke-width="1"/>
+<text x="749.6734375" y="291.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#2D4F9A" text-anchor="start">预约控制器</text>
+<text x="749.6734375" y="340.5" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">[Component]</text>
+<text x="749.6734375" y="370.86" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">解析请求与返回结果</text>
+<text x="749.6734375" y="401.22" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">HTTP Handler</text>
+</g>
+<g data-node-id="policy">
+<rect x="1470.433125" y="262" width="407.08625" height="178.77999999999997" rx="14" fill="#F7F2FC" stroke="#9870DA" stroke-width="1.9"/>
+<line x1="1488.433125" y1="306.0" x2="1859.519375" y2="306.0" stroke="#BDA1E7" stroke-width="1"/>
+<text x="1488.433125" y="291.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#7047AE" text-anchor="start">名额策略</text>
+<text x="1488.433125" y="340.5" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">[Component]</text>
+<text x="1488.433125" y="370.86" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">检查容量与预约约束</text>
+<text x="1488.433125" y="401.22" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">Python Module</text>
+</g>
+<g data-node-id="repo">
+<rect x="2209.1928125" y="262" width="407.08625" height="178.77999999999997" rx="14" fill="#EDF8F5" stroke="#30A698" stroke-width="1.9"/>
+<line x1="2227.1928125" y1="306.0" x2="2598.2790625" y2="306.0" stroke="#78C4B8" stroke-width="1"/>
+<text x="2227.1928125" y="291.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#1E756C" text-anchor="start">预约仓储</text>
+<text x="2227.1928125" y="340.5" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">[Component]</text>
+<text x="2227.1928125" y="370.86" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">封装事务与记录持久化</text>
+<text x="2227.1928125" y="401.22" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">Python Repository</text>
+</g>
+<g data-node-id="publisher">
+<rect x="2209.1928125" y="611.78" width="407.08625" height="178.77999999999997" rx="14" fill="#FFF5ED" stroke="#E98655" stroke-width="1.9"/>
+<line x1="2227.1928125" y1="655.78" x2="2598.2790625" y2="655.78" stroke="#EFB18C" stroke-width="1"/>
+<text x="2227.1928125" y="640.78" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#A6532F" text-anchor="start">确认通知适配器</text>
+<text x="2227.1928125" y="690.28" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">[Component]</text>
+<text x="2227.1928125" y="720.64" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">把确认事件交给消息系统</text>
+<text x="2227.1928125" y="751.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">HTTP Client</text>
+</g>
+<g data-node-id="idempotency">
+<rect x="1470.433125" y="611.78" width="407.08625" height="178.77999999999997" rx="14" fill="#FFFAE9" stroke="#CBA02E" stroke-width="1.9"/>
+<line x1="1488.433125" y1="655.78" x2="1859.519375" y2="655.78" stroke="#DDC279" stroke-width="1"/>
+<text x="1488.433125" y="640.78" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#866018" text-anchor="start">幂等请求守卫</text>
+<text x="1488.433125" y="690.28" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">[Component]</text>
+<text x="1488.433125" y="720.64" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">拒绝重复预约提交</text>
+<text x="1488.433125" y="751.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">Python Module</text>
+</g>
+<rect x="52" y="997.56" width="16" height="16" rx="3" fill="#697C96"/>
+<text x="77" y="1013.56" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#71809A" text-anchor="start">外部Web容器</text>
+<rect x="245.10000000000002" y="997.56" width="16" height="16" rx="3" fill="#4675F5"/>
+<text x="270.1" y="1013.56" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#71809A" text-anchor="start">请求入口</text>
+<rect x="393.1" y="997.56" width="16" height="16" rx="3" fill="#9870DA"/>
+<text x="418.1" y="1013.56" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#71809A" text-anchor="start">领域规则</text>
+<rect x="541.1" y="997.56" width="16" height="16" rx="3" fill="#30A698"/>
+<text x="566.1" y="1013.56" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#71809A" text-anchor="start">持久化组件</text>
+<rect x="711.1" y="997.56" width="16" height="16" rx="3" fill="#E98655"/>
+<text x="736.1" y="1013.56" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#71809A" text-anchor="start">通知适配</text>
+<rect x="859.1" y="997.56" width="16" height="16" rx="3" fill="#CBA02E"/>
+<text x="884.1" y="1013.56" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#71809A" text-anchor="start">幂等检查</text>
+<rect x="503.00000000000006" y="342.0" width="185.6734375" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="595.83671875" y="365.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">HTTPS / 预约请求</text>
+<rect x="1178.09640625" y="291.0" width="142.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1249.09640625" y="314.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">校验预约条件</text>
+<rect x="1961.3560937500001" y="340.39" width="164.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="2043.3560937500001" y="363.39" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">事务内占用名额</text>
+<rect x="1536.4762500000002" y="558.78" width="164.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1618.4762500000002" y="581.78" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">提交后发送确认</text>
+<rect x="1088.433125" y="557.585" width="164.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1170.433125" y="580.585" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">检查幂等请求键</text></svg>

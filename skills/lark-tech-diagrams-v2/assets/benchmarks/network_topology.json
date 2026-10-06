@@ -1,0 +1,162 @@
+{
+  "diagram_type": "network_topology",
+  "title": "预约服务 · 网络区域与通信",
+  "subtitle": "独立示意模型 · 非生产事实",
+  "nodes": [
+    {
+      "id": "edge",
+      "label": "边缘路由器",
+      "kind": "router",
+      "role": "orange",
+      "rank": 0,
+      "group": "dmz",
+      "responsibility": "路由已准入的入口流量",
+      "technology": "L3 Router",
+      "lines": []
+    },
+    {
+      "id": "proxy",
+      "label": "反向代理",
+      "kind": "service",
+      "role": "blue",
+      "rank": 0,
+      "group": "dmz",
+      "responsibility": "终止 TLS 并转发 API 请求",
+      "technology": "HTTPS Proxy",
+      "lines": []
+    },
+    {
+      "id": "api",
+      "label": "预约服务",
+      "kind": "service",
+      "role": "purple",
+      "rank": 1,
+      "group": "app",
+      "responsibility": "处理预约请求",
+      "technology": "HTTP Server",
+      "lines": []
+    },
+    {
+      "id": "worker",
+      "label": "确认投递服务",
+      "kind": "service",
+      "role": "purple",
+      "rank": 1,
+      "group": "app",
+      "responsibility": "消费确认事件",
+      "technology": "Queue Consumer",
+      "lines": []
+    },
+    {
+      "id": "db",
+      "label": "预约记录库",
+      "kind": "store",
+      "role": "teal",
+      "rank": 2,
+      "group": "data",
+      "responsibility": "持久化预约记录",
+      "technology": "PostgreSQL",
+      "lines": []
+    },
+    {
+      "id": "queue",
+      "label": "确认事件队列",
+      "kind": "store",
+      "role": "teal",
+      "rank": 2,
+      "group": "data",
+      "responsibility": "缓冲待投递事件",
+      "technology": "AMQP Broker",
+      "lines": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "nt1",
+      "source": "edge",
+      "target": "proxy",
+      "label": "TCP :443 / 入口转发",
+      "kind": "flow",
+      "protocol": "TCP",
+      "port": 443
+    },
+    {
+      "id": "nt2",
+      "source": "proxy",
+      "target": "api",
+      "label": "HTTPS :8443 / API 请求",
+      "kind": "flow",
+      "protocol": "HTTPS",
+      "port": 8443
+    },
+    {
+      "id": "nt3",
+      "source": "api",
+      "target": "db",
+      "label": "PostgreSQL :5432 / 事务",
+      "kind": "flow",
+      "protocol": "PostgreSQL",
+      "port": 5432
+    },
+    {
+      "id": "nt4",
+      "source": "api",
+      "target": "queue",
+      "label": "AMQP :5672 / 发布确认",
+      "kind": "flow",
+      "protocol": "AMQP",
+      "port": 5672
+    },
+    {
+      "id": "nt5",
+      "source": "worker",
+      "target": "queue",
+      "label": "AMQP :5672 / 订阅确认",
+      "kind": "flow",
+      "protocol": "AMQP",
+      "port": 5672
+    }
+  ],
+  "groups": [
+    {
+      "id": "dmz",
+      "label": "入口区",
+      "kind": "security-zone",
+      "role": "orange",
+      "trust": "公网准入"
+    },
+    {
+      "id": "app",
+      "label": "应用区",
+      "kind": "security-zone",
+      "role": "purple",
+      "trust": "受限私网"
+    },
+    {
+      "id": "data",
+      "label": "数据区",
+      "kind": "security-zone",
+      "role": "teal",
+      "trust": "仅应用准入"
+    }
+  ],
+  "communication_direction": "directed",
+  "legend": [
+    {
+      "role": "orange",
+      "label": "边界设备"
+    },
+    {
+      "role": "blue",
+      "label": "入口网络服务"
+    },
+    {
+      "role": "purple",
+      "label": "应用服务"
+    },
+    {
+      "role": "teal",
+      "label": "数据存储"
+    }
+  ]
+}

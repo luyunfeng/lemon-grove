@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2600" height="1720" viewBox="0 0 2600 1720">
+<rect x="0" y="0" width="2600" height="1720" rx="0" fill="#FFFFFF" stroke="none" stroke-width="2" />
+<text x="50" y="65" font-family="Noto Sans SC" font-size="30" font-weight="700" fill="#243247" text-anchor="start">Claude Code 记忆流程 · 谁在何时读写</text>
+<text x="50" y="108" font-family="Noto Sans SC" font-size="24" font-weight="400" fill="#526B86" text-anchor="start">主会话泳道｜横向表示流程阶段，颜色表示职责归属</text>
+<rect x="330" y="150" width="400" height="45" rx="10" fill="#F0F4F8" stroke="none" stroke-width="2" />
+<text x="346" y="181" font-family="Noto Sans SC" font-size="24" font-weight="600" fill="#243247" text-anchor="start">01  开启与加载</text>
+<rect x="820" y="150" width="340" height="45" rx="10" fill="#F0F4F8" stroke="none" stroke-width="2" />
+<text x="836" y="181" font-family="Noto Sans SC" font-size="24" font-weight="600" fill="#243247" text-anchor="start">02  组装与执行</text>
+<rect x="1200" y="150" width="350" height="45" rx="10" fill="#F0F4F8" stroke="none" stroke-width="2" />
+<text x="1216" y="181" font-family="Noto Sans SC" font-size="24" font-weight="600" fill="#243247" text-anchor="start">03  按需读取</text>
+<rect x="1730" y="150" width="340" height="45" rx="10" fill="#F0F4F8" stroke="none" stroke-width="2" />
+<text x="1746" y="181" font-family="Noto Sans SC" font-size="24" font-weight="600" fill="#243247" text-anchor="start">04  判断价值</text>
+<rect x="2220" y="150" width="310" height="45" rx="10" fill="#F0F4F8" stroke="none" stroke-width="2" />
+<text x="2236" y="181" font-family="Noto Sans SC" font-size="24" font-weight="600" fill="#243247" text-anchor="start">05  选择性保存</text>
+<rect x="50" y="240" width="2500" height="190" rx="10" fill="#EFF6FF" stroke="none" stroke-width="2" />
+<rect x="50" y="240" width="230" height="190" rx="10" fill="#2563EB" stroke="none" stroke-width="2" />
+<text x="70" y="305" font-family="Noto Sans SC" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="start">用户 / 维护者</text>
+<rect x="50" y="450" width="2500" height="250" rx="10" fill="#F5F0FF" stroke="none" stroke-width="2" />
+<rect x="50" y="450" width="230" height="250" rx="10" fill="#7C3AED" stroke="none" stroke-width="2" />
+<text x="70" y="515" font-family="Noto Sans SC" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="start">Claude Code</text>
+<text x="70" y="557" font-family="Noto Sans SC" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="start">上下文管理</text>
+<rect x="50" y="720" width="2500" height="460" rx="10" fill="#EAFBF6" stroke="none" stroke-width="2" />
+<rect x="50" y="720" width="230" height="460" rx="10" fill="#0F9D92" stroke="none" stroke-width="2" />
+<text x="70" y="785" font-family="Noto Sans SC" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="start">Claude</text>
+<text x="70" y="827" font-family="Noto Sans SC" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="start">推理与</text>
+<text x="70" y="869" font-family="Noto Sans SC" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="start">工具执行</text>
+<rect x="50" y="1200" width="2500" height="270" rx="10" fill="#FFF6E4" stroke="none" stroke-width="2" />
+<rect x="50" y="1200" width="230" height="270" rx="10" fill="#DC8B12" stroke="none" stroke-width="2" />
+<text x="70" y="1265" font-family="Noto Sans SC" font-size="26" font-weight="700" fill="#243247" text-anchor="start">本地持久文件</text>
+<text x="70" y="1307" font-family="Noto Sans SC" font-size="26" font-weight="700" fill="#243247" text-anchor="start">被读写的资源</text>
+<g data-node-id="start">
+<rect x="330" y="270" width="310" height="125" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="2" />
+<rect x="330" y="270" width="310" height="50" rx="10" fill="#2563EB" stroke="none" stroke-width="2" />
+<text x="348" y="305" font-family="Noto Sans SC" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="start">开启会话</text>
+<text x="348" y="354" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247" text-anchor="start">提出本轮目标</text>
+</g>
+<g data-node-id="feedback">
+<rect x="1100" y="270" width="350" height="125" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="2" />
+<rect x="1100" y="270" width="350" height="50" rx="10" fill="#2563EB" stroke="none" stroke-width="2" />
+<text x="1118" y="305" font-family="Noto Sans SC" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="start">纠正 / 补充偏好</text>
+<text x="1118" y="354" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247" text-anchor="start">可在会话中随时提出</text>
+</g>
+<g data-node-id="next">
+<rect x="2220" y="270" width="310" height="125" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="2" />
+<rect x="2220" y="270" width="310" height="50" rx="10" fill="#2563EB" stroke="none" stroke-width="2" />
+<text x="2238" y="305" font-family="Noto Sans SC" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="start">下一会话</text>
+<text x="2238" y="354" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247" text-anchor="start">独立启动；不以新增为前提</text>
+</g>
+<g data-node-id="load">
+<rect x="330" y="500" width="330" height="150" rx="10" fill="#F5F0FF" stroke="#7C3AED" stroke-width="2" />
+<rect x="330" y="500" width="330" height="50" rx="10" fill="#7C3AED" stroke="none" stroke-width="2" />
+<text x="348" y="535" font-family="Noto Sans SC" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="start">读取启动资料</text>
+<text x="348" y="584" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247" text-anchor="start">CLAUDE.md / 规则</text>
+<text x="348" y="614" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247" text-anchor="start">MEMORY.md 入口</text>
+</g>
+<g data-node-id="assemble">
+<rect x="820" y="510" width="340" height="140" rx="10" fill="#F5F0FF" stroke="#7C3AED" stroke-width="2" />
+<rect x="820" y="510" width="340" height="50" rx="10" fill="#7C3AED" stroke="none" stroke-width="2" />
+<text x="838" y="545" font-family="Noto Sans SC" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="start">组装当前上下文</text>
+<text x="838" y="594" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247" text-anchor="start">规则、索引与用户输入</text>
+</g>
+<g data-node-id="execute">
+<rect x="820" y="800" width="320" height="130" rx="10" fill="#EAFBF6" stroke="#0F9D92" stroke-width="2" />
+<rect x="820" y="800" width="320" height="50" rx="10" fill="#0F9D92" stroke="none" stroke-width="2" />
+<text x="838" y="835" font-family="Noto Sans SC" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="start">执行 / 继续任务</text>
+<text x="838" y="884" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247" text-anchor="start">推理并调用工具</text>
+</g>
+<g data-node-id="need"><polygon points="1350,775.0 1500.0,865 1350,955.0 1200.0,865" fill="#EAFBF6" stroke="#0F9D92" stroke-width="3" />
+<text x="1350" y="861" font-family="Noto Sans SC" font-size="26" font-weight="700" fill="#243247" text-anchor="middle">需要主题细节？</text>
+</g>
+<g data-node-id="read-topic">
+<rect x="1200" y="1030" width="330" height="120" rx="10" fill="#EAFBF6" stroke="#0F9D92" stroke-width="2" />
+<rect x="1200" y="1030" width="330" height="50" rx="10" fill="#0F9D92" stroke="none" stroke-width="2" />
+<text x="1218" y="1065" font-family="Noto Sans SC" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="start">工具读取主题</text>
+<text x="1218" y="1114" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247" text-anchor="start">由 Claude 选择所需笔记</text>
+</g>
+<g data-node-id="value"><polygon points="1900,775.0 2070.0,865 1900,955.0 1730.0,865" fill="#EAFBF6" stroke="#0F9D92" stroke-width="3" />
+<text x="1900" y="861" font-family="Noto Sans SC" font-size="26" font-weight="700" fill="#243247" text-anchor="middle">有跨会话价值？</text>
+<text x="1900" y="894" font-family="Noto Sans SC" font-size="20" font-weight="400" fill="#243247" text-anchor="middle">判断是否值得保存</text>
+</g>
+<g data-node-id="write">
+<rect x="2220" y="790" width="310" height="160" rx="10" fill="#EAFBF6" stroke="#0F9D92" stroke-width="2" />
+<rect x="2220" y="790" width="310" height="50" rx="10" fill="#0F9D92" stroke="none" stroke-width="2" />
+<text x="2238" y="825" font-family="Noto Sans SC" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="start">保存有用经验</text>
+<text x="2238" y="874" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247" text-anchor="start">写主题笔记</text>
+<text x="2238" y="904" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247" text-anchor="start">维护 MEMORY.md 索引</text>
+</g>
+<g data-node-id="continue">
+<rect x="1730" y="1030" width="340" height="120" rx="10" fill="#EAFBF6" stroke="#0F9D92" stroke-width="2" />
+<rect x="1730" y="1030" width="340" height="50" rx="10" fill="#0F9D92" stroke="none" stroke-width="2" />
+<text x="1748" y="1065" font-family="Noto Sans SC" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="start">继续本轮任务</text>
+<text x="1748" y="1114" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247" text-anchor="start">继续处理目标与新输入</text>
+</g>
+<g data-node-id="startup-data">
+<rect x="330" y="1280" width="400" height="130" rx="10" fill="#FFF6E4" stroke="#DC8B12" stroke-width="2" />
+<rect x="330" y="1280" width="400" height="50" rx="10" fill="#DC8B12" stroke="none" stroke-width="2" />
+<text x="348" y="1315" font-family="Noto Sans SC" font-size="26" font-weight="700" fill="#243247" text-anchor="start">启动文件 · 读出结果</text>
+<text x="348" y="1364" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247" text-anchor="start">持久指令 + 记忆入口索引</text>
+</g>
+<g data-node-id="topic-data">
+<rect x="1230" y="1280" width="350" height="130" rx="10" fill="#FFF6E4" stroke="#DC8B12" stroke-width="2" />
+<rect x="1230" y="1280" width="350" height="50" rx="10" fill="#DC8B12" stroke="none" stroke-width="2" />
+<text x="1248" y="1315" font-family="Noto Sans SC" font-size="26" font-weight="700" fill="#243247" text-anchor="start">主题笔记 · 读出结果</text>
+<text x="1248" y="1364" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247" text-anchor="start">返回所需详细内容</text>
+</g>
+<g data-node-id="persist">
+<rect x="2150" y="1280" width="380" height="130" rx="10" fill="#FFF6E4" stroke="#DC8B12" stroke-width="2" />
+<rect x="2150" y="1280" width="380" height="50" rx="10" fill="#DC8B12" stroke="none" stroke-width="2" />
+<text x="2168" y="1315" font-family="Noto Sans SC" font-size="26" font-weight="700" fill="#243247" text-anchor="start">主题笔记与索引已持久化</text>
+<text x="2168" y="1364" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247" text-anchor="start">供未来会话读取</text>
+</g>
+<polyline data-edge-id="e01" data-source="start" data-target="load" points="480,395 480,500" fill="none" stroke="#526176" stroke-width="2.5" stroke-dasharray="" stroke-linejoin="round" />
+<polygon points="480,500 485,488 475,488" fill="#526176" />
+<text x="500" y="475" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#526176" text-anchor="start">开启</text>
+<polyline data-edge-id="e02" data-source="load" data-target="startup-data" points="460,650 460,1280" fill="none" stroke="#526176" stroke-width="2.5" stroke-dasharray="" stroke-linejoin="round" />
+<polygon points="460,1280 465,1268 455,1268" fill="#526176" />
+<text x="480" y="970" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#526176" text-anchor="start">请求规则与索引</text>
+<polyline data-edge-id="e03" data-source="startup-data" data-target="assemble" points="730,1340 780,1340 780,580 820,580" fill="none" stroke="#526176" stroke-width="2.5" stroke-dasharray="" stroke-linejoin="round" />
+<polygon points="820,580 808,575 808,585" fill="#526176" />
+<text x="600" y="740" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#526176" text-anchor="start">返回启动资料</text>
+<polyline data-edge-id="e04" data-source="assemble" data-target="execute" points="980,650 980,800" fill="none" stroke="#526176" stroke-width="2.5" stroke-dasharray="" stroke-linejoin="round" />
+<polygon points="980,800 985,788 975,788" fill="#526176" />
+<text x="1000" y="753" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#526176" text-anchor="start">交给 Claude</text>
+<polyline data-edge-id="e05" data-source="feedback" data-target="assemble" points="1275,395 1275,470 1100,470 1100,510" fill="none" stroke="#526176" stroke-width="2.5" stroke-dasharray="" stroke-linejoin="round" />
+<polygon points="1100,510 1105,498 1095,498" fill="#526176" />
+<text x="1295" y="458" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#526176" text-anchor="start">加入当前输入</text>
+<polyline data-edge-id="e06" data-source="execute" data-target="need" points="1140,865 1200,865" fill="none" stroke="#526176" stroke-width="2.5" stroke-dasharray="" stroke-linejoin="round" />
+<polygon points="1200,865 1188,860 1188,870" fill="#526176" />
+<text x="1147" y="847" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#526176" text-anchor="start">判断</text>
+<polyline data-edge-id="e07" data-source="need" data-target="value" points="1500,865 1730,865" fill="none" stroke="#526176" stroke-width="2.5" stroke-dasharray="" stroke-linejoin="round" />
+<polygon points="1730,865 1718,860 1718,870" fill="#526176" />
+<text x="1540" y="845" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#526176" text-anchor="start">否：直接推进</text>
+<polyline data-edge-id="e08" data-source="need" data-target="read-topic" points="1350,955 1350,1030" fill="none" stroke="#526176" stroke-width="2.5" stroke-dasharray="" stroke-linejoin="round" />
+<polygon points="1350,1030 1355,1018 1345,1018" fill="#526176" />
+<text x="1370" y="1002" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#526176" text-anchor="start">是：按需读</text>
+<polyline data-edge-id="e09" data-source="read-topic" data-target="topic-data" points="1350,1150 1350,1280" fill="none" stroke="#526176" stroke-width="2.5" stroke-dasharray="" stroke-linejoin="round" />
+<polygon points="1350,1280 1355,1268 1345,1268" fill="#526176" />
+<text x="1370" y="1240" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#526176" text-anchor="start">请求主题内容</text>
+<polyline data-edge-id="e10" data-source="topic-data" data-target="execute" points="1230,1340 1180,1340 1180,978 980,978 980,930" fill="none" stroke="#526176" stroke-width="2.5" stroke-dasharray="10 7" stroke-linejoin="round" />
+<polygon points="980,930 975,942 985,942" fill="#526176" />
+<text x="850" y="1010" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#526176" text-anchor="start">读入细节，继续任务</text>
+<polyline data-edge-id="e11" data-source="value" data-target="write" points="2070,865 2220,865" fill="none" stroke="#526176" stroke-width="2.5" stroke-dasharray="" stroke-linejoin="round" />
+<polygon points="2220,865 2208,860 2208,870" fill="#526176" />
+<text x="2090" y="841" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#526176" text-anchor="start">是：保存</text>
+<polyline data-edge-id="e12" data-source="value" data-target="continue" points="1900,955 1900,1030" fill="none" stroke="#526176" stroke-width="2.5" stroke-dasharray="" stroke-linejoin="round" />
+<polygon points="1900,1030 1905,1018 1895,1018" fill="#526176" />
+<text x="1920" y="1002" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#526176" text-anchor="start">否：不写记忆</text>
+<polyline data-edge-id="e13" data-source="write" data-target="persist" points="2380,950 2380,1280" fill="none" stroke="#526176" stroke-width="2.5" stroke-dasharray="" stroke-linejoin="round" />
+<polygon points="2380,1280 2385,1268 2375,1268" fill="#526176" />
+<text x="2200" y="1110" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#526176" text-anchor="start">写主题及索引</text>
+<polyline data-edge-id="e14" data-source="persist" data-target="continue" points="2150,1340 2120,1340 2120,1090 2070,1090" fill="none" stroke="#526176" stroke-width="2.5" stroke-dasharray="10 7" stroke-linejoin="round" />
+<polygon points="2070,1090 2082,1095 2082,1085" fill="#526176" />
+<text x="2140" y="1170" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#526176" text-anchor="start">保存后继续</text>
+<polyline data-edge-id="e15" data-source="continue" data-target="execute" points="1900,1150 1900,1170 760,1170 760,865 820,865" fill="none" stroke="#526176" stroke-width="2.5" stroke-dasharray="10 7" stroke-linejoin="round" />
+<polygon points="820,865 808,860 808,870" fill="#526176" />
+<text x="900" y="1160" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#526176" text-anchor="start">本轮循环</text>
+<polyline data-edge-id="e16" data-source="next" data-target="load" points="2375,270 2375,220 305,220 305,575 330,575" fill="none" stroke="#526176" stroke-width="2.5" stroke-dasharray="3 8" stroke-linejoin="round" />
+<polygon points="330,575 318,570 318,580" fill="#526176" />
+<text x="1170" y="213" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#526176" text-anchor="start">下一会话：重新加载已有文件（即使本轮无新增）</text>
+<text x="330" y="1515" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#243247" text-anchor="start">入口规则：MEMORY.md：前200行或25KB，先达到为准。主题文件不在启动时全部加载。</text>
+<text x="330" y="1555" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247" text-anchor="start">保存可发生在会话中；仅在有跨会话价值时写入。已有笔记持续保留，未新增不影响下一会话读取。</text>
+<text x="330" y="1595" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#526B86" text-anchor="start">/compact 管理当前上下文，不直接写长期记忆。Auto Memory：~/.claude/projects/{project}/memory/</text>
+<line x1="330" y1="1650" x2="430" y2="1650" stroke="#526176" stroke-width="3" stroke-dasharray="" />
+<text x="450" y="1658" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247" text-anchor="start">本轮动作 / 数据交接</text>
+<line x1="1080" y1="1650" x2="1180" y2="1650" stroke="#526176" stroke-width="3" stroke-dasharray="10 7" />
+<text x="1200" y="1658" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247" text-anchor="start">继续本轮循环</text>
+<line x1="1780" y1="1650" x2="1880" y2="1650" stroke="#526176" stroke-width="3" stroke-dasharray="3 8" />
+<text x="1900" y="1658" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247" text-anchor="start">下一会话边界</text>
+</svg>

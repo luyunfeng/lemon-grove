@@ -17,6 +17,8 @@ templates/         页面模板
 tools/lint.py      只读体检脚本
 tools/related.py   按页面、标签或实体列出相关页面
 skills/llm-wiki/   全局 skill：按线索找到（或克隆）本仓库，再定位到 AGENTS.md
+skills/lark-architecture-diagrams/  V1.1.0 技术绘图旧版参考
+skills/lark-tech-diagrams-v2/       V2.3.0 技术绘图，默认推荐
 ```
 
 ## 用法（在 Codex 或 Claude Code 里直接说）
@@ -34,6 +36,10 @@ python3 tools/lint.py                    # 头部四项 / 标签词表 / 实体 
 python3 tools/related.py --tag verification   # 按标签找相关页面（也可以 --entity 或传一个页面路径）
 grep "^## \[" wiki/log.md | tail -5      # 最近 5 次写入
 ```
+
+## 技术绘图 Skills
+
+两版技术绘图源码保存在 `skills/`，版本选择、安装与验证入口见 [Skills 说明](skills/README.md)。新任务推荐 V2.3.0：内置 16 类技术图、语义配色、确定性排版、字体和参考图；飞书文档与画板交付调用现有工具。V1.1.0 保留为早期风格参考。
 
 ## 柠檬林站点源码
 

@@ -1,0 +1,160 @@
+{
+  "diagram_type": "deployment",
+  "title": "异步任务交付平台 · 部署实例",
+  "subtitle": "教学示例，并非实际生产架构",
+  "nodes": [
+    {
+      "id": "ingress",
+      "label": "ingress-01",
+      "lines": [],
+      "rank": 0,
+      "group": "edge",
+      "role": "blue",
+      "kind": "instance",
+      "artifact": "Envoy :443",
+      "runtime": "边缘 VM / Linux"
+    },
+    {
+      "id": "api1",
+      "label": "api-01",
+      "lines": [],
+      "rank": 1,
+      "group": "app",
+      "role": "blue",
+      "kind": "instance",
+      "artifact": "task-api:example",
+      "runtime": "Pod / node-a"
+    },
+    {
+      "id": "api2",
+      "label": "api-02",
+      "lines": [],
+      "rank": 1,
+      "group": "app",
+      "role": "blue",
+      "kind": "instance",
+      "artifact": "task-api:example",
+      "runtime": "Pod / node-b"
+    },
+    {
+      "id": "worker1",
+      "label": "worker-01",
+      "lines": [],
+      "rank": 2,
+      "group": "app",
+      "role": "blue",
+      "kind": "instance",
+      "artifact": "task-worker:example",
+      "runtime": "Pod / node-b"
+    },
+    {
+      "id": "broker",
+      "label": "broker-01",
+      "lines": [],
+      "rank": 3,
+      "group": "data",
+      "role": "purple",
+      "kind": "instance",
+      "artifact": "RabbitMQ",
+      "runtime": "VM / queue-host"
+    },
+    {
+      "id": "db",
+      "label": "postgres-01",
+      "lines": [],
+      "rank": 3,
+      "group": "data",
+      "role": "teal",
+      "kind": "instance",
+      "artifact": "PostgreSQL",
+      "runtime": "VM / db-host"
+    },
+    {
+      "id": "storage",
+      "label": "objects-01",
+      "lines": [],
+      "rank": 3,
+      "group": "data",
+      "role": "teal",
+      "kind": "instance",
+      "artifact": "S3 compatible storage",
+      "runtime": "存储节点 / store-host"
+    }
+  ],
+  "edges": [
+    {
+      "id": "d1",
+      "source": "ingress",
+      "target": "api1",
+      "label": "HTTPS :8443",
+      "kind": "flow"
+    },
+    {
+      "id": "d2",
+      "source": "ingress",
+      "target": "api2",
+      "label": "HTTPS :8443",
+      "kind": "flow"
+    },
+    {
+      "id": "d3",
+      "source": "api1",
+      "target": "broker",
+      "label": "AMQP :5672",
+      "kind": "flow"
+    },
+    {
+      "id": "d4",
+      "source": "api2",
+      "target": "db",
+      "label": "SQL :5432",
+      "kind": "flow"
+    },
+    {
+      "id": "d5",
+      "source": "worker1",
+      "target": "broker",
+      "label": "AMQP :5672",
+      "kind": "flow"
+    },
+    {
+      "id": "d6",
+      "source": "worker1",
+      "target": "storage",
+      "label": "HTTPS :443",
+      "kind": "flow"
+    }
+  ],
+  "groups": [
+    {
+      "id": "edge",
+      "label": "公网子网 · 边缘运行节点",
+      "role": "orange"
+    },
+    {
+      "id": "app",
+      "label": "私网子网 · Kubernetes 运行节点",
+      "role": "blue"
+    },
+    {
+      "id": "data",
+      "label": "受限子网 · 数据运行节点",
+      "role": "teal"
+    }
+  ],
+  "network_label": "示例 VPC · 网络边界",
+  "legend": [
+    {
+      "role": "blue",
+      "label": "节点：服务实例"
+    },
+    {
+      "role": "purple",
+      "label": "节点：消息中间件"
+    },
+    {
+      "role": "teal",
+      "label": "节点：持久化存储"
+    }
+  ]
+}

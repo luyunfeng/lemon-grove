@@ -1,0 +1,144 @@
+{
+  "diagram_type": "c4_context",
+  "title": "预约平台 · C4 系统上下文 · 扩展结构",
+  "subtitle": "独立示意模型 · 非生产事实",
+  "nodes": [
+    {
+      "id": "reader",
+      "label": "预约用户",
+      "kind": "person",
+      "role": "blue",
+      "rank": 0,
+      "group": "",
+      "responsibility": "预约时段并查看结果",
+      "technology": "",
+      "lines": []
+    },
+    {
+      "id": "operator",
+      "label": "场馆管理员",
+      "kind": "person",
+      "role": "orange",
+      "rank": 0,
+      "group": "",
+      "responsibility": "维护开放时段",
+      "technology": "",
+      "lines": []
+    },
+    {
+      "id": "booking",
+      "label": "预约平台",
+      "kind": "system",
+      "role": "purple",
+      "rank": 1,
+      "group": "booking-system",
+      "responsibility": "协调预约、名额与通知",
+      "technology": "",
+      "lines": []
+    },
+    {
+      "id": "identity",
+      "label": "身份提供系统",
+      "kind": "external",
+      "role": "slate",
+      "rank": 2,
+      "group": "",
+      "responsibility": "验证用户身份",
+      "technology": "",
+      "lines": []
+    },
+    {
+      "id": "message",
+      "label": "消息投递系统",
+      "kind": "external",
+      "role": "teal",
+      "rank": 2,
+      "group": "",
+      "responsibility": "投递预约确认",
+      "technology": "",
+      "lines": []
+    },
+    {
+      "id": "audit",
+      "label": "审计归档系统",
+      "kind": "external",
+      "role": "rose",
+      "rank": 2,
+      "group": "",
+      "responsibility": "留存预约操作记录",
+      "technology": "",
+      "lines": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "cx1",
+      "source": "reader",
+      "target": "booking",
+      "label": "申请预约",
+      "kind": "flow"
+    },
+    {
+      "id": "cx2",
+      "source": "operator",
+      "target": "booking",
+      "label": "维护可用时段",
+      "kind": "flow"
+    },
+    {
+      "id": "cx3",
+      "source": "booking",
+      "target": "identity",
+      "label": "校验身份",
+      "kind": "flow"
+    },
+    {
+      "id": "cx4",
+      "source": "booking",
+      "target": "message",
+      "label": "发送确认消息",
+      "kind": "flow"
+    },
+    {
+      "id": "cx5",
+      "source": "booking",
+      "target": "audit",
+      "label": "归档操作记录",
+      "kind": "flow"
+    }
+  ],
+  "groups": [
+    {
+      "id": "booking-system",
+      "label": "预约平台",
+      "kind": "system-boundary",
+      "role": "purple"
+    }
+  ],
+  "legend": [
+    {
+      "role": "blue",
+      "label": "访客"
+    },
+    {
+      "role": "orange",
+      "label": "业务管理员"
+    },
+    {
+      "role": "purple",
+      "label": "目标系统"
+    },
+    {
+      "role": "slate",
+      "label": "身份服务"
+    },
+    {
+      "role": "teal",
+      "label": "消息服务"
+    },
+    {
+      "role": "rose",
+      "label": "审计系统"
+    }
+  ]
+}

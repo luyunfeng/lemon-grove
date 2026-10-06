@@ -1,0 +1,251 @@
+{
+  "title": "C · 交互图｜颜色对应参与方，纵向对应时间",
+  "diagram_type": "sequence",
+  "basis": "AI研发任务交付的说明性示例；不是实际生产系统或手册精确模型。",
+  "color_dimension": "participant",
+  "nodes": [
+    {
+      "id": "requester",
+      "title": "需求方",
+      "detail": [
+        "提出目标 · 接收交付"
+      ],
+      "color": "#2563EB",
+      "lifeline_x": 300
+    },
+    {
+      "id": "orchestrator",
+      "title": "编排服务",
+      "detail": [
+        "受理 · 派发 · 汇总"
+      ],
+      "color": "#7C3AED",
+      "lifeline_x": 800
+    },
+    {
+      "id": "agent",
+      "title": "执行Agent",
+      "detail": [
+        "执行任务 · 提供证据"
+      ],
+      "color": "#0F9D92",
+      "lifeline_x": 1300
+    },
+    {
+      "id": "reviewer",
+      "title": "评审服务",
+      "detail": [
+        "评审证据 · 给出结论"
+      ],
+      "color": "#DC8B12",
+      "lifeline_x": 1800
+    }
+  ],
+  "edges": [
+    {
+      "id": "e01",
+      "source": "requester",
+      "target": "orchestrator",
+      "kind": "request",
+      "label": "提交目标",
+      "message_order": 1,
+      "y": 380,
+      "branch": null
+    },
+    {
+      "id": "e02",
+      "source": "orchestrator",
+      "target": "requester",
+      "kind": "return",
+      "label": "返回 task_id",
+      "message_order": 2,
+      "y": 460,
+      "branch": null
+    },
+    {
+      "id": "e03",
+      "source": "orchestrator",
+      "target": "agent",
+      "kind": "request",
+      "label": "派发任务",
+      "message_order": 3,
+      "y": 550,
+      "branch": null
+    },
+    {
+      "id": "e04",
+      "source": "agent",
+      "target": "agent",
+      "kind": "self",
+      "label": "执行与自测",
+      "message_order": 4,
+      "y": 620,
+      "branch": null
+    },
+    {
+      "id": "e05",
+      "source": "agent",
+      "target": "orchestrator",
+      "kind": "return",
+      "label": "产物 + 测试证据",
+      "message_order": 5,
+      "y": 750,
+      "branch": null
+    },
+    {
+      "id": "e06",
+      "source": "orchestrator",
+      "target": "reviewer",
+      "kind": "request",
+      "label": "请求评审",
+      "message_order": 6,
+      "y": 830,
+      "branch": null
+    },
+    {
+      "id": "e07",
+      "source": "reviewer",
+      "target": "orchestrator",
+      "kind": "return",
+      "label": "通过",
+      "message_order": 7,
+      "y": 950,
+      "branch": "通过"
+    },
+    {
+      "id": "e08",
+      "source": "orchestrator",
+      "target": "requester",
+      "kind": "notification",
+      "label": "通知交付 / 交付产物",
+      "message_order": 8,
+      "y": 1030,
+      "branch": "通过"
+    },
+    {
+      "id": "e09",
+      "source": "reviewer",
+      "target": "orchestrator",
+      "kind": "return",
+      "label": "修改意见",
+      "message_order": 9,
+      "y": 1150,
+      "branch": "退回"
+    },
+    {
+      "id": "e10",
+      "source": "orchestrator",
+      "target": "agent",
+      "kind": "request",
+      "label": "补充约束后重试",
+      "message_order": 10,
+      "y": 1230,
+      "branch": "退回"
+    }
+  ],
+  "combined_fragments": [
+    {
+      "operator": "alt",
+      "guards": [
+        "通过",
+        "退回"
+      ],
+      "participants": [
+        "requester",
+        "orchestrator",
+        "agent",
+        "reviewer"
+      ],
+      "bounds": [
+        150,
+        870,
+        1820,
+        435
+      ],
+      "separator_y": 1090
+    }
+  ],
+  "activations": [
+    {
+      "participant": "requester",
+      "start_y": 355,
+      "end_y": 460,
+      "scope": "common",
+      "offset": 0
+    },
+    {
+      "participant": "orchestrator",
+      "start_y": 380,
+      "end_y": 460,
+      "scope": "common",
+      "offset": 0
+    },
+    {
+      "participant": "orchestrator",
+      "start_y": 525,
+      "end_y": 870,
+      "scope": "common",
+      "offset": 0
+    },
+    {
+      "participant": "agent",
+      "start_y": 550,
+      "end_y": 750,
+      "scope": "common",
+      "offset": 0
+    },
+    {
+      "participant": "agent",
+      "start_y": 685,
+      "end_y": 720,
+      "scope": "nested",
+      "offset": 12
+    },
+    {
+      "participant": "reviewer",
+      "start_y": 830,
+      "end_y": 870,
+      "scope": "common",
+      "offset": 0
+    },
+    {
+      "participant": "orchestrator",
+      "start_y": 870,
+      "end_y": 1030,
+      "scope": "通过",
+      "offset": 0
+    },
+    {
+      "participant": "reviewer",
+      "start_y": 870,
+      "end_y": 950,
+      "scope": "通过",
+      "offset": 0
+    },
+    {
+      "participant": "orchestrator",
+      "start_y": 1090,
+      "end_y": 1270,
+      "scope": "退回",
+      "offset": 0
+    },
+    {
+      "participant": "reviewer",
+      "start_y": 1090,
+      "end_y": 1150,
+      "scope": "退回",
+      "offset": 0
+    },
+    {
+      "participant": "agent",
+      "start_y": 1230,
+      "end_y": 1280,
+      "scope": "退回",
+      "offset": 0
+    }
+  ],
+  "notes": [
+    "task_id 只表示受理，不代表完成。",
+    "通过才交付产物；退回分支仅展示重试发起，后续执行省略。"
+  ]
+}

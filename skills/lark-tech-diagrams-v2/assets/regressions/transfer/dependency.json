@@ -1,0 +1,112 @@
+{
+  "diagram_type": "dependency",
+  "title": "静态站点生成器 · 编译依赖",
+  "subtitle": "迁移样例 · 箭头从使用方指向被导入模块；非运行时调用顺序",
+  "groups": [
+    {
+      "id": "entry",
+      "label": "入口与增量构建",
+      "role": "blue"
+    },
+    {
+      "id": "compiler",
+      "label": "编译实现",
+      "role": "purple"
+    },
+    {
+      "id": "model",
+      "label": "中间表示契约",
+      "role": "teal"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "cli",
+      "label": "site.cli",
+      "rank": 0,
+      "group": "entry",
+      "role": "blue",
+      "lines": [
+        "命令行构建入口"
+      ]
+    },
+    {
+      "id": "watch",
+      "label": "site.watch",
+      "rank": 0,
+      "group": "entry",
+      "role": "blue",
+      "lines": [
+        "文件变化监控入口"
+      ]
+    },
+    {
+      "id": "parser",
+      "label": "compiler.parser",
+      "rank": 1,
+      "group": "compiler",
+      "role": "purple",
+      "lines": [
+        "解析 Markdown 语法"
+      ]
+    },
+    {
+      "id": "emitter",
+      "label": "compiler.html",
+      "rank": 1,
+      "group": "compiler",
+      "role": "orange",
+      "lines": [
+        "生成 HTML 页面"
+      ]
+    },
+    {
+      "id": "ast",
+      "label": "core.ast",
+      "rank": 2,
+      "group": "model",
+      "role": "teal",
+      "lines": [
+        "文档抽象语法树契约"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "parse-cli",
+      "source": "cli",
+      "target": "parser",
+      "label": "import 解析接口",
+      "kind": "import"
+    },
+    {
+      "id": "emit-cli",
+      "source": "cli",
+      "target": "emitter",
+      "label": "import 生成接口",
+      "kind": "import"
+    },
+    {
+      "id": "parse-watch",
+      "source": "watch",
+      "target": "parser",
+      "label": "import 增量解析",
+      "kind": "import"
+    },
+    {
+      "id": "parser-ast",
+      "source": "parser",
+      "target": "ast",
+      "label": "import AST 类型",
+      "kind": "import"
+    },
+    {
+      "id": "emitter-ast",
+      "source": "emitter",
+      "target": "ast",
+      "label": "import AST 类型",
+      "kind": "import"
+    }
+  ],
+  "case_variant": "transfer"
+}

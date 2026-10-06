@@ -1,0 +1,113 @@
+{
+  "diagram_type": "activity",
+  "title": "展会开场前的并行准备",
+  "subtitle": "示意模型 · 以图型语义表达业务逻辑",
+  "nodes": [
+    {
+      "id": "initial",
+      "label": "",
+      "kind": "initial",
+      "role": "slate"
+    },
+    {
+      "id": "prepare",
+      "label": "确认展会方案",
+      "kind": "action",
+      "role": "blue"
+    },
+    {
+      "id": "fork",
+      "label": "",
+      "kind": "fork",
+      "role": "purple"
+    },
+    {
+      "id": "test",
+      "label": "搭建展示区域",
+      "kind": "action",
+      "role": "teal"
+    },
+    {
+      "id": "scan",
+      "label": "调试现场设备",
+      "kind": "action",
+      "role": "orange"
+    },
+    {
+      "id": "join",
+      "label": "",
+      "kind": "join",
+      "role": "purple"
+    },
+    {
+      "id": "report",
+      "label": "执行联合验收",
+      "kind": "action",
+      "role": "green"
+    },
+    {
+      "id": "final",
+      "label": "",
+      "kind": "final",
+      "role": "slate"
+    }
+  ],
+  "edges": [
+    {
+      "id": "a1",
+      "source": "initial",
+      "target": "prepare",
+      "label": "开始准备",
+      "kind": "flow"
+    },
+    {
+      "id": "a2",
+      "source": "prepare",
+      "target": "fork",
+      "label": "方案已确认",
+      "kind": "flow"
+    },
+    {
+      "id": "a3",
+      "source": "fork",
+      "target": "test",
+      "label": "启动搭建",
+      "kind": "flow"
+    },
+    {
+      "id": "a4",
+      "source": "fork",
+      "target": "scan",
+      "label": "启动调试",
+      "kind": "flow"
+    },
+    {
+      "id": "a5",
+      "source": "test",
+      "target": "join",
+      "label": "搭建完成",
+      "kind": "flow"
+    },
+    {
+      "id": "a6",
+      "source": "scan",
+      "target": "join",
+      "label": "调试完成",
+      "kind": "flow"
+    },
+    {
+      "id": "a7",
+      "source": "join",
+      "target": "report",
+      "label": "全部准备完成",
+      "kind": "flow"
+    },
+    {
+      "id": "a8",
+      "source": "report",
+      "target": "final",
+      "label": "验收记录完成",
+      "kind": "flow"
+    }
+  ]
+}

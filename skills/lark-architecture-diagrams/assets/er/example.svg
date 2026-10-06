@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1500" viewBox="0 0 1800 1500">
+<rect x="0" y="0" width="1800" height="1500" rx="8" fill="#ffffff" stroke="none" stroke-width="1.5" />
+<text x="48" y="80" text-anchor="start" font-family="Noto Sans SC" font-size="40" font-weight="700" fill="#243247">B · ER 图｜颜色对应领域，连线对应约束</text>
+<text x="48" y="132" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="400" fill="#243247">AI 研发任务交付 · 示例数据模型，用于演示视觉语法</text>
+<text x="48" y="175" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">颜色仅表示业务领域；实体按领域归组，实线表示外键约束，不表示调用顺序或执行状态。</text>
+<text x="72" y="262" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="700" fill="#2563EB">身份域</text>
+<path d="M 72 280 L 474 280" fill="none" stroke="#2563EB" stroke-width="2" />
+<text x="614" y="262" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="700" fill="#7C3AED">任务域</text>
+<path d="M 614 280 L 1046 280" fill="none" stroke="#7C3AED" stroke-width="2" />
+<text x="1244" y="262" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="700" fill="#0F9D92">执行域</text>
+<path d="M 1244 280 L 1676 280" fill="none" stroke="#0F9D92" stroke-width="2" />
+<text x="614" y="822" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="700" fill="#DC8B12">审阅域</text>
+<path d="M 614 840 L 1046 840" fill="none" stroke="#DC8B12" stroke-width="2" />
+<g data-node-id="user">
+<rect x="90" y="310" width="360" height="236" rx="8" fill="#ffffff" stroke="#2563EB" stroke-width="1.5" />
+<rect x="90" y="310" width="360" height="70" rx="0" fill="#2563EB" stroke="none" stroke-width="1.5" />
+<text x="114" y="356" text-anchor="start" font-family="Noto Sans SC" font-size="28" font-weight="700" fill="#ffffff">User 用户</text>
+<rect x="91" y="381" width="358" height="44" rx="0" fill="#EFF6FF" stroke="none" stroke-width="1.5" />
+<text x="114" y="411" text-anchor="start" font-family="Noto Sans SC" font-size="20" font-weight="600" fill="#243247">字段</text>
+<text x="375" y="411" text-anchor="start" font-family="Noto Sans SC" font-size="20" font-weight="600" fill="#243247">键</text>
+<rect x="91" y="425" width="358" height="56" rx="0" fill="#EFF6FF" stroke="none" stroke-width="1.5" />
+<text x="114" y="461" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="400" fill="#243247">user_id</text>
+<text x="375" y="461" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="700" fill="#2563EB">PK</text>
+<text x="114" y="517" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="400" fill="#243247">name</text>
+</g>
+<g data-node-id="task">
+<rect x="630" y="310" width="400" height="348" rx="8" fill="#ffffff" stroke="#7C3AED" stroke-width="1.5" />
+<rect x="630" y="310" width="400" height="70" rx="0" fill="#7C3AED" stroke="none" stroke-width="1.5" />
+<text x="654" y="356" text-anchor="start" font-family="Noto Sans SC" font-size="28" font-weight="700" fill="#ffffff">Task 任务</text>
+<rect x="631" y="381" width="398" height="44" rx="0" fill="#F5F0FF" stroke="none" stroke-width="1.5" />
+<text x="654" y="411" text-anchor="start" font-family="Noto Sans SC" font-size="20" font-weight="600" fill="#243247">字段</text>
+<text x="955" y="411" text-anchor="start" font-family="Noto Sans SC" font-size="20" font-weight="600" fill="#243247">键</text>
+<rect x="631" y="425" width="398" height="56" rx="0" fill="#F5F0FF" stroke="none" stroke-width="1.5" />
+<text x="654" y="461" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="400" fill="#243247">task_id</text>
+<text x="955" y="461" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="700" fill="#7C3AED">PK</text>
+<text x="654" y="517" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="400" fill="#243247">requester_id</text>
+<text x="955" y="517" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="700" fill="#7C3AED">FK</text>
+<rect x="631" y="537" width="398" height="56" rx="0" fill="#F5F0FF" stroke="none" stroke-width="1.5" />
+<text x="654" y="573" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="400" fill="#243247">title</text>
+<text x="654" y="629" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="400" fill="#243247">status</text>
+</g>
+<g data-node-id="run">
+<rect x="1260" y="310" width="400" height="348" rx="8" fill="#ffffff" stroke="#0F9D92" stroke-width="1.5" />
+<rect x="1260" y="310" width="400" height="70" rx="0" fill="#0F9D92" stroke="none" stroke-width="1.5" />
+<text x="1284" y="356" text-anchor="start" font-family="Noto Sans SC" font-size="28" font-weight="700" fill="#ffffff">Run 执行记录</text>
+<rect x="1261" y="381" width="398" height="44" rx="0" fill="#EAFBF6" stroke="none" stroke-width="1.5" />
+<text x="1284" y="411" text-anchor="start" font-family="Noto Sans SC" font-size="20" font-weight="600" fill="#243247">字段</text>
+<text x="1585" y="411" text-anchor="start" font-family="Noto Sans SC" font-size="20" font-weight="600" fill="#243247">键</text>
+<rect x="1261" y="425" width="398" height="56" rx="0" fill="#EAFBF6" stroke="none" stroke-width="1.5" />
+<text x="1284" y="461" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="400" fill="#243247">run_id</text>
+<text x="1585" y="461" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="700" fill="#0F9D92">PK</text>
+<text x="1284" y="517" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="400" fill="#243247">task_id</text>
+<text x="1585" y="517" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="700" fill="#0F9D92">FK</text>
+<rect x="1261" y="537" width="398" height="56" rx="0" fill="#EAFBF6" stroke="none" stroke-width="1.5" />
+<text x="1284" y="573" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="400" fill="#243247">attempt_no</text>
+<text x="1284" y="629" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="400" fill="#243247">status</text>
+</g>
+<g data-node-id="artifact">
+<rect x="1260" y="870" width="400" height="348" rx="8" fill="#ffffff" stroke="#0F9D92" stroke-width="1.5" />
+<rect x="1260" y="870" width="400" height="70" rx="0" fill="#0F9D92" stroke="none" stroke-width="1.5" />
+<text x="1284" y="916" text-anchor="start" font-family="Noto Sans SC" font-size="28" font-weight="700" fill="#ffffff">Artifact 产物</text>
+<rect x="1261" y="941" width="398" height="44" rx="0" fill="#EAFBF6" stroke="none" stroke-width="1.5" />
+<text x="1284" y="971" text-anchor="start" font-family="Noto Sans SC" font-size="20" font-weight="600" fill="#243247">字段</text>
+<text x="1585" y="971" text-anchor="start" font-family="Noto Sans SC" font-size="20" font-weight="600" fill="#243247">键</text>
+<rect x="1261" y="985" width="398" height="56" rx="0" fill="#EAFBF6" stroke="none" stroke-width="1.5" />
+<text x="1284" y="1021" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="400" fill="#243247">artifact_id</text>
+<text x="1585" y="1021" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="700" fill="#0F9D92">PK</text>
+<text x="1284" y="1077" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="400" fill="#243247">run_id</text>
+<text x="1585" y="1077" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="700" fill="#0F9D92">FK</text>
+<rect x="1261" y="1097" width="398" height="56" rx="0" fill="#EAFBF6" stroke="none" stroke-width="1.5" />
+<text x="1284" y="1133" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="400" fill="#243247">kind</text>
+<text x="1284" y="1189" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="400" fill="#243247">uri</text>
+</g>
+<g data-node-id="review">
+<rect x="630" y="870" width="400" height="348" rx="8" fill="#ffffff" stroke="#DC8B12" stroke-width="1.5" />
+<rect x="630" y="870" width="400" height="70" rx="0" fill="#DC8B12" stroke="none" stroke-width="1.5" />
+<text x="654" y="916" text-anchor="start" font-family="Noto Sans SC" font-size="28" font-weight="700" fill="#ffffff">Review 评审</text>
+<rect x="631" y="941" width="398" height="44" rx="0" fill="#FFF6E4" stroke="none" stroke-width="1.5" />
+<text x="654" y="971" text-anchor="start" font-family="Noto Sans SC" font-size="20" font-weight="600" fill="#243247">字段</text>
+<text x="955" y="971" text-anchor="start" font-family="Noto Sans SC" font-size="20" font-weight="600" fill="#243247">键</text>
+<rect x="631" y="985" width="398" height="56" rx="0" fill="#FFF6E4" stroke="none" stroke-width="1.5" />
+<text x="654" y="1021" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="400" fill="#243247">review_id</text>
+<text x="955" y="1021" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="700" fill="#DC8B12">PK</text>
+<text x="654" y="1077" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="400" fill="#243247">artifact_id</text>
+<text x="955" y="1077" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="700" fill="#DC8B12">FK</text>
+<rect x="631" y="1097" width="398" height="56" rx="0" fill="#FFF6E4" stroke="none" stroke-width="1.5" />
+<text x="654" y="1133" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="400" fill="#243247">reviewer_id</text>
+<text x="955" y="1133" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="700" fill="#DC8B12">FK</text>
+<text x="654" y="1189" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="400" fill="#243247">decision</text>
+</g>
+<polyline data-edge-id="e01" data-source="user" data-target="task" data-source-field="user_id" data-target-field="requester_id" points="450,453 535,453 535,509 630,509" fill="none" stroke="#526174" stroke-width="2" />
+<path d="M 465.0 463.0 L 465.0 443.0" fill="none" stroke="#526174" stroke-width="2" />
+<path d="M 475.0 463.0 L 475.0 443.0" fill="none" stroke="#526174" stroke-width="2" />
+<path d="M 630.0 521.0 L 610.0 509.0 L 630.0 497.0" fill="none" stroke="#526174" stroke-width="2" />
+<circle cx="592.0" cy="509.0" r="7" fill="#ffffff" stroke="#526174" stroke-width="2" />
+<polyline data-edge-id="e02" data-source="task" data-target="run" data-source-field="task_id" data-target-field="task_id" points="1030,453 1145,453 1145,509 1260,509" fill="none" stroke="#526174" stroke-width="2" />
+<path d="M 1045.0 463.0 L 1045.0 443.0" fill="none" stroke="#526174" stroke-width="2" />
+<path d="M 1055.0 463.0 L 1055.0 443.0" fill="none" stroke="#526174" stroke-width="2" />
+<path d="M 1260.0 521.0 L 1240.0 509.0 L 1260.0 497.0" fill="none" stroke="#526174" stroke-width="2" />
+<circle cx="1222.0" cy="509.0" r="7" fill="#ffffff" stroke="#526174" stroke-width="2" />
+<polyline data-edge-id="e03" data-source="run" data-target="artifact" data-source-field="run_id" data-target-field="run_id" points="1660,453 1730,453 1730,1069 1660,1069" fill="none" stroke="#526174" stroke-width="2" />
+<path d="M 1675.0 463.0 L 1675.0 443.0" fill="none" stroke="#526174" stroke-width="2" />
+<path d="M 1685.0 463.0 L 1685.0 443.0" fill="none" stroke="#526174" stroke-width="2" />
+<path d="M 1660.0 1057.0 L 1680.0 1069.0 L 1660.0 1081.0" fill="none" stroke="#526174" stroke-width="2" />
+<circle cx="1698.0" cy="1069.0" r="7" fill="#ffffff" stroke="#526174" stroke-width="2" />
+<polyline data-edge-id="e04" data-source="artifact" data-target="review" data-source-field="artifact_id" data-target-field="artifact_id" points="1260,1013 1145,1013 1145,1069 1030,1069" fill="none" stroke="#526174" stroke-width="2" />
+<path d="M 1245.0 1003.0 L 1245.0 1023.0" fill="none" stroke="#526174" stroke-width="2" />
+<path d="M 1235.0 1003.0 L 1235.0 1023.0" fill="none" stroke="#526174" stroke-width="2" />
+<path d="M 1030.0 1057.0 L 1050.0 1069.0 L 1030.0 1081.0" fill="none" stroke="#526174" stroke-width="2" />
+<circle cx="1068.0" cy="1069.0" r="7" fill="#ffffff" stroke="#526174" stroke-width="2" />
+<polyline data-edge-id="e05" data-source="user" data-target="review" data-source-field="user_id" data-target-field="reviewer_id" points="90,453 48,453 48,1125 630,1125" fill="none" stroke="#526174" stroke-width="2" />
+<path d="M 75.0 443.0 L 75.0 463.0" fill="none" stroke="#526174" stroke-width="2" />
+<path d="M 65.0 443.0 L 65.0 463.0" fill="none" stroke="#526174" stroke-width="2" />
+<path d="M 630.0 1137.0 L 610.0 1125.0 L 630.0 1113.0" fill="none" stroke="#526174" stroke-width="2" />
+<circle cx="592.0" cy="1125.0" r="7" fill="#ffffff" stroke="#526174" stroke-width="2" />
+<text x="477" y="430" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#243247">1</text>
+<text x="565" y="485" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#243247">0..*</text>
+<text x="1057" y="430" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#243247">1</text>
+<text x="1195" y="485" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#243247">0..*</text>
+<text x="1680" y="430" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#243247">1</text>
+<text x="1675" y="1045" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#243247">0..*</text>
+<text x="1216" y="990" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#243247">1</text>
+<text x="1055" y="1045" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#243247">0..*</text>
+<text x="55" y="430" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#243247">1</text>
+<text x="565" y="1100" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="600" fill="#243247">0..*</text>
+<text x="520" y="400" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">提交</text>
+<text x="1100" y="400" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">执行</text>
+<text x="1665" y="770" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">产生</text>
+<text x="1090" y="950" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">接受评审</text>
+<text x="310" y="1075" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">撰写评审</text>
+<text x="310" y="742" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">主键 PK：唯一标识实体</text>
+<text x="310" y="788" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">外键 FK：引用父实体主键</text>
+<text x="310" y="834" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">本例所有 FK 均为非空</text>
+<text x="48" y="1320" text-anchor="start" font-family="Noto Sans SC" font-size="24" font-weight="700" fill="#243247">领域图例</text>
+<rect x="210" y="1293" width="24" height="24" rx="4" fill="#2563EB" stroke="none" stroke-width="1.5" />
+<text x="248" y="1315" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">身份域</text>
+<rect x="575" y="1293" width="24" height="24" rx="4" fill="#7C3AED" stroke="none" stroke-width="1.5" />
+<text x="613" y="1315" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">任务域</text>
+<rect x="940" y="1293" width="24" height="24" rx="4" fill="#0F9D92" stroke="none" stroke-width="1.5" />
+<text x="978" y="1315" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">执行域</text>
+<rect x="1305" y="1293" width="24" height="24" rx="4" fill="#DC8B12" stroke="none" stroke-width="1.5" />
+<text x="1343" y="1315" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">审阅域</text>
+<text x="48" y="1380" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">基数读法：父端  ||  = 恰好 1；子端  ○ + 鸦脚 = 0..*。标注描述紧邻该端的实体数量。</text>
+<text x="48" y="1425" text-anchor="start" font-family="Noto Sans SC" font-size="22" font-weight="400" fill="#243247">约束含义：每条子记录恰属一个父实体；每个父实体可没有子记录，也可关联多条子记录。</text>
+</svg>

@@ -30,6 +30,14 @@ SENSITIVE_RE = re.compile(
     r"(?<![\d.])(?:10\.\d{1,3}|172\.(?:1[6-9]|2\d|3[01])|192\.168)\.\d{1,3}\.\d{1,3}(?![\d.])|"
     r"byted\.org|bytedance\.net|larkoffice|feishu\.cn|larksuite|feishu://|"
     r"(?:AKIA|AKLT)[A-Za-z0-9]{12,}|sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{20,}|xox[bp]-|-----BEGIN [A-Z ]*PRIVATE KEY")
+# Public upstream references are not private tenant resources. Replace only
+# the known owner name, so credentials or private links elsewhere on the same
+# line still reach the existing sensitive-information checks.
+PUBLIC_LARK_OWNER_RE = re.compile(
+    r"(https://(?:github\.com|raw\.githubusercontent\.com)/)larksuite(?=/)")
+PUBLIC_WHITEBOARD_PACKAGE_RE = re.compile(r"@larksuite(?=/whiteboard-cli(?:@|\b))")
+
+
 RAW_META_RE = re.compile(r"^> ?- ?(来源|作者|发布日期|收录日期|原文链接)\s*[:：]", re.M)
 DATE_PREFIX_RE = re.compile(r"^\d{4}-\d{2}-\d{2}-")
 # Scan personal environment hints in all Markdown files, including root docs/skills.
@@ -42,6 +50,12 @@ LINK_RE = re.compile(r"(?<!!)\[[^\]]*\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)")
 WIKILINK_RE = re.compile(r"\[\[[^\]]+\]\]")
 CODE_RE = re.compile(r"```.*?```|`[^`\n]*`", re.S)
 COMMENT_RE = re.compile(r"<!--.*?-->", re.S)
+
+
+def sensitive_line(line):
+    public_safe = PUBLIC_LARK_OWNER_RE.sub(r"\1public-tool-owner", line)
+    public_safe = PUBLIC_WHITEBOARD_PACKAGE_RE.sub("@public-tool-owner", public_safe)
+    return bool(SENSITIVE_RE.search(public_safe) or PERSONAL_ENV_RE.search(line))
 
 
 def parse_frontmatter(text):
@@ -107,7 +121,7 @@ def main():
         if any(part.startswith(".") for part in relpath.parts):
             continue
         for number, line in enumerate(p.read_text(encoding="utf-8").splitlines(), 1):
-            if SENSITIVE_RE.search(line) or PERSONAL_ENV_RE.search(line):
+            if sensitive_line(line):
                 # Report location only; a found credential must not be echoed.
                 errors.append(f"{relpath.as_posix()}:{number}: 疑似敏感信息或个人环境线索（内容已隐藏）")
             if relpath.parts[0] == "raw" and INTERNAL_SOURCE_RE.search(line):
