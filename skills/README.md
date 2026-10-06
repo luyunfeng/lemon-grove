@@ -1,36 +1,54 @@
-# 技术绘图 Skills
+# 技能目录
 
-本仓库保存两版可复用的技术绘图源码。新任务推荐 **lark-tech-diagrams-v2 2.3.0**；V1 保留早期风格和输入约定，便于参考已有工作。
+这里保存知识库配套的可复用技能源码，每个技能一个子目录。知识页放在 `wiki/`，技能的执行规则与使用说明放在这里。
 
-| Skill | 版本 | 用途 | 安装与运行 |
-|---|---|---|---|
-| [lark-tech-diagrams-v2](lark-tech-diagrams-v2/SKILL.md) | 2.3.0 | 16 类技术图，确定性 SVG、语义配色、图型布局、包内字体和离线检查 | [安装说明](lark-tech-diagrams-v2/INSTALL.md) |
-| [lark-architecture-diagrams](lark-architecture-diagrams/SKILL.md) | 1.1.0 | 早期架构、泳道、ER、交互图风格参考；保留旧版检查与空画板发布助手 | [安装说明](lark-architecture-diagrams/INSTALL.md) |
+## 已收录
 
-普通绘图建议只启用 V2；需要旧版时明确点名，避免两份风格同时匹配。安装入口是各目录的 `SKILL.md`，全部代码、模板和必要资源随目录保存，不需要历史聊天。
+| 技能 | 用途 | 入口 |
+|---|---|---|
+| `llm-wiki` | 定位知识库并读取根目录规则，支持后续查询、收录与体检 | [技能入口](llm-wiki/SKILL.md) |
+| `speak-human` | 保留原意，把中文草稿整理成有逻辑的 Markdown 要点 | [使用说明](speak-human/README.md) · [技能入口](speak-human/SKILL.md) |
+| `lark-tech-diagrams-v2` | V2.3.0，16 类技术图的语义配色、确定性排版、包内字体和离线检查；默认推荐 | [使用说明](lark-tech-diagrams-v2/README.md) · [技能入口](lark-tech-diagrams-v2/SKILL.md) |
+| `lark-architecture-diagrams` | V1.1.0，早期架构、泳道、ER、交互图风格及历史检查助手 | [使用说明](lark-architecture-diagrams/README.md) · [技能入口](lark-architecture-diagrams/SKILL.md) |
 
-## V2 的能力与边界
+## 技术绘图选择
 
-V2 覆盖 C4 上下文、C4 容器、C4 组件、分层架构、部署、网络拓扑、流程、泳道、时序、状态机、活动、ER、UML 类、数据流、模块依赖和事件流。
+普通绘图建议启用 `lark-tech-diagrams-v2` 2.3.0；需要早期风格时明确点名 V1，避免两份风格同时匹配。V2 覆盖 C4 上下文/容器/组件、分层架构、部署、网络、流程、泳道、时序、状态机、活动、ER、类、数据流、依赖和事件图，安装及复现检查见 [V2 安装说明](lark-tech-diagrams-v2/INSTALL.md)。
 
-绘图包负责逻辑建模、颜色语义、排版、字体测量、连线与离线质量检查。创建文档、授权、画板更新、上传、导出和原生节点回读由现有飞书 Skill 或官方 CLI 承担。目标工具接收已经生成的 SVG，避免重新生成另一种图后改变风格。
+绘图包负责逻辑、颜色语义、排版、字体测量、连线和离线检查；飞书文档创建、授权、画板更新、上传、导出和回读交给现有 Skill 或官方 CLI。目标工具接收已经生成的 SVG，避免重画成另一种图后改变风格。V1 的旧版空画板发布助手作为历史实现保留，不作为 V2 的依赖；两版都应使用当前调用方自己的账号与目标。
 
-`assets/fonts/` 中的两份 Noto Sans CJK 字体共约 40 MB，附带 SIL OFL 许可和文件哈希。保留字体是为了稳定文字测量和换行；运行时、账号、缓存、云端收据和逐轮实验报告不随 Skill 提交。
+V2 保留约 40 MB 的两份 Noto Sans CJK 字体、SIL OFL 许可及哈希，以稳定文字测量和换行。模板与参考图随目录保存，运行时、账号、缓存、云端收据和逐轮实验报告不入包。当前完整验证环境为 Linux、Python 3.12、Pillow 12.3.0、CairoSVG 2.9.0 与兼容 Fontconfig 的 Cairo；其他平台需独立验证。
 
-## 使用与验证
+## 安装与更新
 
-给 Agent 的典型请求：
+将所需的**完整技能目录**复制或链接到宿主使用的技能目录，保持 `SKILL.md` 与 `references/` 等资源的相对位置。具体目录以当前宿主配置为准。
 
-> 使用 lark-tech-diagrams-v2，把下面的逻辑画成技术图：……
+在使用个人 `skills` 目录的 Codex 环境中，可从本仓库根目录执行以下 Bash 命令。示例安装 `speak-human`；安装 `llm-wiki` 时替换第一行的技能名。
 
-> 使用 lark-tech-diagrams-v2，把下面的逻辑画到指定飞书文档：……
+```bash
+skill_name=speak-human
+skill_source="$(pwd)/skills/$skill_name"
+skill_parent="${CODEX_HOME:-$HOME/.codex}/skills"
+skill_target="$skill_parent/$skill_name"
 
-先按安装说明运行 `check_examples.py`，验证 16 类参考输入与 SVG 一致；陌生业务仍需检查节点、关系、方向、基数、分支及实际 PNG。示例是虚构业务，不能直接当作用户系统事实。输出目录放在仓库和 Skill 之外。
+if [ ! -f "$skill_source/SKILL.md" ]; then
+  printf '%s\n' '请在知识库根目录执行，并检查技能名称。'
+elif [ -e "$skill_target" ] || [ -L "$skill_target" ]; then
+  printf '%s\n' '目标已存在，请先核对内容并备份，避免覆盖本地修改。'
+else
+  mkdir -p "$skill_parent" && ln -s "$skill_source" "$skill_target"
+fi
+```
 
-V2 当前验证环境为 Linux、Python 3.12、Pillow 12.3.0、CairoSVG 2.9.0 和兼容 Fontconfig 的 Cairo。其他操作系统需独立验证；目标端转换和原生文字可编辑性也需由工具回读核验。连接器拖动绑定不在已验证范围内。
+按宿主提供的方式重新加载技能后，使用技能名调用。软链接依赖仓库位置保持稳定；仓库移动后需要重新建立链接。复制安装的技能需要在源码更新后同步副本。
 
-## 维护
+后续修改以仓库源码为准，遵循根目录 `AGENTS.md` 的确认与 PR 流程。技能变更合入并同步到本地后，软链接会读取更新后的内容；同一宿主只保留一份同名技能入口，避免加载到不同版本。
 
-修改 V2 时，先冻结输入与风格，再运行参考复现、长标签/复杂拓扑回归和独立新任务评审。规则与流程见 [迭代验证](lark-tech-diagrams-v2/references/self-evolution.md)。需要修改参考 SVG 时记录原因并实际看图，不只更新哈希。
+## 新增技能
 
-V1 的发布助手作为历史实现保留，不作为 V2 的依赖。仓库副本已去掉作者的应用和目录配置；两版都应使用当前调用方自己的账号与目标。
+1. 创建 `skills/<skill-name>/`，名称用小写英文 kebab-case。
+2. 提供 `SKILL.md` 与 `README.md`。前者写触发条件、行为和必要约束；后者写用途、安装、调用示例、验证与维护方式。
+3. 只有实际需要时才增加 `references/`、`agents/`、`scripts/` 等目录；使用相对引用，避免依赖原始会话或某台机器。
+4. 在上方清单登记，检查示例是否保留原意、引用是否可访问，以及包内是否包含敏感信息，再按知识库流程提交 PR。
+
+需要生成、联网或写入外部系统的技能，应在自己的说明中写清实际依赖与操作范围；目录本身不授予额外权限。

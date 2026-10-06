@@ -63,9 +63,17 @@
 - 更新: wiki/index.md, AGENTS.md（新增 inference 标签）
 - 分支: wiki/20261006-llm-serving-cache
 
+## [2026-10-06] schema | 建立技能目录说明并收录 speak-human
+- 分诊: 归档可复用技能源码，补齐技能清单与配套使用说明
+- 新建: skills/README.md, skills/speak-human/README.md, skills/speak-human/SKILL.md, skills/speak-human/agents/openai.yaml, skills/speak-human/references/format-profile.md, skills/speak-human/references/rubric.md, skills/speak-human/references/research.md
+- 更新: AGENTS.md, README.md, wiki/log.md
+- 要点: 按技能分目录保存；README 说明安装、调用、格式示例、保真边界与验证；技能源码可独立加载，不依赖原始会话或历史评测目录
+- 验证: 知识库 lint 为 0 ERROR / 0 WARN；技能元数据、包内相对链接与锚点、敏感信息及安装命令语法检查通过
+- 分支: wiki/20261004-speak-human-library
+
 ## [2026-10-06] schema | 收录两版技术绘图 Skill 与安装说明
-- 新建: skills/lark-architecture-diagrams/, skills/lark-tech-diagrams-v2/, skills/README.md
+- 新建: skills/lark-architecture-diagrams/, skills/lark-tech-diagrams-v2/（含 README 和 INSTALL）
 - 说明: 保留 V1.1.0 旧版参考，推荐 V2.3.0；附安装、使用、工具边界和验证说明
 - 处理: 去掉仓库副本中的个人应用与目录配置，保留必要字体与许可
-- 更新: README.md, tools/lint.py（公开官方工具引用的识别）, wiki/log.md
+- 更新: skills/README.md, README.md, tools/lint.py（公开官方工具引用的识别）, wiki/log.md
 - 分支: wiki/20261006-technical-diagram-skills

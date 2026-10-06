@@ -34,7 +34,7 @@ CLAUDE.md                         Claude Code 入口，@AGENTS.md 引入本文�
 README.md                         简要用法
 raw/<slug>.md                     原始资料（文章、论文摘录、课程笔记、对话记录…），全部放在 raw/ 一级目录，不分类；文件名不带日期
 raw/assets/<slug>.<ext>           图片等附件（raw/ 下唯一允许的子目录）
-wiki/index.md                     知识地图：按领域分组，每页一行（链接 + 一句话）；全库唯一允许放站内链接的页面
+wiki/index.md                     知识地图：按领域分组，每页一行（链接 + 一句话）；wiki/ 内唯一允许放站内链接的页面
 wiki/log.md                       追加式写入日志（只记录写操作：ingest / lint / schema / wiki）
 wiki/overview.md                  概览：在学什么、掌握到什么程度、待解问题
 wiki/concepts/<slug>.md           概念页：一个知识点（概念、方法、原则）一页
@@ -44,14 +44,24 @@ wiki/syntheses/<slug>.md          综合结论：只有用户明确要求沉淀�
 templates/                        各类页面模板
 tools/lint.py                     机械体检脚本（只读）
 tools/related.py                  按页面、标签或实体列出相关页面（只读）
-skills/llm-wiki/SKILL.md          全局 skill 源文件（按线索找仓库、找不到就克隆，然后定位到本文件；不写规则）
-skills/llm-wiki/INSTALL.md        新机器上安装 skill 的步骤（克隆仓库 + 建软链）
+skills/README.md                 技能清单、安装方式与新增约定
+skills/<skill-name>/SKILL.md      技能入口：触发条件、执行规则与按需读取的资源
+skills/<skill-name>/README.md     配套说明：用途、安装、调用示例、验证与维护
+skills/<skill-name>/references/   可选的格式约定、评分标准、研究依据等参考资料
+skills/<skill-name>/agents/       可选的宿主界面元数据
+skills/llm-wiki/SKILL.md          知识库定位入口；知识库规则仍只以本文件为准
 ```
 
 - 文件名用小写英文 kebab-case（不超过 60 字符）；标题写在 frontmatter 的 `title` 里，可以用中文。
 - wiki 只允许上面这几个一级子目录（concepts / entities / roadmaps / syntheses），不再往下嵌套；不设按资料或按主题拼出来的页面。领域只作为 index 里的分组标题。
-- **正文不放站内链接**（Markdown 链接和 `[[wikilink]]` 都不用），提到别的概念直接写名字。只有 `wiki/index.md` 用相对路径的标准 Markdown 链接指向各页。
+- **wiki 正文不放站内链接**（Markdown 链接和 `[[wikilink]]` 都不用），提到别的概念直接写名字。`wiki/` 内只有 `wiki/index.md` 用相对路径的标准 Markdown 链接指向各页。
 - 文件移动或重命名用 `git mv`，保留历史。
+
+### 技能源码
+
+- `skills/` 保存可复用技能源码，每个技能独立放在 `skills/<skill-name>/`；在 `skills/README.md` 登记，新加入的技能配套 `README.md`。
+- 技能包遵循宿主的文件格式，保留 `SKILL.md`、`README.md` 等标准文件名；不套用 wiki 的四字段 frontmatter 和知识页写法。包内文档可用相对链接引用自身资源，研究依据可保留公开来源链接；根目录 README 可链接技能清单。
+- 仓库中的技能源码通过本文件规定的确认和 PR 流程维护。安装副本或软链接使用完整技能目录，保持资源的相对路径；不得把凭据、个人机器路径、公司敏感材料或私人对话原文打包入库。
 
 ## 3. 页面 frontmatter 与写法
 

@@ -16,9 +16,11 @@ apps/lemon-grove/  柠檬林站点的完整源码、依赖锁文件、测试与 
 templates/         页面模板
 tools/lint.py      只读体检脚本
 tools/related.py   按页面、标签或实体列出相关页面
-skills/llm-wiki/   全局 skill：按线索找到（或克隆）本仓库，再定位到 AGENTS.md
-skills/lark-architecture-diagrams/  V1.1.0 技术绘图旧版参考
-skills/lark-tech-diagrams-v2/       V2.3.0 技术绘图，默认推荐
+skills/           可复用技能源码；每个技能一个子目录，skills/README.md 为清单与安装入口
+  llm-wiki/       知识库定位入口，找到仓库后读取 AGENTS.md
+  speak-human/    中文表达整理：保留原意，用编号、二级补充和局部加粗说清楚
+  lark-architecture-diagrams/  V1.1.0 技术绘图旧版参考
+  lark-tech-diagrams-v2/       V2.3.0 技术绘图，默认推荐
 ```
 
 ## 用法（在 Codex 或 Claude Code 里直接说）
@@ -27,7 +29,9 @@ skills/lark-tech-diagrams-v2/       V2.3.0 技术绘图，默认推荐
 - 写入：「炼化一下：<内容或 URL>」「把这篇收录进知识库」。AI 会先列出计划，**你确认后**才会写入，然后开分支、提交并创建 PR（不会直接改 main，也不会自动合并）。
 - 体检：「知识库体检 / lint 一下」。先给报告，修复同样需要你确认，并走 PR。
 
-skill `llm-wiki` 装好后在任何目录下都能触发。新机器安装见 `skills/llm-wiki/INSTALL.md`。
+skill `llm-wiki` 装好后可在其他目录调用；它会根据当前目录或用户提供的路径定位知识库。技能清单和安装方式见 [skills/README.md](skills/README.md)。
+
+`speak-human` 的规则、格式偏好和评分标准保存在 `skills/speak-human/`，配套 README 提供调用方式、示例和验证方法。例如：「用 $speak-human 改写下面这段话，保留原意，按点展开」。
 
 手工检查：
 
