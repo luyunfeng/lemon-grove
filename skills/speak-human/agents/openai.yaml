@@ -1,0 +1,4 @@
+interface:
+  display_name: "说人话 · 按点说清楚"
+  short_description: "保留原意，把中文草稿整理成有逻辑的 Markdown 要点，减少套话与机械表达"
+  default_prompt: "用 $speak-human 改写下面的内容：保留原意和限制条件，用自然中文按 Markdown 要点展开，让结论、依据和条件的关系清楚。"
