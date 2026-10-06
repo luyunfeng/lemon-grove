@@ -1,0 +1,55 @@
+{
+  "version": "1.1.0",
+  "status": "finalized",
+  "confirmed_by": "user",
+  "family": "semantic-color-and-diagram-specific-layout",
+  "name": "语义配色＋图型专属布局",
+  "default": true,
+  "diagram_types": [
+    "architecture",
+    "swimlane",
+    "er",
+    "interaction-sequence"
+  ],
+  "canonical_examples": {
+    "swimlane": "assets/swimlane/memory-flow.svg",
+    "er": "assets/er/example.svg",
+    "interaction": "assets/interaction/example.svg"
+  },
+  "appearance": {
+    "background": "white",
+    "primary_palette": [
+      "#2563EB",
+      "#7C3AED",
+      "#0F9D92",
+      "#DC8B12"
+    ],
+    "extra_palette": [
+      "#BE3455",
+      "#526B86"
+    ],
+    "heading": "saturated bands",
+    "regions": "pale semantic fills",
+    "body": "dark text",
+    "font": "Noto Sans SC"
+  },
+  "mapping_rule": "同一图中颜色编码单一主要维度；同语义同色；状态不混用归属色",
+  "layout_rule": "按图型表达责任交接、实体关系和基数、参与方与时间、或架构层级",
+  "input_policy": "绘图时用户只给逻辑即可；自动选择图型，不再询问风格",
+  "content_policy": "结构由用户逻辑决定，不为丰富画面擅自增加业务复杂度",
+  "delivery": "editable-lark-whiteboard-unless-user-specifies-otherwise",
+  "secondary_examples": {
+    "swimlane_basic": "assets/swimlane/example.svg"
+  },
+  "swimlane_preference": {
+    "status": "confirmed",
+    "reference": "assets/swimlane/memory-flow.svg",
+    "recipe": "references/swimlane.md",
+    "layout": "horizontal responsibility lanes with neutral stage headers",
+    "steps": "responsibility-colored title bands; labeled decision diamonds",
+    "resource_lanes": "passive data and persistence, not decision makers",
+    "routes": "solid handoffs; dashed current-cycle loops; dotted cross-cycle flow only when applicable",
+    "density": "lane height follows workload; reserve routing corridors",
+    "scope": "reuse visual grammar; derive actors, phases, conditions and topology from the user logic"
+  }
+}

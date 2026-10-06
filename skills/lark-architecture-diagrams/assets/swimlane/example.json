@@ -1,0 +1,158 @@
+{
+  "title": "A · 泳道图｜颜色对应责任，位置对应交接",
+  "basis": "AI研发任务交付的说明性示例，不代表真实生产系统或手册精确模型。",
+  "diagram_type": "swimlane",
+  "color_dimension": "responsible_role",
+  "lanes": [
+    {
+      "id": "requester",
+      "title": "需求方",
+      "color": "#2563EB",
+      "order": 0
+    },
+    {
+      "id": "orchestrator",
+      "title": "任务编排",
+      "color": "#7C3AED",
+      "order": 1
+    },
+    {
+      "id": "agent",
+      "title": "执行Agent",
+      "color": "#0F9D92",
+      "order": 2
+    },
+    {
+      "id": "reviewer",
+      "title": "审阅者",
+      "color": "#DC8B12",
+      "order": 3
+    }
+  ],
+  "nodes": [
+    {
+      "id": "goal",
+      "title": "提交目标",
+      "detail": [
+        "说明目标与验收标准"
+      ],
+      "lane": "requester",
+      "shape": "action"
+    },
+    {
+      "id": "register",
+      "title": "登记任务",
+      "detail": [
+        "记录目标与执行要求"
+      ],
+      "lane": "orchestrator",
+      "shape": "action"
+    },
+    {
+      "id": "execute",
+      "title": "执行 / 自测",
+      "detail": [
+        "实现任务并检查结果"
+      ],
+      "lane": "agent",
+      "shape": "action"
+    },
+    {
+      "id": "artifact",
+      "title": "提交产物",
+      "detail": [
+        "产物与自测记录"
+      ],
+      "lane": "agent",
+      "shape": "action"
+    },
+    {
+      "id": "review",
+      "title": "评审",
+      "detail": [
+        "检查产物与自测证据"
+      ],
+      "lane": "reviewer",
+      "shape": "action"
+    },
+    {
+      "id": "decision",
+      "title": "通过？",
+      "detail": [
+        "核对验收标准"
+      ],
+      "lane": "reviewer",
+      "shape": "decision"
+    },
+    {
+      "id": "delivery",
+      "title": "接收交付",
+      "detail": [
+        "接收产物与验收结果"
+      ],
+      "lane": "requester",
+      "shape": "action"
+    },
+    {
+      "id": "refine",
+      "title": "补充要求",
+      "detail": [
+        "澄清评审指出的缺口"
+      ],
+      "lane": "orchestrator",
+      "shape": "action"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e01",
+      "source": "goal",
+      "target": "register",
+      "kind": "normal"
+    },
+    {
+      "id": "e02",
+      "source": "register",
+      "target": "execute",
+      "kind": "normal"
+    },
+    {
+      "id": "e03",
+      "source": "execute",
+      "target": "artifact",
+      "kind": "normal"
+    },
+    {
+      "id": "e04",
+      "source": "artifact",
+      "target": "review",
+      "kind": "normal"
+    },
+    {
+      "id": "e05",
+      "source": "review",
+      "target": "decision",
+      "kind": "normal"
+    },
+    {
+      "id": "e06",
+      "source": "decision",
+      "target": "delivery",
+      "kind": "normal",
+      "condition": "通过"
+    },
+    {
+      "id": "e07",
+      "source": "decision",
+      "target": "refine",
+      "kind": "rework",
+      "condition": "退回"
+    },
+    {
+      "id": "e08",
+      "source": "refine",
+      "target": "execute",
+      "kind": "rework"
+    }
+  ]
+}

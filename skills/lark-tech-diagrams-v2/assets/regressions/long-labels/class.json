@@ -1,0 +1,160 @@
+{
+  "diagram_type": "class",
+  "title": "异步任务交付平台 · 领域类模型",
+  "subtitle": "长标签测试 · 与 baseline 节点、关系和业务含义一致",
+  "nodes": [
+    {
+      "id": "executor",
+      "label": "«interface» Executor · 领域契约 Domain Model",
+      "lines": [],
+      "rank": 0,
+      "group": "",
+      "role": "purple",
+      "fields": [],
+      "methods": [
+        "+ execute(task): Result"
+      ]
+    },
+    {
+      "id": "python",
+      "label": "PythonExecutor · 领域契约 Domain Model",
+      "lines": [],
+      "rank": 1,
+      "group": "",
+      "role": "purple",
+      "fields": [
+        "- timeout: int"
+      ],
+      "methods": [
+        "+ execute(task): Result"
+      ]
+    },
+    {
+      "id": "task",
+      "label": "Task · 领域契约 Domain Model",
+      "lines": [],
+      "rank": 0,
+      "group": "",
+      "role": "blue",
+      "fields": [
+        "- id: UUID",
+        "- status: TaskStatus"
+      ],
+      "methods": [
+        "+ start(): Attempt",
+        "+ complete(): void"
+      ]
+    },
+    {
+      "id": "attempt",
+      "label": "Attempt · 领域契约 Domain Model",
+      "lines": [],
+      "rank": 1,
+      "group": "",
+      "role": "blue",
+      "fields": [
+        "- sequence: int",
+        "- startedAt: Instant"
+      ],
+      "methods": [
+        "+ finish(): void"
+      ]
+    },
+    {
+      "id": "artifact",
+      "label": "Artifact · 领域契约 Domain Model",
+      "lines": [],
+      "rank": 2,
+      "group": "",
+      "role": "teal",
+      "fields": [
+        "- key: str",
+        "- checksum: str"
+      ],
+      "methods": [
+        "+ verify(): bool"
+      ]
+    },
+    {
+      "id": "service",
+      "label": "TaskService · 领域契约 Domain Model",
+      "lines": [],
+      "rank": 2,
+      "group": "",
+      "role": "orange",
+      "fields": [
+        "- executor: Executor"
+      ],
+      "methods": [
+        "+ submit(): Task",
+        "+ run(task): void"
+      ]
+    },
+    {
+      "id": "base",
+      "label": "BaseExecutor · 领域契约 Domain Model",
+      "lines": [],
+      "role": "purple",
+      "rank": 0,
+      "fields": [
+        "# retries: int"
+      ],
+      "methods": [
+        "+ execute(task): Result"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "c1",
+      "source": "python",
+      "target": "executor",
+      "label": "实现执行契约",
+      "kind": "realization"
+    },
+    {
+      "id": "c2",
+      "source": "task",
+      "target": "attempt",
+      "label": "执行记录",
+      "kind": "composition",
+      "cardinality": {
+        "source": "1",
+        "target": "0..*"
+      }
+    },
+    {
+      "id": "c3",
+      "source": "attempt",
+      "target": "artifact",
+      "label": "产出",
+      "kind": "association",
+      "cardinality": {
+        "source": "1",
+        "target": "0..*"
+      }
+    },
+    {
+      "id": "c4",
+      "source": "service",
+      "target": "executor",
+      "label": "调用",
+      "kind": "dependency"
+    },
+    {
+      "id": "c5",
+      "source": "service",
+      "target": "task",
+      "label": "管理",
+      "kind": "association"
+    },
+    {
+      "id": "c6",
+      "source": "python",
+      "target": "base",
+      "label": "继承公共重试能力",
+      "kind": "inheritance"
+    }
+  ],
+  "case_variant": "long-labels"
+}

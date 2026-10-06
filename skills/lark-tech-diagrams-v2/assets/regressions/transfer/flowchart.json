@@ -1,0 +1,80 @@
+{
+  "diagram_type": "flowchart",
+  "title": "视频转码的输入检查",
+  "subtitle": "示意模型 · 以图型语义表达业务逻辑",
+  "nodes": [
+    {
+      "id": "receive",
+      "label": "接收视频",
+      "kind": "action",
+      "role": "blue"
+    },
+    {
+      "id": "parse",
+      "label": "读取媒体信息",
+      "kind": "action",
+      "role": "purple"
+    },
+    {
+      "id": "valid",
+      "label": "编码格式支持？",
+      "kind": "decision",
+      "role": "amber"
+    },
+    {
+      "id": "save",
+      "label": "执行转码",
+      "kind": "action",
+      "role": "teal"
+    },
+    {
+      "id": "reject",
+      "label": "返回格式错误",
+      "kind": "action",
+      "role": "rose"
+    },
+    {
+      "id": "done",
+      "label": "返回输出文件",
+      "kind": "action",
+      "role": "green"
+    }
+  ],
+  "edges": [
+    {
+      "id": "f1",
+      "source": "receive",
+      "target": "parse",
+      "label": "读取媒体",
+      "kind": "flow"
+    },
+    {
+      "id": "f2",
+      "source": "parse",
+      "target": "valid",
+      "label": "检查编码",
+      "kind": "flow"
+    },
+    {
+      "id": "f3",
+      "source": "valid",
+      "target": "save",
+      "label": "是",
+      "kind": "flow"
+    },
+    {
+      "id": "f4",
+      "source": "valid",
+      "target": "reject",
+      "label": "否",
+      "kind": "flow"
+    },
+    {
+      "id": "f5",
+      "source": "save",
+      "target": "done",
+      "label": "转码完成",
+      "kind": "flow"
+    }
+  ]
+}

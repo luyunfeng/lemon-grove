@@ -1,0 +1,110 @@
+{
+  "diagram_type": "event_flow",
+  "title": "内容发布 · 搜索索引与邮件订阅",
+  "subtitle": "迁移样例 · 两种独立消费副作用；邮件失败不会替代搜索确认",
+  "nodes": [
+    {
+      "id": "cms",
+      "label": "内容管理服务",
+      "kind": "publisher",
+      "role": "blue",
+      "lines": [
+        "文章发布后提交事件"
+      ]
+    },
+    {
+      "id": "articles",
+      "label": "content.published",
+      "kind": "topic",
+      "role": "purple",
+      "event_type": "ArticlePublished",
+      "delivery_mode": "fanout",
+      "lines": [
+        "持久化主题 · ArticlePublished"
+      ]
+    },
+    {
+      "id": "index",
+      "label": "搜索索引订阅者",
+      "kind": "subscriber",
+      "role": "teal",
+      "lines": [
+        "subscription: search-index",
+        "按文章版本更新索引"
+      ]
+    },
+    {
+      "id": "mail",
+      "label": "邮件摘要订阅者",
+      "kind": "subscriber",
+      "role": "teal",
+      "lines": [
+        "subscription: digest-mail",
+        "按事件标识去重发送"
+      ]
+    },
+    {
+      "id": "failed",
+      "label": "content.mail.dead",
+      "kind": "dead_letter",
+      "role": "rose",
+      "lines": [
+        "保留原文章事件与邮件错误"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "publish",
+      "source": "cms",
+      "target": "articles",
+      "label": "发布 ArticlePublished",
+      "kind": "publish",
+      "event_type": "ArticlePublished"
+    },
+    {
+      "id": "index-delivery",
+      "source": "articles",
+      "target": "index",
+      "label": "ArticlePublished · search-index",
+      "kind": "deliver",
+      "event_type": "ArticlePublished",
+      "subscription": "search-index"
+    },
+    {
+      "id": "mail-delivery",
+      "source": "articles",
+      "target": "mail",
+      "label": "ArticlePublished · digest-mail",
+      "kind": "deliver",
+      "event_type": "ArticlePublished",
+      "subscription": "digest-mail"
+    },
+    {
+      "id": "index-ack",
+      "source": "index",
+      "target": "articles",
+      "label": "search-index 消费确认",
+      "kind": "ack",
+      "acknowledges": "index-delivery"
+    },
+    {
+      "id": "mail-ack",
+      "source": "mail",
+      "target": "articles",
+      "label": "digest-mail 消费确认",
+      "kind": "ack",
+      "acknowledges": "mail-delivery"
+    },
+    {
+      "id": "mail-dead",
+      "source": "mail",
+      "target": "failed",
+      "label": "重试耗尽 · 原事件与邮件错误",
+      "kind": "dead_letter",
+      "event_type": "ArticlePublished",
+      "failed_delivery": "mail-delivery"
+    }
+  ],
+  "case_variant": "transfer"
+}

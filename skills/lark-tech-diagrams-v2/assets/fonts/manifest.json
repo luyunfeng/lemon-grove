@@ -1,0 +1,8 @@
+{
+  "fonts": {
+    "NotoSansCJK-Bold.ttc": "faa5f3656a78b2e2d450d27fe8382c778bc2b6bb5ea29c986664a6a435056ceb",
+    "NotoSansCJK-Regular.ttc": "b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a"
+  },
+  "license": "SIL Open Font License 1.1",
+  "source": "https://github.com/notofonts/noto-cjk"
+}

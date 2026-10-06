@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 733.40625 1108.0" width="733.40625" height="1108.0"><defs><marker id="arrow-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#CBA02E"/></marker><marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#4675F5"/></marker><marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#30A698"/></marker><marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#35A56D"/></marker><marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#E98655"/></marker><marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#9870DA"/></marker><marker id="arrow-rose" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#CC6B80"/></marker><marker id="arrow-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#697C96"/></marker><marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#30A698"/></marker></defs><rect x="0" y="0" width="733.40625" height="1108.0" fill="#FCFDFE"/><line x1="206.703125" y1="42" x2="366.703125" y2="42" stroke="#4675F5" stroke-width="6" stroke-linecap="round"/>
+<line x1="366.703125" y1="42" x2="526.703125" y2="42" stroke="#30A698" stroke-width="6" stroke-linecap="round"/>
+<text x="366.703125" y="88" font-family="Noto Sans SC" font-size="36" font-weight="bold" fill="#253149" text-anchor="middle">工单生命周期</text>
+<text x="366.703125" y="124" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#71809A" text-anchor="middle">示意模型 · 以图型语义表达业务逻辑；状态机在创建时建立</text>
+<polyline data-edge-id="s1" data-source="initial" data-target="new" points="369.81718750000005,196.0 369.81718750000005,322.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="s2" data-source="new" data-target="active" points="369.81718750000005,366.0 369.81718750000005,486.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="s3" data-source="active" data-target="review" points="369.81718750000005,530.0 369.81718750000005,650.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="s4" data-source="review" data-target="active" points="249.81718750000002,672.0 225.81718750000002,672.0 225.81718750000002,508.0 249.81718750000002,508.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="s5" data-source="review" data-target="closed" points="369.81718750000005,694.0 369.81718750000005,814.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="s6" data-source="closed" data-target="final" points="369.81718750000005,858.0 369.81718750000005,984.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<g data-node-id="initial">
+<circle cx="369.81718750000005" cy="187.0" r="9.0" fill="#697C96" stroke="#697C96" stroke-width="1.9"/>
+</g>
+<g data-node-id="new">
+<rect x="249.81718750000002" y="322.0" width="240" height="44.0" rx="14" fill="#F7F2FC" stroke="#9870DA" stroke-width="1.9"/>
+<text x="267.81718750000005" y="351.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#7047AE" text-anchor="start">待分派</text>
+</g>
+<g data-node-id="active">
+<rect x="249.81718750000002" y="486.0" width="240" height="44.0" rx="14" fill="#F0F5FE" stroke="#4675F5" stroke-width="1.9"/>
+<text x="267.81718750000005" y="515.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#2D4F9A" text-anchor="start">处理中</text>
+</g>
+<g data-node-id="review">
+<rect x="249.81718750000002" y="650.0" width="240" height="44.0" rx="14" fill="#FFFAE9" stroke="#CBA02E" stroke-width="1.9"/>
+<text x="267.81718750000005" y="679.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#866018" text-anchor="start">待验收</text>
+</g>
+<g data-node-id="closed">
+<rect x="249.81718750000002" y="814.0" width="240" height="44.0" rx="14" fill="#EDF8F5" stroke="#30A698" stroke-width="1.9"/>
+<text x="267.81718750000005" y="843.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#1E756C" text-anchor="start">已关闭</text>
+</g>
+<g data-node-id="final">
+<circle cx="369.81718750000005" cy="993.0" r="9.0" fill="#FFFFFF" stroke="#697C96" stroke-width="1.9"/>
+<circle cx="369.81718750000005" cy="993.0" r="5.8500000000000005" fill="#697C96"/>
+</g>
+<rect x="374.81718750000005" y="242.0" width="111.56093750000001" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="430.59765625000006" y="265.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">/ 保存工单</text>
+<rect x="374.81718750000005" y="409.0" width="183.81718750000002" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="466.72578125000007" y="432.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">分派 [负责人有效]</text>
+<rect x="374.81718750000005" y="573.0" width="160.49375" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="455.06406250000003" y="596.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">提交 / 请求验收</text>
+<rect x="60.3234375" y="573.0" width="160.49375" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="140.5703125" y="596.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">驳回 / 补充处理</text>
+<rect x="374.81718750000005" y="737.0" width="160.49375" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="455.06406250000003" y="760.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">通过 / 关闭工单</text>
+<rect x="374.81718750000005" y="904.0" width="98.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="423.81718750000005" y="927.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">归档完成</text></svg>

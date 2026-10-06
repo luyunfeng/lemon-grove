@@ -1,0 +1,238 @@
+{
+  "diagram_type": "er",
+  "title": "异步任务交付平台 · 数据关系",
+  "subtitle": "示意模型 · 颜色表达职责，关系按图型语法绘制",
+  "nodes": [
+    {
+      "id": "tenant",
+      "label": "租户 Tenant",
+      "lines": [],
+      "rank": 0,
+      "group": "",
+      "role": "blue",
+      "fields": [
+        {
+          "name": "tenant_id",
+          "type": "uuid",
+          "key": "PK"
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "key": ""
+        }
+      ]
+    },
+    {
+      "id": "task",
+      "label": "任务 Task",
+      "lines": [],
+      "rank": 1,
+      "group": "",
+      "role": "blue",
+      "fields": [
+        {
+          "name": "task_id",
+          "type": "uuid",
+          "key": "PK"
+        },
+        {
+          "name": "tenant_id",
+          "type": "uuid",
+          "key": "FK"
+        },
+        {
+          "name": "status",
+          "type": "text",
+          "key": ""
+        }
+      ]
+    },
+    {
+      "id": "attempt",
+      "label": "执行 Attempt",
+      "lines": [],
+      "rank": 2,
+      "group": "",
+      "role": "purple",
+      "fields": [
+        {
+          "name": "attempt_id",
+          "type": "uuid",
+          "key": "PK"
+        },
+        {
+          "name": "task_id",
+          "type": "uuid",
+          "key": "FK"
+        },
+        {
+          "name": "started_at",
+          "type": "timestamp",
+          "key": ""
+        }
+      ]
+    },
+    {
+      "id": "artifact",
+      "label": "交付物 Artifact",
+      "lines": [],
+      "rank": 3,
+      "group": "",
+      "role": "teal",
+      "fields": [
+        {
+          "name": "artifact_id",
+          "type": "uuid",
+          "key": "PK"
+        },
+        {
+          "name": "attempt_id",
+          "type": "uuid",
+          "key": "FK"
+        },
+        {
+          "name": "object_key",
+          "type": "text",
+          "key": ""
+        }
+      ]
+    },
+    {
+      "id": "endpoint",
+      "label": "回调端点 Endpoint",
+      "lines": [],
+      "rank": 1,
+      "group": "",
+      "role": "orange",
+      "fields": [
+        {
+          "name": "endpoint_id",
+          "type": "uuid",
+          "key": "PK"
+        },
+        {
+          "name": "tenant_id",
+          "type": "uuid",
+          "key": "FK"
+        },
+        {
+          "name": "url",
+          "type": "text",
+          "key": ""
+        }
+      ]
+    },
+    {
+      "id": "delivery",
+      "label": "通知投递 Delivery",
+      "lines": [],
+      "rank": 2,
+      "group": "",
+      "role": "orange",
+      "fields": [
+        {
+          "name": "delivery_id",
+          "type": "uuid",
+          "key": "PK"
+        },
+        {
+          "name": "task_id",
+          "type": "uuid",
+          "key": "FK"
+        },
+        {
+          "name": "endpoint_id",
+          "type": "uuid",
+          "key": "FK"
+        },
+        {
+          "name": "status",
+          "type": "text",
+          "key": ""
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "r1",
+      "source": "tenant",
+      "target": "task",
+      "label": "拥有",
+      "kind": "relationship",
+      "source_field": "tenant_id",
+      "target_field": "tenant_id",
+      "cardinality": {
+        "source": "1",
+        "target": "0..*"
+      }
+    },
+    {
+      "id": "r2",
+      "source": "task",
+      "target": "attempt",
+      "label": "执行记录",
+      "kind": "relationship",
+      "source_field": "task_id",
+      "target_field": "task_id",
+      "cardinality": {
+        "source": "1",
+        "target": "0..*"
+      }
+    },
+    {
+      "id": "r3",
+      "source": "attempt",
+      "target": "artifact",
+      "label": "产出",
+      "kind": "relationship",
+      "source_field": "attempt_id",
+      "target_field": "attempt_id",
+      "cardinality": {
+        "source": "1",
+        "target": "0..*"
+      }
+    },
+    {
+      "id": "r4",
+      "source": "tenant",
+      "target": "endpoint",
+      "label": "配置",
+      "kind": "relationship",
+      "source_field": "tenant_id",
+      "target_field": "tenant_id",
+      "cardinality": {
+        "source": "1",
+        "target": "0..*"
+      }
+    },
+    {
+      "id": "r5",
+      "source": "task",
+      "target": "delivery",
+      "label": "触发",
+      "kind": "relationship",
+      "source_field": "task_id",
+      "target_field": "task_id",
+      "cardinality": {
+        "source": "1",
+        "target": "0..*"
+      }
+    },
+    {
+      "id": "r6",
+      "source": "endpoint",
+      "target": "delivery",
+      "label": "接收",
+      "kind": "relationship",
+      "source_field": "endpoint_id",
+      "target_field": "endpoint_id",
+      "cardinality": {
+        "source": "1",
+        "target": "0..*"
+      }
+    }
+  ],
+  "case_variant": "baseline"
+}

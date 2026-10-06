@@ -1,0 +1,113 @@
+{
+  "diagram_type": "activity",
+  "title": "发布前的并行检查活动",
+  "subtitle": "长标签验证 · 业务关系与 baseline 完全一致",
+  "nodes": [
+    {
+      "id": "initial",
+      "label": "",
+      "kind": "initial",
+      "role": "slate"
+    },
+    {
+      "id": "prepare",
+      "label": "准备发布候选\nReleaseCandidateVerification",
+      "kind": "action",
+      "role": "blue"
+    },
+    {
+      "id": "fork",
+      "label": "",
+      "kind": "fork",
+      "role": "purple"
+    },
+    {
+      "id": "test",
+      "label": "运行自动化测试\nReleaseCandidateVerification",
+      "kind": "action",
+      "role": "teal"
+    },
+    {
+      "id": "scan",
+      "label": "执行依赖扫描\nReleaseCandidateVerification",
+      "kind": "action",
+      "role": "orange"
+    },
+    {
+      "id": "join",
+      "label": "",
+      "kind": "join",
+      "role": "purple"
+    },
+    {
+      "id": "report",
+      "label": "汇总检查结果\nReleaseCandidateVerification",
+      "kind": "action",
+      "role": "green"
+    },
+    {
+      "id": "final",
+      "label": "",
+      "kind": "final",
+      "role": "slate"
+    }
+  ],
+  "edges": [
+    {
+      "id": "a1",
+      "source": "initial",
+      "target": "prepare",
+      "label": "开始检查 · 保留完整上下文",
+      "kind": "flow"
+    },
+    {
+      "id": "a2",
+      "source": "prepare",
+      "target": "fork",
+      "label": "候选就绪 · 保留完整上下文",
+      "kind": "flow"
+    },
+    {
+      "id": "a3",
+      "source": "fork",
+      "target": "test",
+      "label": "启动测试 · 保留完整上下文",
+      "kind": "flow"
+    },
+    {
+      "id": "a4",
+      "source": "fork",
+      "target": "scan",
+      "label": "启动扫描 · 保留完整上下文",
+      "kind": "flow"
+    },
+    {
+      "id": "a5",
+      "source": "test",
+      "target": "join",
+      "label": "测试结果 · 保留完整上下文",
+      "kind": "flow"
+    },
+    {
+      "id": "a6",
+      "source": "scan",
+      "target": "join",
+      "label": "扫描结果 · 保留完整上下文",
+      "kind": "flow"
+    },
+    {
+      "id": "a7",
+      "source": "join",
+      "target": "report",
+      "label": "全部检查完成 · 保留完整上下文",
+      "kind": "flow"
+    },
+    {
+      "id": "a8",
+      "source": "report",
+      "target": "final",
+      "label": "结果已汇总 · 保留完整上下文",
+      "kind": "flow"
+    }
+  ]
+}

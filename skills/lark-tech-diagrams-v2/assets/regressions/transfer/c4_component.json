@@ -1,0 +1,119 @@
+{
+  "diagram_type": "c4_component",
+  "title": "稿件管理 API · C4 组件",
+  "subtitle": "独立示意模型 · 非生产事实",
+  "nodes": [
+    {
+      "id": "editorweb",
+      "label": "在线编辑器",
+      "kind": "container",
+      "role": "slate",
+      "rank": 0,
+      "group": "",
+      "responsibility": "提交稿件版本",
+      "technology": "Browser",
+      "lines": []
+    },
+    {
+      "id": "handler",
+      "label": "稿件请求处理器",
+      "kind": "component",
+      "role": "blue",
+      "rank": 1,
+      "group": "manuscript-api",
+      "responsibility": "解析稿件提交请求",
+      "technology": "Go Handler",
+      "lines": []
+    },
+    {
+      "id": "policy",
+      "label": "发行规则检查器",
+      "kind": "component",
+      "role": "purple",
+      "rank": 2,
+      "group": "manuscript-api",
+      "responsibility": "校验稿件完整性与批准状态",
+      "technology": "Go Package",
+      "lines": []
+    },
+    {
+      "id": "repo",
+      "label": "稿件版本仓储",
+      "kind": "component",
+      "role": "teal",
+      "rank": 3,
+      "group": "manuscript-api",
+      "responsibility": "保存与检索稿件版本",
+      "technology": "S3 Client",
+      "lines": []
+    },
+    {
+      "id": "publisher",
+      "label": "发行目录适配器",
+      "kind": "component",
+      "role": "orange",
+      "rank": 3,
+      "group": "manuscript-api",
+      "responsibility": "登记获准发行的作品",
+      "technology": "HTTPS Client",
+      "lines": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "tp1",
+      "source": "editorweb",
+      "target": "handler",
+      "label": "HTTPS / 上传稿件",
+      "kind": "flow"
+    },
+    {
+      "id": "tp2",
+      "source": "handler",
+      "target": "policy",
+      "label": "检查发行资格",
+      "kind": "flow"
+    },
+    {
+      "id": "tp3",
+      "source": "policy",
+      "target": "repo",
+      "label": "读取已批准版本",
+      "kind": "flow"
+    },
+    {
+      "id": "tp4",
+      "source": "handler",
+      "target": "publisher",
+      "label": "登记发行作品",
+      "kind": "flow"
+    }
+  ],
+  "groups": [
+    {
+      "id": "manuscript-api",
+      "label": "稿件管理 API",
+      "kind": "container-boundary",
+      "role": "purple",
+      "parent_system": "数字出版平台"
+    }
+  ],
+  "legend": [
+    {
+      "role": "blue",
+      "label": "请求适配"
+    },
+    {
+      "role": "purple",
+      "label": "领域规则"
+    },
+    {
+      "role": "teal",
+      "label": "持久化适配"
+    },
+    {
+      "role": "orange",
+      "label": "外部通知适配"
+    }
+  ]
+}

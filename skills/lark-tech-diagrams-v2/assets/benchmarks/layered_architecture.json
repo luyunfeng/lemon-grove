@@ -1,0 +1,169 @@
+{
+  "diagram_type": "layered_architecture",
+  "title": "预约系统 · 职责分层 · 扩展结构",
+  "subtitle": "独立示意模型 · 非生产事实",
+  "nodes": [
+    {
+      "id": "web",
+      "label": "预约页面",
+      "kind": "module",
+      "role": "blue",
+      "rank": 0,
+      "group": "presentation",
+      "responsibility": "采集用户意图",
+      "technology": "Web UI",
+      "lines": []
+    },
+    {
+      "id": "handler",
+      "label": "请求协调器",
+      "kind": "module",
+      "role": "blue",
+      "rank": 0,
+      "group": "presentation",
+      "responsibility": "转译请求并调用用例",
+      "technology": "HTTP Controller",
+      "lines": []
+    },
+    {
+      "id": "usecase",
+      "label": "提交预约用例",
+      "kind": "module",
+      "role": "purple",
+      "rank": 1,
+      "group": "application",
+      "responsibility": "编排一次预约事务",
+      "technology": "Application Service",
+      "lines": []
+    },
+    {
+      "id": "domain",
+      "label": "名额领域服务",
+      "kind": "module",
+      "role": "orange",
+      "rank": 2,
+      "group": "domain",
+      "responsibility": "维护容量不变量",
+      "technology": "Domain Model",
+      "lines": []
+    },
+    {
+      "id": "repo",
+      "label": "预约存储适配器",
+      "kind": "module",
+      "role": "teal",
+      "rank": 3,
+      "group": "infrastructure",
+      "responsibility": "提供事务与持久化",
+      "technology": "SQL Repository",
+      "lines": []
+    },
+    {
+      "id": "cancel",
+      "label": "取消预约用例",
+      "kind": "module",
+      "role": "purple",
+      "rank": 1,
+      "group": "application",
+      "responsibility": "撤销预约并释放名额",
+      "technology": "Application Service",
+      "lines": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "ly1",
+      "source": "web",
+      "target": "handler",
+      "label": "提交页面输入",
+      "kind": "flow"
+    },
+    {
+      "id": "ly2",
+      "source": "handler",
+      "target": "usecase",
+      "label": "执行提交用例",
+      "kind": "flow"
+    },
+    {
+      "id": "ly3",
+      "source": "usecase",
+      "target": "domain",
+      "label": "校验名额规则",
+      "kind": "flow"
+    },
+    {
+      "id": "ly4",
+      "source": "domain",
+      "target": "repo",
+      "label": "调用存储接口",
+      "kind": "flow"
+    },
+    {
+      "id": "ly5",
+      "source": "handler",
+      "target": "cancel",
+      "label": "执行取消用例",
+      "kind": "flow"
+    },
+    {
+      "id": "ly6",
+      "source": "cancel",
+      "target": "domain",
+      "label": "校验释放条件",
+      "kind": "flow"
+    }
+  ],
+  "groups": [
+    {
+      "id": "presentation",
+      "label": "接入层",
+      "kind": "layer",
+      "role": "blue",
+      "order": 0,
+      "responsibility": "请求与展示"
+    },
+    {
+      "id": "application",
+      "label": "应用层",
+      "kind": "layer",
+      "role": "purple",
+      "order": 1,
+      "responsibility": "用例编排"
+    },
+    {
+      "id": "domain",
+      "label": "领域层",
+      "kind": "layer",
+      "role": "orange",
+      "order": 2,
+      "responsibility": "业务不变量"
+    },
+    {
+      "id": "infrastructure",
+      "label": "基础设施层",
+      "kind": "layer",
+      "role": "teal",
+      "order": 3,
+      "responsibility": "存储实现"
+    }
+  ],
+  "legend": [
+    {
+      "role": "blue",
+      "label": "接入"
+    },
+    {
+      "role": "purple",
+      "label": "用例"
+    },
+    {
+      "role": "orange",
+      "label": "领域"
+    },
+    {
+      "role": "teal",
+      "label": "基础设施"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "diagram_type": "class",
+  "title": "文档排版 · 渲染策略与对象组合",
+  "subtitle": "迁移样例 · 空心三角指向契约，实心菱形位于整体",
+  "nodes": [
+    {
+      "id": "renderer",
+      "label": "«interface» Renderer",
+      "role": "purple",
+      "fields": [],
+      "methods": [
+        "+ render(page): bytes"
+      ]
+    },
+    {
+      "id": "pdf",
+      "label": "PdfRenderer",
+      "role": "purple",
+      "fields": [
+        "- dpi: int"
+      ],
+      "methods": [
+        "+ render(page): bytes"
+      ]
+    },
+    {
+      "id": "document",
+      "label": "Document",
+      "role": "blue",
+      "fields": [
+        "- title: str"
+      ],
+      "methods": [
+        "+ addPage(): Page"
+      ]
+    },
+    {
+      "id": "page",
+      "label": "Page",
+      "role": "teal",
+      "fields": [
+        "- index: int"
+      ],
+      "methods": [
+        "+ layout(): void"
+      ]
+    },
+    {
+      "id": "block",
+      "label": "TextBlock",
+      "role": "teal",
+      "fields": [
+        "- text: str"
+      ],
+      "methods": [
+        "+ measure(): Size"
+      ]
+    },
+    {
+      "id": "exporter",
+      "label": "ExportService",
+      "role": "orange",
+      "fields": [
+        "- renderer: Renderer"
+      ],
+      "methods": [
+        "+ export(document): bytes"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "implements",
+      "source": "pdf",
+      "target": "renderer",
+      "label": "实现排版契约",
+      "kind": "realization"
+    },
+    {
+      "id": "pages",
+      "source": "document",
+      "target": "page",
+      "label": "拥有页面",
+      "kind": "composition",
+      "cardinality": {
+        "source": "1",
+        "target": "1..*"
+      }
+    },
+    {
+      "id": "blocks",
+      "source": "page",
+      "target": "block",
+      "label": "拥有文本块",
+      "kind": "composition",
+      "cardinality": {
+        "source": "1",
+        "target": "0..*"
+      }
+    },
+    {
+      "id": "uses",
+      "source": "exporter",
+      "target": "renderer",
+      "label": "调用渲染契约",
+      "kind": "dependency"
+    },
+    {
+      "id": "exports",
+      "source": "exporter",
+      "target": "document",
+      "label": "读取文档内容",
+      "kind": "association"
+    }
+  ],
+  "case_variant": "transfer"
+}

@@ -8,6 +8,16 @@
 |---|---|---|
 | `llm-wiki` | 定位知识库并读取根目录规则，支持后续查询、收录与体检 | [技能入口](llm-wiki/SKILL.md) |
 | `speak-human` | 保留原意，把中文草稿整理成有逻辑的 Markdown 要点 | [使用说明](speak-human/README.md) · [技能入口](speak-human/SKILL.md) |
+| `lark-tech-diagrams-v2` | V2.3.0，16 类技术图的语义配色、确定性排版、包内字体和离线检查；默认推荐 | [使用说明](lark-tech-diagrams-v2/README.md) · [技能入口](lark-tech-diagrams-v2/SKILL.md) |
+| `lark-architecture-diagrams` | V1.1.0，早期架构、泳道、ER、交互图风格及历史检查助手 | [使用说明](lark-architecture-diagrams/README.md) · [技能入口](lark-architecture-diagrams/SKILL.md) |
+
+## 技术绘图选择
+
+普通绘图建议启用 `lark-tech-diagrams-v2` 2.3.0；需要早期风格时明确点名 V1，避免两份风格同时匹配。V2 覆盖 C4 上下文/容器/组件、分层架构、部署、网络、流程、泳道、时序、状态机、活动、ER、类、数据流、依赖和事件图，安装及复现检查见 [V2 安装说明](lark-tech-diagrams-v2/INSTALL.md)。
+
+绘图包负责逻辑、颜色语义、排版、字体测量、连线和离线检查；飞书文档创建、授权、画板更新、上传、导出和回读交给现有 Skill 或官方 CLI。目标工具接收已经生成的 SVG，避免重画成另一种图后改变风格。V1 的旧版空画板发布助手作为历史实现保留，不作为 V2 的依赖；两版都应使用当前调用方自己的账号与目标。
+
+V2 保留约 40 MB 的两份 Noto Sans CJK 字体、SIL OFL 许可及哈希，以稳定文字测量和换行。模板与参考图随目录保存，运行时、账号、缓存、云端收据和逐轮实验报告不入包。当前完整验证环境为 Linux、Python 3.12、Pillow 12.3.0、CairoSVG 2.9.0 与兼容 Fontconfig 的 Cairo；其他平台需独立验证。
 
 ## 安装与更新
 

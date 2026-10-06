@@ -1,0 +1,133 @@
+{
+  "diagram_type": "c4_component",
+  "title": "预约 API · C4 组件 · 长标签可读性",
+  "subtitle": "独立示意模型 · 非生产事实",
+  "nodes": [
+    {
+      "id": "web",
+      "label": "预约 Web 应用 / Responsibility Boundary",
+      "kind": "container",
+      "role": "slate",
+      "rank": 0,
+      "group": "",
+      "responsibility": "提交预约请求",
+      "technology": "Browser",
+      "lines": [
+        "边界内职责与协作约束说明 / explicit responsibility and collaboration contract"
+      ]
+    },
+    {
+      "id": "handler",
+      "label": "预约控制器 / Responsibility Boundary",
+      "kind": "component",
+      "role": "blue",
+      "rank": 1,
+      "group": "api-boundary",
+      "responsibility": "解析请求与返回结果",
+      "technology": "HTTP Handler",
+      "lines": [
+        "边界内职责与协作约束说明 / explicit responsibility and collaboration contract"
+      ]
+    },
+    {
+      "id": "policy",
+      "label": "名额策略 / Responsibility Boundary",
+      "kind": "component",
+      "role": "purple",
+      "rank": 2,
+      "group": "api-boundary",
+      "responsibility": "检查容量与预约约束",
+      "technology": "Python Module",
+      "lines": [
+        "边界内职责与协作约束说明 / explicit responsibility and collaboration contract"
+      ]
+    },
+    {
+      "id": "repo",
+      "label": "预约仓储 / Responsibility Boundary",
+      "kind": "component",
+      "role": "teal",
+      "rank": 3,
+      "group": "api-boundary",
+      "responsibility": "封装事务与记录持久化",
+      "technology": "Python Repository",
+      "lines": [
+        "边界内职责与协作约束说明 / explicit responsibility and collaboration contract"
+      ]
+    },
+    {
+      "id": "publisher",
+      "label": "确认通知适配器 / Responsibility Boundary",
+      "kind": "component",
+      "role": "orange",
+      "rank": 3,
+      "group": "api-boundary",
+      "responsibility": "把确认事件交给消息系统",
+      "technology": "HTTP Client",
+      "lines": [
+        "边界内职责与协作约束说明 / explicit responsibility and collaboration contract"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "cp1",
+      "source": "web",
+      "target": "handler",
+      "label": "HTTPS / 预约请求 / explicit contract",
+      "kind": "flow"
+    },
+    {
+      "id": "cp2",
+      "source": "handler",
+      "target": "policy",
+      "label": "校验预约条件 / explicit contract",
+      "kind": "flow"
+    },
+    {
+      "id": "cp3",
+      "source": "policy",
+      "target": "repo",
+      "label": "事务内占用名额 / explicit contract",
+      "kind": "flow"
+    },
+    {
+      "id": "cp4",
+      "source": "handler",
+      "target": "publisher",
+      "label": "提交后发送确认 / explicit contract",
+      "kind": "flow"
+    }
+  ],
+  "groups": [
+    {
+      "id": "api-boundary",
+      "label": "预约 API / Ownership",
+      "kind": "container-boundary",
+      "role": "slate",
+      "parent_system": "预约平台"
+    }
+  ],
+  "legend": [
+    {
+      "role": "slate",
+      "label": "外部Web容器"
+    },
+    {
+      "role": "blue",
+      "label": "请求入口"
+    },
+    {
+      "role": "purple",
+      "label": "领域规则"
+    },
+    {
+      "role": "teal",
+      "label": "持久化组件"
+    },
+    {
+      "role": "orange",
+      "label": "通知适配"
+    }
+  ]
+}

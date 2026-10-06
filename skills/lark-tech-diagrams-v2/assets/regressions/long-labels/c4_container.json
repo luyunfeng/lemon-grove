@@ -1,0 +1,133 @@
+{
+  "diagram_type": "c4_container",
+  "title": "预约平台 · C4 容器 · 长标签可读性",
+  "subtitle": "独立示意模型 · 非生产事实",
+  "nodes": [
+    {
+      "id": "user",
+      "label": "预约用户 / Responsibility Boundary",
+      "kind": "person",
+      "role": "slate",
+      "rank": 0,
+      "group": "",
+      "responsibility": "通过网页预约",
+      "technology": "",
+      "lines": [
+        "边界内职责与协作约束说明 / explicit responsibility and collaboration contract"
+      ]
+    },
+    {
+      "id": "web",
+      "label": "预约 Web 应用 / Responsibility Boundary",
+      "kind": "container",
+      "role": "blue",
+      "rank": 1,
+      "group": "booking-system",
+      "responsibility": "展示时段与预约结果",
+      "technology": "TypeScript / Browser",
+      "lines": [
+        "边界内职责与协作约束说明 / explicit responsibility and collaboration contract"
+      ]
+    },
+    {
+      "id": "api",
+      "label": "预约 API / Responsibility Boundary",
+      "kind": "container",
+      "role": "purple",
+      "rank": 2,
+      "group": "booking-system",
+      "responsibility": "校验名额并提交预约",
+      "technology": "Python / HTTP",
+      "lines": [
+        "边界内职责与协作约束说明 / explicit responsibility and collaboration contract"
+      ]
+    },
+    {
+      "id": "db",
+      "label": "预约数据库 / Responsibility Boundary",
+      "kind": "container",
+      "role": "teal",
+      "rank": 3,
+      "group": "booking-system",
+      "responsibility": "保存时段与预约记录",
+      "technology": "PostgreSQL",
+      "lines": [
+        "边界内职责与协作约束说明 / explicit responsibility and collaboration contract"
+      ],
+      "storage": true
+    },
+    {
+      "id": "message",
+      "label": "消息投递系统 / Responsibility Boundary",
+      "kind": "external",
+      "role": "orange",
+      "rank": 4,
+      "group": "",
+      "responsibility": "投递预约通知",
+      "technology": "HTTPS",
+      "lines": [
+        "边界内职责与协作约束说明 / explicit responsibility and collaboration contract"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "ct1",
+      "source": "user",
+      "target": "web",
+      "label": "使用预约页面 / explicit contract",
+      "kind": "flow"
+    },
+    {
+      "id": "ct2",
+      "source": "web",
+      "target": "api",
+      "label": "HTTPS / 提交预约 / explicit contract",
+      "kind": "flow"
+    },
+    {
+      "id": "ct3",
+      "source": "api",
+      "target": "db",
+      "label": "SQL / 保存预约 / explicit contract",
+      "kind": "flow"
+    },
+    {
+      "id": "ct4",
+      "source": "api",
+      "target": "message",
+      "label": "HTTPS / 发送确认 / explicit contract",
+      "kind": "flow"
+    }
+  ],
+  "groups": [
+    {
+      "id": "booking-system",
+      "label": "预约平台 / Ownership",
+      "kind": "system-boundary",
+      "role": "slate"
+    }
+  ],
+  "legend": [
+    {
+      "role": "slate",
+      "label": "使用者"
+    },
+    {
+      "role": "blue",
+      "label": "Web界面"
+    },
+    {
+      "role": "purple",
+      "label": "业务API"
+    },
+    {
+      "role": "teal",
+      "label": "数据存储"
+    },
+    {
+      "role": "orange",
+      "label": "外部消息"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2396.601176470588 919.6" width="2396.601176470588" height="919.6"><defs><marker id="arrow-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#CBA02E"/></marker><marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#4675F5"/></marker><marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#30A698"/></marker><marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#35A56D"/></marker><marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#E98655"/></marker><marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#9870DA"/></marker><marker id="arrow-rose" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#CC6B80"/></marker><marker id="arrow-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#697C96"/></marker><marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#30A698"/></marker></defs><rect x="0" y="0" width="2396.601176470588" height="919.6" fill="#FCFDFE"/><rect x="124.60000000000001" y="172" width="2159.5011764705882" height="164.0" rx="14" fill="#F0F5FE" stroke="#91AFF0" stroke-width="1.4" stroke-opacity="1"/>
+<text x="142.60000000000002" y="202" font-family="Noto Sans SC" font-size="22" font-weight="bold" fill="#2D4F9A" text-anchor="start">读者</text>
+<rect x="124.60000000000001" y="364.0" width="2159.5011764705882" height="224" rx="14" fill="#EDF8F5" stroke="#78C4B8" stroke-width="1.4" stroke-opacity="1"/>
+<text x="142.60000000000002" y="394.0" font-family="Noto Sans SC" font-size="22" font-weight="bold" fill="#1E756C" text-anchor="start">借阅台</text>
+<rect x="124.60000000000001" y="616.0" width="2159.5011764705882" height="203.6" rx="14" fill="#F7F2FC" stroke="#BDA1E7" stroke-width="1.4" stroke-opacity="1"/>
+<text x="142.60000000000002" y="646.0" font-family="Noto Sans SC" font-size="22" font-weight="bold" fill="#7047AE" text-anchor="start">馆藏系统</text>
+<line x1="1038.300588235294" y1="42" x2="1198.300588235294" y2="42" stroke="#4675F5" stroke-width="6" stroke-linecap="round"/>
+<line x1="1198.300588235294" y1="42" x2="1358.300588235294" y2="42" stroke="#30A698" stroke-width="6" stroke-linecap="round"/>
+<text x="1198.300588235294" y="88" font-family="Noto Sans SC" font-size="36" font-weight="bold" fill="#253149" text-anchor="middle">借阅申请的职责交接</text>
+<text x="1198.300588235294" y="124" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#71809A" text-anchor="middle">示意模型 · 以图型语义表达业务逻辑</text>
+<polyline data-edge-id="l1" data-source="request" data-target="check" points="439.16,276.0 439.16,454.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="l2" data-source="check" data-target="eligible" points="559.1600000000001,476.0 716.1600000000001,476.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="l3" data-source="eligible" data-target="deny" points="1069.1011764705884,476.0 1202.1011764705884,476.0 1202.1011764705884,254.0 1226.1011764705884,254.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="l4" data-source="eligible" data-target="reserve" points="892.6305882352942,528.0 892.6305882352942,698.0 1226.1011764705884,698.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="l5" data-source="reserve" data-target="handover" points="1466.1011764705884,698.0 1599.1011764705884,698.0 1599.1011764705884,476.0 1623.1011764705884,476.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="l6" data-source="handover" data-target="receive" points="1863.1011764705884,476.0 1996.1011764705881,476.0 1996.1011764705881,254.0 2020.1011764705881,254.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<g data-node-id="request">
+<rect x="319.16" y="232.0" width="240" height="44.0" rx="14" fill="#F0F5FE" stroke="#4675F5" stroke-width="1.9"/>
+<text x="337.16" y="261.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#2D4F9A" text-anchor="start">提交借阅申请</text>
+</g>
+<g data-node-id="check">
+<rect x="319.16" y="454.0" width="240" height="44.0" rx="14" fill="#F0F5FE" stroke="#4675F5" stroke-width="1.9"/>
+<text x="337.16" y="483.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#2D4F9A" text-anchor="start">核对借阅资格</text>
+</g>
+<g data-node-id="eligible">
+<polygon points="892.6305882352942,424.0 1069.1011764705884,476.0 892.6305882352942,528.0 716.1600000000001,476.0" fill="#FFFAE9" stroke="#CBA02E" stroke-width="1.9"/>
+<text x="892.6305882352942" y="484.64" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#3F4F69" text-anchor="middle">资格符合？</text>
+</g>
+<g data-node-id="deny">
+<rect x="1226.1011764705884" y="232.0" width="240" height="44.0" rx="14" fill="#FDF2F5" stroke="#CC6B80" stroke-width="1.9"/>
+<text x="1244.1011764705884" y="261.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#973D57" text-anchor="start">接收拒绝原因</text>
+</g>
+<g data-node-id="reserve">
+<rect x="1226.1011764705884" y="676.0" width="240" height="44.0" rx="14" fill="#F7F2FC" stroke="#9870DA" stroke-width="1.9"/>
+<text x="1244.1011764705884" y="705.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#7047AE" text-anchor="start">锁定可借副本</text>
+</g>
+<g data-node-id="handover">
+<rect x="1623.1011764705884" y="454.0" width="240" height="44.0" rx="14" fill="#EDF8F5" stroke="#30A698" stroke-width="1.9"/>
+<text x="1641.1011764705884" y="483.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#1E756C" text-anchor="start">办理借出</text>
+</g>
+<g data-node-id="receive">
+<rect x="2020.1011764705881" y="232.0" width="240" height="44.0" rx="14" fill="#EEF9F2" stroke="#35A56D" stroke-width="1.9"/>
+<text x="2038.1011764705881" y="261.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#257647" text-anchor="start">领取图书</text>
+</g>
+<text x="52" y="884.6" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#71809A" text-anchor="start">泳道底色表示责任归属 · 节点色区分动作、判断与结果</text>
+<rect x="444.1600000000001" y="284.3" width="106.80000000000001" height="35.7" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="497.56000000000006" y="309.3" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="middle">申请信息</text>
+<rect x="584.2600000000001" y="441.0" width="106.80000000000001" height="35.7" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="637.6600000000001" y="466.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="middle">资格结果</text>
+<rect x="1138.4511764705885" y="441.0" width="34.2" height="35.7" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1155.5511764705884" y="466.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="middle">否</text>
+<rect x="1092.2864705882355" y="663.0" width="34.2" height="35.7" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1109.3864705882354" y="688.0" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="middle">是</text>
+<rect x="1604.1011764705884" y="530.86" width="131.0" height="35.7" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1669.6011764705884" y="555.86" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="middle">副本已锁定</text>
+<rect x="2001.1011764705881" y="413.20000000000005" width="106.80000000000001" height="35.7" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="2054.5011764705882" y="438.20000000000005" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="middle">借出确认</text></svg>

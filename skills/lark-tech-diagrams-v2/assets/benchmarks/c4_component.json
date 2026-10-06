@@ -1,0 +1,145 @@
+{
+  "diagram_type": "c4_component",
+  "title": "预约 API · C4 组件 · 扩展结构",
+  "subtitle": "独立示意模型 · 非生产事实",
+  "nodes": [
+    {
+      "id": "web",
+      "label": "预约 Web 应用",
+      "kind": "container",
+      "role": "slate",
+      "rank": 0,
+      "group": "",
+      "responsibility": "提交预约请求",
+      "technology": "Browser",
+      "lines": []
+    },
+    {
+      "id": "handler",
+      "label": "预约控制器",
+      "kind": "component",
+      "role": "blue",
+      "rank": 1,
+      "group": "api-boundary",
+      "responsibility": "解析请求与返回结果",
+      "technology": "HTTP Handler",
+      "lines": []
+    },
+    {
+      "id": "policy",
+      "label": "名额策略",
+      "kind": "component",
+      "role": "purple",
+      "rank": 2,
+      "group": "api-boundary",
+      "responsibility": "检查容量与预约约束",
+      "technology": "Python Module",
+      "lines": []
+    },
+    {
+      "id": "repo",
+      "label": "预约仓储",
+      "kind": "component",
+      "role": "teal",
+      "rank": 3,
+      "group": "api-boundary",
+      "responsibility": "封装事务与记录持久化",
+      "technology": "Python Repository",
+      "lines": []
+    },
+    {
+      "id": "publisher",
+      "label": "确认通知适配器",
+      "kind": "component",
+      "role": "orange",
+      "rank": 3,
+      "group": "api-boundary",
+      "responsibility": "把确认事件交给消息系统",
+      "technology": "HTTP Client",
+      "lines": []
+    },
+    {
+      "id": "idempotency",
+      "label": "幂等请求守卫",
+      "kind": "component",
+      "role": "amber",
+      "rank": 2,
+      "group": "api-boundary",
+      "responsibility": "拒绝重复预约提交",
+      "technology": "Python Module",
+      "lines": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "cp1",
+      "source": "web",
+      "target": "handler",
+      "label": "HTTPS / 预约请求",
+      "kind": "flow"
+    },
+    {
+      "id": "cp2",
+      "source": "handler",
+      "target": "policy",
+      "label": "校验预约条件",
+      "kind": "flow"
+    },
+    {
+      "id": "cp3",
+      "source": "policy",
+      "target": "repo",
+      "label": "事务内占用名额",
+      "kind": "flow"
+    },
+    {
+      "id": "cp4",
+      "source": "handler",
+      "target": "publisher",
+      "label": "提交后发送确认",
+      "kind": "flow"
+    },
+    {
+      "id": "cp5",
+      "source": "handler",
+      "target": "idempotency",
+      "label": "检查幂等请求键",
+      "kind": "flow"
+    }
+  ],
+  "groups": [
+    {
+      "id": "api-boundary",
+      "label": "预约 API",
+      "kind": "container-boundary",
+      "role": "slate",
+      "parent_system": "预约平台"
+    }
+  ],
+  "legend": [
+    {
+      "role": "slate",
+      "label": "外部Web容器"
+    },
+    {
+      "role": "blue",
+      "label": "请求入口"
+    },
+    {
+      "role": "purple",
+      "label": "领域规则"
+    },
+    {
+      "role": "teal",
+      "label": "持久化组件"
+    },
+    {
+      "role": "orange",
+      "label": "通知适配"
+    },
+    {
+      "role": "amber",
+      "label": "幂等检查"
+    }
+  ]
+}

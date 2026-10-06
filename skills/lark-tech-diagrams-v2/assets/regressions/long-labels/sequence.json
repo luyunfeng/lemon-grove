@@ -1,0 +1,117 @@
+{
+  "diagram_type": "sequence",
+  "title": "导出请求的同步受理与异步执行",
+  "subtitle": "长标签验证 · 业务关系与 baseline 完全一致",
+  "nodes": [
+    {
+      "id": "client",
+      "label": "客户端\nExportRequestCoordinator",
+      "kind": "action",
+      "role": "blue"
+    },
+    {
+      "id": "api",
+      "label": "导出接口\nExportRequestCoordinator",
+      "kind": "action",
+      "role": "teal"
+    },
+    {
+      "id": "auth",
+      "label": "权限服务\nExportRequestCoordinator",
+      "kind": "action",
+      "role": "purple"
+    },
+    {
+      "id": "queue",
+      "label": "任务队列\nExportRequestCoordinator",
+      "kind": "action",
+      "role": "orange"
+    },
+    {
+      "id": "worker",
+      "label": "导出执行器\nExportRequestCoordinator",
+      "kind": "action",
+      "role": "green"
+    }
+  ],
+  "edges": [
+    {
+      "id": "m1",
+      "source": "client",
+      "target": "api",
+      "label": "请求导出 · Request correlation",
+      "kind": "sync"
+    },
+    {
+      "id": "m2",
+      "source": "api",
+      "target": "auth",
+      "label": "检查访问权限 · Request correlation",
+      "kind": "sync"
+    },
+    {
+      "id": "m3",
+      "source": "auth",
+      "target": "api",
+      "label": "权限判定 · Request correlation",
+      "kind": "return"
+    },
+    {
+      "id": "m4",
+      "source": "api",
+      "target": "queue",
+      "label": "提交导出任务 · Request correlation",
+      "kind": "async"
+    },
+    {
+      "id": "m5",
+      "source": "api",
+      "target": "client",
+      "label": "已受理与任务号 · Request correlation",
+      "kind": "return"
+    },
+    {
+      "id": "m6",
+      "source": "queue",
+      "target": "worker",
+      "label": "投递任务 · Request correlation",
+      "kind": "async"
+    },
+    {
+      "id": "m7",
+      "source": "api",
+      "target": "client",
+      "label": "拒绝无权访问 · Request correlation",
+      "kind": "return"
+    }
+  ],
+  "branches": [
+    {
+      "kind": "alt",
+      "operands": [
+        {
+          "guard": "[权限允许]",
+          "start": "m4",
+          "end": "m6"
+        },
+        {
+          "guard": "[权限拒绝]",
+          "start": "m7",
+          "end": "m7"
+        }
+      ]
+    }
+  ],
+  "activations": [
+    {
+      "participant": "api",
+      "start": "m1",
+      "end": "m7"
+    },
+    {
+      "participant": "auth",
+      "start": "m2",
+      "end": "m3"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1808.1168750000002 1082.0" width="1808.1168750000002" height="1082.0"><defs><marker id="arrow-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#CBA02E"/></marker><marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#4675F5"/></marker><marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#30A698"/></marker><marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#35A56D"/></marker><marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#E98655"/></marker><marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#9870DA"/></marker><marker id="arrow-rose" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#CC6B80"/></marker><marker id="arrow-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#697C96"/></marker><marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#30A698"/></marker></defs><rect x="0" y="0" width="1808.1168750000002" height="1082.0" fill="#FCFDFE"/><line x1="744.0584375000001" y1="42" x2="904.0584375000001" y2="42" stroke="#4675F5" stroke-width="6" stroke-linecap="round"/>
+<line x1="904.0584375000001" y1="42" x2="1064.0584375" y2="42" stroke="#30A698" stroke-width="6" stroke-linecap="round"/>
+<text x="904.0584375000001" y="88" font-family="Noto Sans SC" font-size="36" font-weight="bold" fill="#253149" text-anchor="middle">任务数据转换、存储与交付</text>
+<text x="904.0584375000001" y="124" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#71809A" text-anchor="middle">示意模型 · 颜色表达职责，关系按图型语法绘制</text>
+<polyline data-edge-id="d1" data-source="caller" data-target="ingest" points="512.0,205.8 809.4412499999999,205.8" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="d2" data-source="ingest" data-target="caller" points="809.4412499999999,232.2 512.0,232.2" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="d3" data-source="ingest" data-target="tasks" points="1092.3237499999998,219.0 1349.413125,219.0 1349.413125,314.3 1373.413125,314.3" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="d4" data-source="tasks" data-target="dispatch" points="1373.413125,370.7 1116.3237499999998,370.7 1116.3237499999998,452.8 1092.3237499999998,452.8" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="d5" data-source="dispatch" data-target="queue" points="1092.3237499999998,479.2 1349.413125,479.2 1349.413125,561.3 1373.413125,561.3" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="d6" data-source="queue" data-target="execute" points="1373.413125,617.7 1116.3237499999998,617.7 1116.3237499999998,699.8 1092.3237499999998,699.8" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="d7" data-source="execute" data-target="dispatch" points="809.4412499999999,713.0 785.4412499999999,713.0 785.4412499999999,466.0 809.4412499999999,466.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="d8" data-source="execute" data-target="results" points="1092.3237499999998,726.2 1349.413125,726.2 1349.413125,808.3 1373.413125,808.3" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="d9" data-source="results" data-target="deliver" points="1373.413125,864.7 1116.3237499999998,864.7 1116.3237499999998,960.0 1092.3237499999998,960.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="d10" data-source="deliver" data-target="receiver" points="809.4412499999999,946.8 512.0,946.8" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<polyline data-edge-id="d11" data-source="receiver" data-target="deliver" points="512.0,973.2 809.4412499999999,973.2" fill="none" stroke="#697C96" stroke-width="1.9" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+<g data-node-id="caller">
+<rect x="272.0" y="197.0" width="240" height="44.0" rx="0" fill="#F0F5FE" stroke="#4675F5" stroke-width="1.9"/>
+<text x="290.0" y="226.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#2D4F9A" text-anchor="start">任务调用方</text>
+</g>
+<g data-node-id="ingest">
+<rect x="809.4412499999999" y="197.0" width="282.88250000000005" height="44.0" rx="14" fill="#F7F2FC" stroke="#9870DA" stroke-width="1.9"/>
+<text x="827.4412499999999" y="226.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#7047AE" text-anchor="start">1 · 校验并受理</text>
+</g>
+<g data-node-id="tasks">
+<rect x="1373.413125" y="295.5" width="272.70375" height="94" fill="#EDF8F5" stroke="none"/>
+<line x1="1646.1168750000002" y1="295.5" x2="1373.413125" y2="295.5" stroke="#30A698" stroke-width="1.9" fill="none"/>
+<line x1="1373.413125" y1="295.5" x2="1373.413125" y2="389.5" stroke="#30A698" stroke-width="1.9" fill="none"/>
+<line x1="1373.413125" y1="389.5" x2="1646.1168750000002" y2="389.5" stroke="#30A698" stroke-width="1.9" fill="none"/>
+<text x="1391.413125" y="324.5" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#1E756C" text-anchor="start">D1 · 任务记录</text>
+</g>
+<g data-node-id="dispatch">
+<rect x="809.4412499999999" y="444.0" width="282.88250000000005" height="44.0" rx="14" fill="#F7F2FC" stroke="#9870DA" stroke-width="1.9"/>
+<text x="827.4412499999999" y="473.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#7047AE" text-anchor="start">2 · 编排与调度</text>
+</g>
+<g data-node-id="queue">
+<rect x="1373.413125" y="542.5" width="272.70375" height="94" fill="#EDF8F5" stroke="none"/>
+<line x1="1646.1168750000002" y1="542.5" x2="1373.413125" y2="542.5" stroke="#30A698" stroke-width="1.9" fill="none"/>
+<line x1="1373.413125" y1="542.5" x2="1373.413125" y2="636.5" stroke="#30A698" stroke-width="1.9" fill="none"/>
+<line x1="1373.413125" y1="636.5" x2="1646.1168750000002" y2="636.5" stroke="#30A698" stroke-width="1.9" fill="none"/>
+<text x="1391.413125" y="571.5" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#1E756C" text-anchor="start">D2 · 待执行消息</text>
+</g>
+<g data-node-id="execute">
+<rect x="809.4412499999999" y="691.0" width="282.88250000000005" height="44.0" rx="14" fill="#F7F2FC" stroke="#9870DA" stroke-width="1.9"/>
+<text x="827.4412499999999" y="720.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#7047AE" text-anchor="start">3 · 转换任务数据</text>
+</g>
+<g data-node-id="results">
+<rect x="1373.413125" y="789.5" width="272.70375" height="94" fill="#EDF8F5" stroke="none"/>
+<line x1="1646.1168750000002" y1="789.5" x2="1373.413125" y2="789.5" stroke="#30A698" stroke-width="1.9" fill="none"/>
+<line x1="1373.413125" y1="789.5" x2="1373.413125" y2="883.5" stroke="#30A698" stroke-width="1.9" fill="none"/>
+<line x1="1373.413125" y1="883.5" x2="1646.1168750000002" y2="883.5" stroke="#30A698" stroke-width="1.9" fill="none"/>
+<text x="1391.413125" y="818.5" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#1E756C" text-anchor="start">D3 · 结果数据</text>
+</g>
+<g data-node-id="deliver">
+<rect x="809.4412499999999" y="938.0" width="282.88250000000005" height="44.0" rx="14" fill="#F7F2FC" stroke="#9870DA" stroke-width="1.9"/>
+<text x="827.4412499999999" y="967.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#7047AE" text-anchor="start">4 · 组装交付载荷</text>
+</g>
+<g data-node-id="receiver">
+<rect x="272.0" y="938.0" width="240" height="44.0" rx="0" fill="#F0F5FE" stroke="#4675F5" stroke-width="1.9"/>
+<text x="290.0" y="967.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#2D4F9A" text-anchor="start">结果接收方</text>
+</g>
+<rect x="567.7206249999999" y="172.8" width="186.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="660.7206249999999" y="195.8" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">任务参数、幂等键</text>
+<rect x="556.7206249999999" y="241.2" width="208.00000000000003" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="660.7206249999999" y="264.2" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">受理标识、校验错误</text>
+<rect x="1171.8684374999998" y="186.0" width="98.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1220.8684374999998" y="209.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">任务记录</text>
+<rect x="1184.8684374999998" y="337.7" width="120.00000000000001" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1244.8684374999998" y="360.7" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">待调度任务</text>
+<rect x="1116.8684374999998" y="446.2" width="208.00000000000003" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1220.8684374999998" y="469.2" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">任务消息、重试次数</text>
+<rect x="1195.8684374999998" y="584.7" width="98.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1244.8684374999998" y="607.7" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">执行输入</text>
+<rect x="790.4412499999999" y="572.5" width="208.00000000000003" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="894.4412499999999" y="595.5" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">失败详情、剩余额度</text>
+<rect x="1116.8684374999998" y="693.2" width="208.00000000000003" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1220.8684374999998" y="716.2" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">结果对象、校验摘要</text>
+<rect x="1129.8684374999998" y="831.7" width="230.00000000000003" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1244.8684374999998" y="854.7" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">结果地址、交付元数据</text>
+<rect x="589.7206249999999" y="913.8" width="142.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="660.7206249999999" y="936.8" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">结果通知载荷</text>
+<rect x="589.7206249999999" y="982.2" width="142.0" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="660.7206249999999" y="1005.2" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">交付确认数据</text></svg>

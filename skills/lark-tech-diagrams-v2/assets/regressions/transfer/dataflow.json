@@ -1,0 +1,81 @@
+{
+  "diagram_type": "dataflow",
+  "title": "环境传感数据 · 清洗、存储与告警",
+  "subtitle": "迁移样例 · 连线命名数据内容，外部实体与存储之间经过处理",
+  "nodes": [
+    {
+      "id": "sensor",
+      "label": "现场传感器",
+      "kind": "external",
+      "role": "blue"
+    },
+    {
+      "id": "clean",
+      "label": "1 · 校验并清洗测量值",
+      "kind": "process",
+      "role": "purple"
+    },
+    {
+      "id": "samples",
+      "label": "D1 · 标准化测量记录",
+      "kind": "store",
+      "role": "teal"
+    },
+    {
+      "id": "detect",
+      "label": "2 · 检测阈值异常",
+      "kind": "process",
+      "role": "purple"
+    },
+    {
+      "id": "rules",
+      "label": "D2 · 告警阈值配置",
+      "kind": "store",
+      "role": "teal"
+    },
+    {
+      "id": "operator",
+      "label": "值班人员",
+      "kind": "external",
+      "role": "blue"
+    }
+  ],
+  "edges": [
+    {
+      "id": "raw",
+      "source": "sensor",
+      "target": "clean",
+      "label": "时间戳、温度、设备编号",
+      "kind": "flow"
+    },
+    {
+      "id": "save",
+      "source": "clean",
+      "target": "samples",
+      "label": "标准化测量记录",
+      "kind": "flow"
+    },
+    {
+      "id": "read",
+      "source": "samples",
+      "target": "detect",
+      "label": "最近测量窗口",
+      "kind": "flow"
+    },
+    {
+      "id": "rule",
+      "source": "rules",
+      "target": "detect",
+      "label": "阈值、持续时间",
+      "kind": "flow"
+    },
+    {
+      "id": "alarm",
+      "source": "detect",
+      "target": "operator",
+      "label": "异常设备、测量值、告警原因",
+      "kind": "flow"
+    }
+  ],
+  "case_variant": "transfer"
+}

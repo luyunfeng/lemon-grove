@@ -1,0 +1,171 @@
+{
+  "diagram_type": "dependency",
+  "title": "异步任务交付平台 · 模块依赖",
+  "subtitle": "长标签测试 · 与 baseline 节点、关系和业务含义一致",
+  "nodes": [
+    {
+      "id": "http",
+      "label": "interfaces.http · 源代码模块 Source Module",
+      "lines": [],
+      "rank": 0,
+      "group": "interface",
+      "role": "blue",
+      "lines_hint": [
+        "HTTP 适配入口"
+      ]
+    },
+    {
+      "id": "cli",
+      "label": "interfaces.cli · 源代码模块 Source Module",
+      "lines": [],
+      "rank": 0,
+      "group": "interface",
+      "role": "blue",
+      "lines_hint": [
+        "命令行入口"
+      ]
+    },
+    {
+      "id": "submit",
+      "label": "application.submit · 源代码模块 Source Module",
+      "lines": [],
+      "rank": 1,
+      "group": "application",
+      "role": "purple",
+      "lines_hint": [
+        "提交用例"
+      ]
+    },
+    {
+      "id": "execute",
+      "label": "application.execute · 源代码模块 Source Module",
+      "lines": [],
+      "rank": 1,
+      "group": "application",
+      "role": "purple",
+      "lines_hint": [
+        "执行用例"
+      ]
+    },
+    {
+      "id": "model",
+      "label": "domain.task · 源代码模块 Source Module",
+      "lines": [],
+      "rank": 2,
+      "group": "domain",
+      "role": "teal",
+      "lines_hint": [
+        "任务聚合"
+      ]
+    },
+    {
+      "id": "ports",
+      "label": "domain.ports · 源代码模块 Source Module",
+      "lines": [],
+      "rank": 2,
+      "group": "domain",
+      "role": "teal",
+      "lines_hint": [
+        "仓储与执行接口"
+      ]
+    },
+    {
+      "id": "pg",
+      "label": "infrastructure.pg · 源代码模块 Source Module",
+      "lines": [],
+      "rank": 1,
+      "group": "application",
+      "role": "orange",
+      "lines_hint": [
+        "仓储接口实现"
+      ]
+    },
+    {
+      "id": "queue",
+      "label": "infrastructure.queue · 源代码模块 Source Module",
+      "lines": [],
+      "rank": 1,
+      "group": "application",
+      "role": "orange",
+      "lines_hint": [
+        "消息接口实现"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "i1",
+      "source": "http",
+      "target": "submit",
+      "label": "import",
+      "kind": "import"
+    },
+    {
+      "id": "i2",
+      "source": "cli",
+      "target": "execute",
+      "label": "import",
+      "kind": "import"
+    },
+    {
+      "id": "i3",
+      "source": "submit",
+      "target": "model",
+      "label": "import",
+      "kind": "import"
+    },
+    {
+      "id": "i4",
+      "source": "submit",
+      "target": "ports",
+      "label": "import",
+      "kind": "import"
+    },
+    {
+      "id": "i5",
+      "source": "execute",
+      "target": "model",
+      "label": "import",
+      "kind": "import"
+    },
+    {
+      "id": "i6",
+      "source": "execute",
+      "target": "ports",
+      "label": "import",
+      "kind": "import"
+    },
+    {
+      "id": "i7",
+      "source": "pg",
+      "target": "ports",
+      "label": "implements / import",
+      "kind": "import"
+    },
+    {
+      "id": "i8",
+      "source": "queue",
+      "target": "ports",
+      "label": "implements / import",
+      "kind": "import"
+    }
+  ],
+  "groups": [
+    {
+      "id": "interface",
+      "label": "入口层",
+      "role": "blue"
+    },
+    {
+      "id": "application",
+      "label": "用例与外部适配模块",
+      "role": "purple"
+    },
+    {
+      "id": "domain",
+      "label": "领域核心 · 无外层依赖",
+      "role": "teal"
+    }
+  ],
+  "case_variant": "long-labels"
+}

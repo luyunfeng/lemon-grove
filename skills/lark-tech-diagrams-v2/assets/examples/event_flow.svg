@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2163.4875 1254.0" width="2163.4875" height="1254.0"><defs><marker id="arrow-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#CBA02E"/></marker><marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#4675F5"/></marker><marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#30A698"/></marker><marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#35A56D"/></marker><marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#E98655"/></marker><marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#9870DA"/></marker><marker id="arrow-rose" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#CC6B80"/></marker><marker id="arrow-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#697C96"/></marker><marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#30A698"/></marker></defs><rect x="0" y="0" width="2163.4875" height="1254.0" fill="#FCFDFE"/><line x1="921.7437500000001" y1="42" x2="1081.74375" y2="42" stroke="#4675F5" stroke-width="6" stroke-linecap="round"/>
+<line x1="1081.74375" y1="42" x2="1241.74375" y2="42" stroke="#30A698" stroke-width="6" stroke-linecap="round"/>
+<text x="1081.74375" y="88" font-family="Noto Sans SC" font-size="36" font-weight="bold" fill="#253149" text-anchor="middle">订单事件 · 独立订阅与失败出口</text>
+<text x="1081.74375" y="124" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#71809A" text-anchor="middle">示意模型 · 每个订阅独立投递与确认；失败消息进入死信主题</text>
+<polyline data-edge-id="publish" data-source="checkout" data-target="orders" points="382.20000000000005,305.0 442.20000000000005,305.0 442.20000000000005,352.0 896.40625,352.0" fill="none" stroke="#4675F5" stroke-width="1.9" stroke-linejoin="round"/>
+<line x1="884.40625" y1="346.0" x2="896.40625" y2="352.0" stroke="#4675F5" stroke-width="1.9"/>
+<line x1="884.40625" y1="358.0" x2="896.40625" y2="352.0" stroke="#4675F5" stroke-width="1.9"/>
+<polyline data-edge-id="billing-delivery" data-source="orders" data-target="billing" points="1218.68125,336.0 1660.18515625,336.0 1660.18515625,337.5 1756.18515625,337.5" fill="none" stroke="#30A698" stroke-width="1.9" stroke-linejoin="round"/>
+<line x1="1744.18515625" y1="331.5" x2="1756.18515625" y2="337.5" stroke="#30A698" stroke-width="1.9"/>
+<line x1="1744.18515625" y1="343.5" x2="1756.18515625" y2="337.5" stroke="#30A698" stroke-width="1.9"/>
+<polyline data-edge-id="stock-delivery" data-source="orders" data-target="stock" points="1218.68125,400.0 1660.18515625,400.0 1660.18515625,656.5 1756.18515625,656.5" fill="none" stroke="#30A698" stroke-width="1.9" stroke-linejoin="round"/>
+<line x1="1744.18515625" y1="650.5" x2="1756.18515625" y2="656.5" stroke="#30A698" stroke-width="1.9"/>
+<line x1="1744.18515625" y1="662.5" x2="1756.18515625" y2="656.5" stroke="#30A698" stroke-width="1.9"/>
+<polyline data-edge-id="billing-ack" data-source="billing" data-target="orders" points="1756.18515625,305.5 1314.68125,305.5 1314.68125,304.0 1218.68125,304.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-dasharray="7,5" stroke-linejoin="round"/>
+<line x1="1230.68125" y1="310.0" x2="1218.68125" y2="304.0" stroke="#697C96" stroke-width="1.9"/>
+<line x1="1230.68125" y1="298.0" x2="1218.68125" y2="304.0" stroke="#697C96" stroke-width="1.9"/>
+<polyline data-edge-id="stock-ack" data-source="stock" data-target="orders" points="1756.18515625,624.5 1696.18515625,624.5 1696.18515625,368.0 1218.68125,368.0" fill="none" stroke="#697C96" stroke-width="1.9" stroke-dasharray="7,5" stroke-linejoin="round"/>
+<line x1="1230.68125" y1="374.0" x2="1218.68125" y2="368.0" stroke="#697C96" stroke-width="1.9"/>
+<line x1="1230.68125" y1="362.0" x2="1218.68125" y2="368.0" stroke="#697C96" stroke-width="1.9"/>
+<polyline data-edge-id="stock-dead" data-source="stock" data-target="dlq" points="1908.1875,708.0 1908.1875,928.0" fill="none" stroke="#CC6B80" stroke-width="1.9" stroke-linejoin="round"/>
+<line x1="1914.1875" y1="916.0" x2="1908.1875" y2="928.0" stroke="#CC6B80" stroke-width="1.9"/>
+<line x1="1902.1875" y1="916.0" x2="1908.1875" y2="928.0" stroke="#CC6B80" stroke-width="1.9"/>
+<g data-node-id="checkout">
+<rect x="80.0" y="210" width="302.20000000000005" height="146.0" rx="14" fill="#F0F5FE" stroke="#4675F5" stroke-width="1.9"/>
+<line x1="98.0" y1="254.0" x2="364.20000000000005" y2="254.0" stroke="#91AFF0" stroke-width="1"/>
+<text x="98.0" y="239.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#2D4F9A" text-anchor="start">订单服务</text>
+<text x="98.0" y="288.5" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">«publisher» 事件发布者</text>
+<text x="98.0" y="318.86" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">事务提交后发布领域事件</text>
+</g>
+<g data-node-id="orders">
+<rect x="896.40625" y="210" width="322.27500000000003" height="240" rx="14" fill="#F7F2FC" stroke="#9870DA" stroke-width="1.9"/>
+<line x1="914.40625" y1="254.0" x2="1200.68125" y2="254.0" stroke="#BDA1E7" stroke-width="1"/>
+<text x="914.40625" y="239.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#7047AE" text-anchor="start">orders.placed</text>
+<text x="914.40625" y="288.5" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">«topic» 事件主题</text>
+<text x="914.40625" y="318.86" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">持久化主题 · OrderPlaced</text>
+</g>
+<g data-node-id="billing">
+<rect x="1756.18515625" y="210" width="304.00468750000005" height="179.0" rx="14" fill="#EDF8F5" stroke="#30A698" stroke-width="1.9"/>
+<line x1="1774.18515625" y1="254.0" x2="2042.1898437500004" y2="254.0" stroke="#78C4B8" stroke-width="1"/>
+<text x="1774.18515625" y="239.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#1E756C" text-anchor="start">计费订阅者</text>
+<text x="1774.18515625" y="288.5" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">«subscriber» 独立订阅者</text>
+<text x="1774.18515625" y="318.86" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">subscription: billing</text>
+<text x="1774.18515625" y="349.22" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">幂等处理后独立确认</text>
+</g>
+<g data-node-id="stock">
+<rect x="1756.18515625" y="529.0" width="304.00468750000005" height="179.0" rx="14" fill="#EDF8F5" stroke="#30A698" stroke-width="1.9"/>
+<line x1="1774.18515625" y1="573.0" x2="2042.1898437500004" y2="573.0" stroke="#78C4B8" stroke-width="1"/>
+<text x="1774.18515625" y="558.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#1E756C" text-anchor="start">库存订阅者</text>
+<text x="1774.18515625" y="607.5" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">«subscriber» 独立订阅者</text>
+<text x="1774.18515625" y="637.86" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">subscription: stock</text>
+<text x="1774.18515625" y="668.22" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">失败达到阈值后转移死信</text>
+</g>
+<g data-node-id="dlq">
+<rect x="1732.8875" y="928.0" width="350.6" height="146.0" rx="14" fill="#FDF2F5" stroke="#CC6B80" stroke-width="1.9"/>
+<line x1="1750.8875" y1="972.0" x2="2065.4875" y2="972.0" stroke="#DBA1B0" stroke-width="1"/>
+<text x="1750.8875" y="957.0" font-family="Noto Sans SC" font-size="24" font-weight="bold" fill="#973D57" text-anchor="start">orders.stock.dead</text>
+<text x="1750.8875" y="1006.5" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">«dead letter» 死信主题</text>
+<text x="1750.8875" y="1036.86" font-family="Noto Sans SC" font-size="22" font-weight="normal" fill="#3F4F69" text-anchor="start">失败事件、原因与原订阅信息</text>
+</g>
+<rect x="52" y="1183.0" width="16" height="16" rx="3" fill="#4675F5"/>
+<text x="77" y="1199.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#71809A" text-anchor="start">发布</text>
+<rect x="156.0" y="1183.0" width="16" height="16" rx="3" fill="#9870DA"/>
+<text x="181.0" y="1199.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#71809A" text-anchor="start">主题</text>
+<rect x="260.0" y="1183.0" width="16" height="16" rx="3" fill="#30A698"/>
+<text x="285.0" y="1199.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#71809A" text-anchor="start">独立订阅投递</text>
+<rect x="452.0" y="1183.0" width="16" height="16" rx="3" fill="#697C96"/>
+<text x="477.0" y="1199.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#71809A" text-anchor="start">虚线：消费确认</text>
+<rect x="666.0" y="1183.0" width="16" height="16" rx="3" fill="#CC6B80"/>
+<text x="691.0" y="1199.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#71809A" text-anchor="start">死信转移</text>
+<rect x="575.7875" y="319.0" width="187.03125000000003" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="669.303125" y="342.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">发布 OrderPlaced</text>
+<rect x="1430.83984375" y="319.75" width="224.3453125" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1543.0125" y="342.75" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">OrderPlaced · billing</text>
+<rect x="1332.030078125" y="409.0" width="214.80625" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1439.433203125" y="432.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">OrderPlaced · stock</text>
+<rect x="1451.9464843750002" y="272.5" width="166.97343750000002" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1535.433203125" y="295.5" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">billing 消费确认</text>
+<rect x="1701.18515625" y="479.25" width="157.43437500000002" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1779.90234375" y="502.25" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">stock 消费确认</text>
+<rect x="1606.9812499999998" y="801.0" width="296.20625" height="33.0" rx="3" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1755.084375" y="824.0" font-family="Noto Sans SC" font-size="20" font-weight="normal" fill="#3F4F69" text-anchor="middle">重试耗尽 · 原事件与失败原因</text></svg>

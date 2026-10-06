@@ -1,0 +1,6 @@
+interface:
+  display_name: "飞书技术绘图"
+  short_description: "按定稿风格将逻辑自动绘制为泳道、ER、交互或架构飞书画板"
+  default_prompt: "使用 $lark-architecture-diagrams 按已定稿的 v1.1.0 风格绘制下面的逻辑，自动选择图型，生成并验证可编辑飞书画板。"
+policy:
+  allow_implicit_invocation: true

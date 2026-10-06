@@ -19,6 +19,8 @@ tools/related.py   按页面、标签或实体列出相关页面
 skills/           可复用技能源码；每个技能一个子目录，skills/README.md 为清单与安装入口
   llm-wiki/       知识库定位入口，找到仓库后读取 AGENTS.md
   speak-human/    中文表达整理：保留原意，用编号、二级补充和局部加粗说清楚
+  lark-architecture-diagrams/  V1.1.0 技术绘图旧版参考
+  lark-tech-diagrams-v2/       V2.3.0 技术绘图，默认推荐
 ```
 
 ## 用法（在 Codex 或 Claude Code 里直接说）
@@ -38,6 +40,10 @@ python3 tools/lint.py                    # 头部四项 / 标签词表 / 实体 
 python3 tools/related.py --tag verification   # 按标签找相关页面（也可以 --entity 或传一个页面路径）
 grep "^## \[" wiki/log.md | tail -5      # 最近 5 次写入
 ```
+
+## 技术绘图 Skills
+
+两版技术绘图源码保存在 `skills/`，版本选择、安装与验证入口见 [Skills 说明](skills/README.md)。新任务推荐 V2.3.0：内置 16 类技术图、语义配色、确定性排版、字体和参考图；飞书文档与画板交付调用现有工具。V1.1.0 保留为早期风格参考。
 
 ## 柠檬林站点源码
 

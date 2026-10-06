@@ -1,0 +1,201 @@
+{
+  "diagram_type": "dataflow",
+  "title": "任务数据转换、存储与交付",
+  "subtitle": "扩展模型 · 执行审计与结果统计分支",
+  "nodes": [
+    {
+      "id": "caller",
+      "label": "任务调用方",
+      "lines": [],
+      "role": "blue",
+      "kind": "external",
+      "stage": 0
+    },
+    {
+      "id": "ingest",
+      "label": "1 · 校验并受理",
+      "lines": [],
+      "role": "purple",
+      "kind": "process",
+      "stage": 1
+    },
+    {
+      "id": "tasks",
+      "label": "D1 · 任务记录",
+      "lines": [],
+      "role": "teal",
+      "kind": "store",
+      "stage": 2
+    },
+    {
+      "id": "dispatch",
+      "label": "2 · 编排与调度",
+      "lines": [],
+      "role": "purple",
+      "kind": "process",
+      "stage": 3
+    },
+    {
+      "id": "queue",
+      "label": "D2 · 待执行消息",
+      "lines": [],
+      "role": "teal",
+      "kind": "store",
+      "stage": 4
+    },
+    {
+      "id": "execute",
+      "label": "3 · 转换任务数据",
+      "lines": [],
+      "role": "purple",
+      "kind": "process",
+      "stage": 5
+    },
+    {
+      "id": "results",
+      "label": "D3 · 结果数据",
+      "lines": [],
+      "role": "teal",
+      "kind": "store",
+      "stage": 6
+    },
+    {
+      "id": "deliver",
+      "label": "4 · 组装交付载荷",
+      "lines": [],
+      "role": "purple",
+      "kind": "process",
+      "stage": 7
+    },
+    {
+      "id": "receiver",
+      "label": "结果接收方",
+      "lines": [],
+      "role": "blue",
+      "kind": "external",
+      "stage": 8
+    },
+    {
+      "id": "audit",
+      "label": "D4 · 执行审计数据",
+      "kind": "store",
+      "role": "teal",
+      "stage": 6
+    },
+    {
+      "id": "aggregate",
+      "label": "5 · 汇总结果指标",
+      "kind": "process",
+      "role": "purple",
+      "stage": 7
+    },
+    {
+      "id": "metrics",
+      "label": "D5 · 结果统计数据",
+      "kind": "store",
+      "role": "teal",
+      "stage": 8
+    }
+  ],
+  "edges": [
+    {
+      "id": "d1",
+      "source": "caller",
+      "target": "ingest",
+      "label": "任务参数、幂等键",
+      "kind": "flow"
+    },
+    {
+      "id": "d2",
+      "source": "ingest",
+      "target": "caller",
+      "label": "受理标识、校验错误",
+      "kind": "flow"
+    },
+    {
+      "id": "d3",
+      "source": "ingest",
+      "target": "tasks",
+      "label": "任务记录",
+      "kind": "flow"
+    },
+    {
+      "id": "d4",
+      "source": "tasks",
+      "target": "dispatch",
+      "label": "待调度任务",
+      "kind": "flow"
+    },
+    {
+      "id": "d5",
+      "source": "dispatch",
+      "target": "queue",
+      "label": "任务消息、重试次数",
+      "kind": "flow"
+    },
+    {
+      "id": "d6",
+      "source": "queue",
+      "target": "execute",
+      "label": "执行输入",
+      "kind": "flow"
+    },
+    {
+      "id": "d7",
+      "source": "execute",
+      "target": "dispatch",
+      "label": "失败详情、剩余额度",
+      "kind": "feedback"
+    },
+    {
+      "id": "d8",
+      "source": "execute",
+      "target": "results",
+      "label": "结果对象、校验摘要",
+      "kind": "flow"
+    },
+    {
+      "id": "d9",
+      "source": "results",
+      "target": "deliver",
+      "label": "结果地址、交付元数据",
+      "kind": "flow"
+    },
+    {
+      "id": "d10",
+      "source": "deliver",
+      "target": "receiver",
+      "label": "结果通知载荷",
+      "kind": "flow"
+    },
+    {
+      "id": "d11",
+      "source": "receiver",
+      "target": "deliver",
+      "label": "交付确认数据",
+      "kind": "feedback"
+    },
+    {
+      "id": "d12",
+      "source": "execute",
+      "target": "audit",
+      "label": "执行时长、结果状态",
+      "kind": "flow"
+    },
+    {
+      "id": "d13",
+      "source": "results",
+      "target": "aggregate",
+      "label": "结果分类、完成时间",
+      "kind": "flow"
+    },
+    {
+      "id": "d14",
+      "source": "aggregate",
+      "target": "metrics",
+      "label": "分类计数、时间窗口",
+      "kind": "flow"
+    }
+  ],
+  "case_variant": "expanded"
+}

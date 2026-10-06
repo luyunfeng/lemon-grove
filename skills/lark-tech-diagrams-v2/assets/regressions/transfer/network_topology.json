@@ -1,0 +1,137 @@
+{
+  "diagram_type": "network_topology",
+  "title": "档案服务 · 连通关系（方向未提供）",
+  "subtitle": "独立示意模型 · 非生产事实",
+  "nodes": [
+    {
+      "id": "edge",
+      "label": "园区路由器",
+      "kind": "router",
+      "role": "orange",
+      "rank": 0,
+      "group": "access",
+      "responsibility": "路由园区访问流量",
+      "technology": "L3 Router",
+      "lines": []
+    },
+    {
+      "id": "portal",
+      "label": "档案检索门户",
+      "kind": "service",
+      "role": "blue",
+      "rank": 0,
+      "group": "access",
+      "responsibility": "提供档案检索入口",
+      "technology": "HTTPS Portal",
+      "lines": []
+    },
+    {
+      "id": "search",
+      "label": "检索服务",
+      "kind": "service",
+      "role": "purple",
+      "rank": 1,
+      "group": "services",
+      "responsibility": "处理索引查询",
+      "technology": "Search API",
+      "lines": []
+    },
+    {
+      "id": "index",
+      "label": "全文索引",
+      "kind": "store",
+      "role": "teal",
+      "rank": 2,
+      "group": "storage",
+      "responsibility": "保存可检索的内容索引",
+      "technology": "Search Engine",
+      "lines": []
+    },
+    {
+      "id": "archive",
+      "label": "归档对象库",
+      "kind": "store",
+      "role": "teal",
+      "rank": 2,
+      "group": "storage",
+      "responsibility": "保存档案原件",
+      "technology": "S3",
+      "lines": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "tn1",
+      "source": "edge",
+      "target": "portal",
+      "label": "TCP :443 / 接入连通",
+      "kind": "flow",
+      "protocol": "TCP",
+      "port": 443
+    },
+    {
+      "id": "tn2",
+      "source": "portal",
+      "target": "search",
+      "label": "HTTPS :8443 / 检索连通",
+      "kind": "flow",
+      "protocol": "HTTPS",
+      "port": 8443
+    },
+    {
+      "id": "tn3",
+      "source": "search",
+      "target": "index",
+      "label": "HTTPS :9200 / 索引连通",
+      "kind": "flow",
+      "protocol": "HTTPS",
+      "port": 9200
+    },
+    {
+      "id": "tn4",
+      "source": "search",
+      "target": "archive",
+      "label": "HTTPS :443 / 原件连通",
+      "kind": "flow",
+      "protocol": "HTTPS",
+      "port": 443
+    }
+  ],
+  "groups": [
+    {
+      "id": "access",
+      "label": "园区访问区",
+      "kind": "security-zone",
+      "role": "orange",
+      "trust": "园区授权用户"
+    },
+    {
+      "id": "services",
+      "label": "检索服务区",
+      "kind": "security-zone",
+      "role": "purple",
+      "trust": "受限服务访问"
+    },
+    {
+      "id": "storage",
+      "label": "档案存储区",
+      "kind": "security-zone",
+      "role": "teal",
+      "trust": "仅检索服务准入"
+    }
+  ],
+  "legend": [
+    {
+      "role": "orange",
+      "label": "路由设备"
+    },
+    {
+      "role": "purple",
+      "label": "应用服务"
+    },
+    {
+      "role": "teal",
+      "label": "数据存储"
+    }
+  ]
+}

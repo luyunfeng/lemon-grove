@@ -1,0 +1,213 @@
+{
+  "title": "B · ER 图｜颜色对应领域，连线对应约束",
+  "basis": "AI研发任务交付：示例数据模型，用于演示视觉语法。",
+  "nodes": [
+    {
+      "id": "user",
+      "title": "User 用户",
+      "domain": "identity",
+      "fields": [
+        {
+          "name": "user_id",
+          "key": "PK"
+        },
+        {
+          "name": "name",
+          "key": ""
+        }
+      ],
+      "detail": [
+        "user_id",
+        "name"
+      ]
+    },
+    {
+      "id": "task",
+      "title": "Task 任务",
+      "domain": "task",
+      "fields": [
+        {
+          "name": "task_id",
+          "key": "PK"
+        },
+        {
+          "name": "requester_id",
+          "key": "FK",
+          "references": "user.user_id",
+          "nullable": false
+        },
+        {
+          "name": "title",
+          "key": ""
+        },
+        {
+          "name": "status",
+          "key": ""
+        }
+      ],
+      "detail": [
+        "task_id",
+        "requester_id",
+        "title",
+        "status"
+      ]
+    },
+    {
+      "id": "run",
+      "title": "Run 执行记录",
+      "domain": "execution",
+      "fields": [
+        {
+          "name": "run_id",
+          "key": "PK"
+        },
+        {
+          "name": "task_id",
+          "key": "FK",
+          "references": "task.task_id",
+          "nullable": false
+        },
+        {
+          "name": "attempt_no",
+          "key": ""
+        },
+        {
+          "name": "status",
+          "key": ""
+        }
+      ],
+      "detail": [
+        "run_id",
+        "task_id",
+        "attempt_no",
+        "status"
+      ]
+    },
+    {
+      "id": "artifact",
+      "title": "Artifact 产物",
+      "domain": "execution",
+      "fields": [
+        {
+          "name": "artifact_id",
+          "key": "PK"
+        },
+        {
+          "name": "run_id",
+          "key": "FK",
+          "references": "run.run_id",
+          "nullable": false
+        },
+        {
+          "name": "kind",
+          "key": ""
+        },
+        {
+          "name": "uri",
+          "key": ""
+        }
+      ],
+      "detail": [
+        "artifact_id",
+        "run_id",
+        "kind",
+        "uri"
+      ]
+    },
+    {
+      "id": "review",
+      "title": "Review 评审",
+      "domain": "review",
+      "fields": [
+        {
+          "name": "review_id",
+          "key": "PK"
+        },
+        {
+          "name": "artifact_id",
+          "key": "FK",
+          "references": "artifact.artifact_id",
+          "nullable": false
+        },
+        {
+          "name": "reviewer_id",
+          "key": "FK",
+          "references": "user.user_id",
+          "nullable": false
+        },
+        {
+          "name": "decision",
+          "key": ""
+        }
+      ],
+      "detail": [
+        "review_id",
+        "artifact_id",
+        "reviewer_id",
+        "decision"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "e01",
+      "source": "user",
+      "target": "task",
+      "kind": "one-to-many",
+      "source_cardinality": "1",
+      "target_cardinality": "0..*",
+      "foreign_key": "task.requester_id",
+      "label": "提交",
+      "source_field": "user_id",
+      "target_field": "requester_id"
+    },
+    {
+      "id": "e02",
+      "source": "task",
+      "target": "run",
+      "kind": "one-to-many",
+      "source_cardinality": "1",
+      "target_cardinality": "0..*",
+      "foreign_key": "run.task_id",
+      "label": "执行",
+      "source_field": "task_id",
+      "target_field": "task_id"
+    },
+    {
+      "id": "e03",
+      "source": "run",
+      "target": "artifact",
+      "kind": "one-to-many",
+      "source_cardinality": "1",
+      "target_cardinality": "0..*",
+      "foreign_key": "artifact.run_id",
+      "label": "产生",
+      "source_field": "run_id",
+      "target_field": "run_id"
+    },
+    {
+      "id": "e04",
+      "source": "artifact",
+      "target": "review",
+      "kind": "one-to-many",
+      "source_cardinality": "1",
+      "target_cardinality": "0..*",
+      "foreign_key": "review.artifact_id",
+      "label": "接受评审",
+      "source_field": "artifact_id",
+      "target_field": "artifact_id"
+    },
+    {
+      "id": "e05",
+      "source": "user",
+      "target": "review",
+      "kind": "one-to-many",
+      "source_cardinality": "1",
+      "target_cardinality": "0..*",
+      "foreign_key": "review.reviewer_id",
+      "label": "撰写评审",
+      "source_field": "user_id",
+      "target_field": "reviewer_id"
+    }
+  ]
+}
