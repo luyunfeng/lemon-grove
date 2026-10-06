@@ -50,3 +50,9 @@
 - 源码版本: 5078374d99a4683174480acd47e9793202153a9e，仅迁移文件快照；依赖下载地址规范为公共 npm 源，锁定版本和校验值不变
 - 验证: 网站 56 项测试、类型检查、构建和 3 项页面/接口检查通过
 - 分支: wiki/20261002-lemon-grove-site-source
+## [2026-10-04] ingest | 理解工件：输出格式阶梯与可丢弃定制工件
+- 分诊: 新建为主，回填 agentic-engineering
+- Raw: raw/llm-output-understanding-artifacts.md, raw/llm-output-understanding-artifacts-writeup.md
+- 新建: wiki/concepts/understanding-artifacts.md
+- 更新: wiki/concepts/agentic-engineering.md, wiki/index.md
+- 分支: wiki/20261004-understanding-artifacts
