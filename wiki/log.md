@@ -77,3 +77,10 @@
 - 处理: 去掉仓库副本中的个人应用与目录配置，保留必要字体与许可
 - 更新: skills/README.md, README.md, tools/lint.py（公开官方工具引用的识别）, wiki/log.md
 - 分支: wiki/20261006-technical-diagram-skills
+
+## [2026-10-06] schema | 规范独立工作树与 main 合并流程
+- 分诊: 将已确认的工作树协作约定写入唯一规则来源
+- 更新: AGENTS.md, wiki/log.md
+- 要点: 所有任务变更在独立工作树及任务分支完成；main 只作为合并主线；PR 创建后保留工作树和分支；各工作区互不干扰
+- 验证: 知识库 lint 为 0 ERROR / 0 WARN；Git 流程示例的 Bash 语法与补丁格式检查通过
+- 分支: wiki/20261006-worktree-workflow
