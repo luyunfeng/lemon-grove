@@ -31,6 +31,7 @@
 ## 模型训练与评测
 - [可验证奖励](concepts/verifiable-rewards.md) — 后训练从人类偏好转向可验证奖励，Coding 因此率先突破
 - [模型评测](concepts/model-evaluation.md) — Arena、传统基准、自有评测三层，以及怎么读懂一次模型发布
+- [LLM Serving 四层缓存](concepts/llm-serving-cache.md) — KV cache、prefix、prompt、semantic 四层缓存的机制，以及精确匹配与相似度匹配的边界
 
 ## 个人知识管理
 - [LLM Wiki 模式](concepts/llm-wiki-pattern.md) — LLM 把资料持续编译成互链的 wiki：raw / wiki / schema 三层，ingest / query / lint

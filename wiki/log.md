@@ -56,3 +56,9 @@
 - 新建: wiki/concepts/understanding-artifacts.md
 - 更新: wiki/concepts/agentic-engineering.md, wiki/index.md
 - 分支: wiki/20261004-understanding-artifacts
+## [2026-10-06] ingest | LLM serving 四层缓存
+- 分诊: 新建
+- Raw: raw/llm-serving-four-caches.md
+- 新建: wiki/concepts/llm-serving-cache.md
+- 更新: wiki/index.md, AGENTS.md（新增 inference 标签）
+- 分支: wiki/20261006-llm-serving-cache
