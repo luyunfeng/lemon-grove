@@ -94,6 +94,7 @@ entities: [claude-code, codex] # 这页涉及的实体，值是 wiki/entities/ �
 | `post-training` | 后训练与强化学习，包括可验证奖励 |
 | `evaluation` | 模型与系统评测：Arena、基准、自有评测 |
 | `llm-models` | 具体模型的能力、定位与发布解读 |
+| `inference` | 模型推理与 serving 基础设施：KV cache、prefix/prompt/semantic caching、成本 |
 | `ai-safety` | 对齐、奖励作弊、失控风险与治理 |
 | `coding-agent` | 终端 Coding Agent 工具本身的机制与用法 |
 | `agent-framework` | 构建在 Coding Agent 之上的方法框架与 Skill 组合 |
