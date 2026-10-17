@@ -38,6 +38,9 @@
 - [Open Knowledge Format（OKF）](concepts/open-knowledge-format.md) — 把 LLM wiki 规范成可移植、可互操作的开放格式
 - [本知识库的设计与用法](concepts/knowledge-base-design.md) — 本库的结构、写法、硬规则和日常用法
 
+## 健康
+- [久坐与活动间歇](concepts/movement-breaks.md) — 久坐的毒性来自全天不动而非缺锻炼；最小有效剂量是每半小时走 5 分钟
+
 ## 工具与项目
 - [Claude Code](entities/claude-code.md) — 终端 Coding Agent：harness 扩展点、大型代码库做法、/goal 与 /loop、子 Agent
 - [Codex](entities/codex.md) — 终端 Coding Agent：Skill 发现目录、Hook 体系、混合模型子 Agent
