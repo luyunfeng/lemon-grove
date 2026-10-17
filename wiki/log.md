@@ -84,3 +84,10 @@
 - 要点: 所有任务变更在独立工作树及任务分支完成；main 只作为合并主线；PR 创建后保留工作树和分支；各工作区互不干扰
 - 验证: 知识库 lint 为 0 ERROR / 0 WARN；Git 流程示例的 Bash 语法与补丁格式检查通过
 - 分支: wiki/20261006-worktree-workflow
+
+## [2026-10-17] ingest | Agent 时代的代码评审（Claude Code 团队实践）
+- 分诊: 新建概念页为主，级联更新
+- Raw: raw/claude-code-team-code-review.md
+- 新建: wiki/concepts/code-review-at-agent-scale.md
+- 更新: wiki/entities/claude-code.md, wiki/concepts/understanding-artifacts.md, wiki/index.md, wiki/log.md
+- 分支: wiki/20261017-code-review-at-agent-scale

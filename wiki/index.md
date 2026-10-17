@@ -11,6 +11,7 @@
 - [Context Engineering（上下文工程）](concepts/context-engineering.md) — 把上下文当稀缺资源：渐进式披露、工具执行隔离、分层入口文件
 - [Harness Engineering（驾驭工程）](concepts/harness-engineering.md) — 用反馈闭环包住会漂移的概率模型；harness 随模型进步要删减
 - [Verification（验证）](concepts/verification.md) — 生成容易验证难：maker/checker 分离、可验证的完成条件、证据的边界
+- [Agent 时代的代码评审（Code Review at Scale）](concepts/code-review-at-agent-scale.md) — review 从「有人读过」转向「哪种检查抓哪种问题」：分层自动化、风险分级审批、收敛治理、事故变 eval
 - [Loop Engineering（循环工程）](concepts/loop-engineering.md) — 设计自动驱动 Agent 的外层循环：触发、提示、运行、验证、记录
 - [目标驱动与计划驱动（Goal vs Plan）](concepts/goal-vs-plan.md) — 事前定步骤与事后验目标两种控制方式，各自适用的场景
 - [Spec 驱动开发与执行前校准（Vibe / Plan / Spec）](concepts/spec-driven-development.md) — 执行前校准的光谱 Vibe → Plan → Spec，以及从澄清到规格到任务的流水线

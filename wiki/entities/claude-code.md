@@ -60,6 +60,10 @@ Anthropic 的终端 Coding Agent。它像人类工程师一样遍历文件系统
 
 Anthropic 走的是「生成与评估对抗分离」这条 harness 路线：它认为模型不只会漂移，还会对自己的输出过度自信、掩盖偏差，所以把规划、生成、评估拆成独立的推理过程（Planner-Generator-Evaluator），各自有独立上下文和预先给定的验收标准。评估者不只回 pass/fail，而是给出「哪里不满足、差在哪、怎么改」的结构化反馈，注入生成者的下一轮。`/goal` 就是这条路线的产品化简化版：一个 Worker 加一个轻量 Evaluator（Haiku）。同一路线的另一条原则是：harness 的每个组件都编码了一个关于模型局限的假设，模型进步后要回头删减——这正是下文「配置要定期审查」的依据。
 
+### 5. 团队自用：Agent 时代的代码评审
+
+Claude Code 团队自己的仓库约 90% 代码由 Claude 写，三个月内合并 PR 翻倍、revert 率下降超四成。做法是把读代码交给机器：PR 前给可运行的验证并由全新上下文的子 Agent 审查；每个 PR 上多 Agent 并行找 bug、verifier 投票过滤误报、独立安全审查，findings 未清不能合并；审批按风险分三档（低/中/高对应 0/1/2 人），风险档由变更内容而非作者决定，Agent 的 approval 不能顶替人；merge queue、feature flag 内部先用、分渠道渐进发布加快速回滚兜底。评审者本身用事故与 revert 构建的评测集每天打分迭代，并治理收敛：封顶三轮、其后只 re-review diff。这套流程已产品化为 Code Review（Team / Enterprise 可用），本地轻量版是 /code-review，另有 /security-review 与开源 GitHub Action。机制展开见「Agent 时代的代码评审（Code Review at Scale）」。
+
 ## 怎么用
 
 **大型代码库：让上下文可导航**
