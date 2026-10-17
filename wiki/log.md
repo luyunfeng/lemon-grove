@@ -85,6 +85,15 @@
 - 验证: 知识库 lint 为 0 ERROR / 0 WARN；Git 流程示例的 Bash 语法与补丁格式检查通过
 - 分支: wiki/20261006-worktree-workflow
 
+## [2026-10-17] ingest | 久坐的毒性与活动间歇
+- 分诊: 新建
+- Raw: raw/sitting-all-day.md
+- 新建: wiki/concepts/movement-breaks.md
+- 更新: wiki/index.md, AGENTS.md（标签词表新增 health）
+- 要点: 高度久坐的毒性独立于规律锻炼存在；肌肉是全天工作的"吸血糖海绵"；最小有效剂量为每半小时走 5 分钟
+- 验证: python3 tools/lint.py 0 ERROR
+- 分支: wiki/20261017-movement-breaks
+
 ## [2026-10-17] ingest | Agent 时代的代码评审（Claude Code 团队实践）
 - 分诊: 新建概念页为主，级联更新
 - Raw: raw/claude-code-team-code-review.md

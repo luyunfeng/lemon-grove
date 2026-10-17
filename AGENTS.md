@@ -112,6 +112,7 @@ entities: [claude-code, codex] # 这页涉及的实体，值是 wiki/entities/ �
 | `knowledge-management` | 个人知识管理与 LLM Wiki |
 | `learning-path` | 按阶段组织的学习路线 |
 | `meta` | 本知识库自身的说明与概览 |
+| `health` | 身体健康、运动、睡眠等生理知识与习惯 |
 <!-- tags:end -->
 
 ### 3.3 怎么找关联
