@@ -93,3 +93,10 @@
 - 要点: 高度久坐的毒性独立于规律锻炼存在；肌肉是全天工作的"吸血糖海绵"；最小有效剂量为每半小时走 5 分钟
 - 验证: python3 tools/lint.py 0 ERROR
 - 分支: wiki/20261017-movement-breaks
+
+## [2026-10-17] ingest | Agent 时代的代码评审（Claude Code 团队实践）
+- 分诊: 新建概念页为主，级联更新
+- Raw: raw/claude-code-team-code-review.md
+- 新建: wiki/concepts/code-review-at-agent-scale.md
+- 更新: wiki/entities/claude-code.md, wiki/concepts/understanding-artifacts.md, wiki/index.md, wiki/log.md
+- 分支: wiki/20261017-code-review-at-agent-scale
