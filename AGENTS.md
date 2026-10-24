@@ -14,8 +14,8 @@
    - 要用的分支名，以及 PR 标题。
    然后**停下来等用户明确同意**（如"确认""可以""同意""写吧"）。没有得到明确同意就不创建、不修改任何文件，也不执行任何 git 写操作。用户要求调整时，改好计划再确认一次。在非交互模式（如 `codex exec`、`claude -p`）里，只输出计划就结束。
 2. **读取、查询严格只读。** 查询时：不改任何文件、不回写答案、不写 log、不执行任何 git 写操作（commit、push、pull、fetch、checkout、switch、stash 都不行）。只允许读文件、`rg`/`grep`、`git log`、`git status`、`git show`、`git diff`。如果某个答案值得沉淀，只能在回答末尾**建议**（例如"可以说『炼化一下这个结论』来收录"），由用户另行发起写入请求。
-3. **独立工作树写入，Git 只走 PR。** 所有文件变更、验证、提交和推送都在独立工作树的任务分支完成。`main` 只作为合并主线，不在其工作区编辑或提交任务变更。永远不要直接 push `main`，永远不要 `--force` 或改写已推送的历史，**不要手动合并 PR**（合并由 `.github/workflows/auto-merge-notes.yml` 自动完成，规则见第 5 节）。创建 PR 后保留任务工作树和分支，不切回 `main`。流程见第 5 节。
-4. `raw/` 正文只增不改：已提交的 raw 正文不能修改或删除，需要更正时新增一份资料，并把更正后的认识写进 wiki。raw 的文件名和头部格式由本文件统一规定，规范调整时可以经确认后一次性整理（`git mv`）并记入 log。
+3. **独立工作树写入，Git 只走 PR。** 所有文件变更、验证、提交和推送都在独立工作树的任务分支完成。`main` 只作为合并主线，不在其工作区编辑或提交任务变更。永远不要直接 push `main`，永远不要 `--force` 或改写已推送的历史，PR 建好后由 Agent 立即用 `gh pr merge` 自动合并，不等人工审阅（条件与命令见第 5 节）。合并后保留任务工作树和分支，不切回 `main`。流程见第 5 节。
+4. `raw/` 正文只增不改：已提交的 raw 正文不能修改或删除，需要更正时新增一份资料，并把更正后的认识写进 wiki。raw 的文件名和头部格式由本文件统一规定，规范调整时可以经确认后一次性整理（`git mv`），并写进 PR 描述的写入记录。
 5. 不提交密钥、token、公司内部地址、个人环境路径、私人联系方式或公司敏感数据。脱敏修改 raw 正文需要用户明确批准例外，不能借普通收录改写已提交资料。公开资料中的作者、人物观点、机构与项目名称不是敏感信息，应在 raw 中保留；不能仅凭出现公司或人名进行脱敏。
 
 ## 1. 三层结构
@@ -205,15 +205,22 @@ git add -A
 git commit -m "<ingest|lint|wiki|schema>: <中文摘要>"
 git push -u origin HEAD
 gh pr create --base main --head "$task_branch" --title "<同 commit 摘要>" --body-file "<描述文件>"
+gh pr merge "$task_branch" --merge --match-head-commit "$(git rev-parse HEAD)"   # 自动合并，不加 --delete-branch
+gh pr view "$task_branch" --json state,mergeCommit   # 核对 state 为 MERGED
 # 完成后保留当前任务工作树和分支
 ```
 
 - 使用 GitHub CLI `gh pr create` 或已授权的 GitHub 连接创建 PR；描述列出改动文件、要点及验证结果。
 - 命令行未认证时使用 `gh auth login`；认证失败时保留本地分支，报告原因，不修改其他工具的认证配置。
-- **不要手动合并 PR**，不直接 push main，不 force push。PR 合并由 `.github/workflows/auto-merge-notes.yml` 自动完成：PR 由 `luyunfeng` 本人在本仓库发起、指向 `main`、非 draft 且无冲突时，推送建 PR 后工作流自动合并，无需任何人工操作。创建 PR 即视为本轮写入任务完成。
-- PR 没有自动合并时，按条件核对：是否 draft、base/head 是否本仓库分支、是否有冲突、GitHub Actions 是否报错，并如实报告原因。**不要改用 `gh pr merge` 等手动方式绕过**；确需手动介入由用户自行决定。
+- **自动合并（MR）**：PR 创建成功后，Agent 在同一任务里立即执行上面的 `gh pr merge ... --merge`，无需等待用户在网页上操作；用户在第 0 节确认计划时，即同意了提交后自动合并。合并后用 `gh pr view` 核对状态为 `MERGED`，**PR 合并成功才算本轮写入任务完成**，最终回复给出 PR 链接和合并结果。
+- 自动合并的前提，缺一不可：本轮计划已经用户确认；`python3 tools/lint.py` 为 0 ERROR；PR 由本轮任务创建、base 为 `main`、head 为本仓库的本轮任务分支、非 draft；`--match-head-commit` 与本地刚推送的 HEAD 一致（防止合并到别人后推的提交）。只合并本轮创建的 PR，不合并其他 PR。
+- 合并方式固定为 `--merge`（保留分支历史），不用 `--squash`、`--rebase`，不加 `--delete-branch`、`--admin`、`--auto`；不直接 push main，不 force push。
+- 合并失败时不绕过：
+  - 有冲突（`not mergeable` / `CONFLICTING`）：在任务工作树执行 `git fetch origin && git merge origin/main`，只按已确认的范围解决冲突，重跑 lint，提交并 `git push`，再执行一次 `gh pr merge`。冲突涉及计划外内容时停下报告。
+  - 权限、分支保护、认证或网络错误：保留 PR 和分支，如实报告错误原文，不改用 `--admin`、直接 push 等方式绕过，由用户决定。
+- 本仓库不使用 GitHub Actions 自动合并；合并只由 Agent 通过上述命令完成。
 - 查看 PR：`gh pr list`、`gh pr view <编号>`（只读）。
-- PR 自动合并后，下次新任务先 fetch，再从最新的 `origin/main` 创建独立工作树和任务分支。本地 `main` 仅用于接收已合并的结果：需要同步时，在主工作区干净的前提下以 fast-forward 同步；查询时不同步。
+- PR 合并后，下次新任务先 fetch，再从最新的 `origin/main` 创建独立工作树和任务分支。本地 `main` 仅用于接收已合并的结果：需要同步时，在主工作区干净的前提下以 fast-forward 同步；查询时不同步。
 - 同一轮写入只使用一个任务工作树、一个分支和一个 PR。推送或建 PR 失败时保留任务工作树与分支并报告原因。
 - 迁移资料时使用经过脱敏检查的内容快照；旧提交历史中的个人身份与公司信息不会随文件清理而消失，不能直接随快照上传。
 
