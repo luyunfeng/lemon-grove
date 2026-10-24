@@ -15,11 +15,11 @@
 - [Loop Engineering（循环工程）](concepts/loop-engineering.md) — 设计自动驱动 Agent 的外层循环：触发、提示、运行、验证、记录
 - [目标驱动与计划驱动（Goal vs Plan）](concepts/goal-vs-plan.md) — 事前定步骤与事后验目标两种控制方式，各自适用的场景
 - [Spec 驱动开发与执行前校准（Vibe / Plan / Spec）](concepts/spec-driven-development.md) — 执行前校准的光谱 Vibe → Plan → Spec，以及从澄清到规格到任务的流水线
-- [子 Agent 编排（Sub-agents / Multi-Agent）](concepts/sub-agent-orchestration.md) — 用子 Agent 隔离上下文、分离实现与检查；模型编排、脚本编排、跨模型混合
+- [子 Agent 编排（Sub-agents / Multi-Agent）](concepts/sub-agent-orchestration.md) — 用子 Agent 隔离上下文、分离实现与检查；拆分边界、通信、汇总与治理，模型编排、脚本编排、跨模型混合
 - [约束的强制分层（Rule Enforcement Layers）](concepts/rule-enforcement-layers.md) — 约束分建议、流程、硬拦截三层；能确定性检查的不靠模型记住
 - [Compound Engineering（复利工程）](concepts/compound-engineering.md) — 把每次工作沉淀成可复用资产，让下一次同类工作更容易
 - [提示词中的置信度](concepts/confidence-in-prompts.md) — 让模型输出置信度，用来自我校准、决策路由和聚焦人工验证
-- [Agent 工具接口（CLI 优先，MCP 作薄适配层）](concepts/agent-tool-interface.md) — CLI 是 Agent 最好用的工具接口，MCP 作薄适配层；后端也要为 CLI 设计
+- [Agent 工具接口（CLI 优先，MCP 作薄适配层）](concepts/agent-tool-interface.md) — CLI 是 Agent 最好用的工具接口，MCP 作薄适配层；后端也要为 CLI 设计，跨 Agent 委派走 A2A
 - [Agent 原生文档（Agent-Native-Doc）](concepts/agent-native-doc.md) — 写给 Agent 读的仓库文档：只写代码推不出来的领域知识
 - [理解工件（Understanding Artifacts）](concepts/understanding-artifacts.md) — 让模型把产出重新表征成受控语言、图、交互网页、讲解视频，帮人建立理解；可丢弃的定制工件因此变得合理
 
