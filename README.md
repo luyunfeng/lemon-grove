@@ -10,7 +10,7 @@
 AGENTS.md          唯一规则来源：目录约定、frontmatter、查询/写入/体检流程、写入确认、多 Agent 提交流程
 CLAUDE.md          Claude Code 入口（@AGENTS.md）
 raw/               原始资料底稿（一级目录，不分类；图片放 raw/assets/；文件名不带日期，头部不写作者和来源）
-wiki/              知识页：index.md 知识地图、log.md 历史写入日志（已停止追加）、overview.md 概览
+wiki/              知识页：index.md 知识地图、overview.md 概览（写入记录看 git log）
   concepts/ entities/ roadmaps/ syntheses/   一页一个知识点或工具；头部的 tags / entities 用来找关联，正文不放站内链接
 apps/lemon-grove/  柠檬林站点的完整源码、依赖锁文件、测试与 GitHub 内容发布版本
 templates/         页面模板

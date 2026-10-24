@@ -15,7 +15,7 @@ DEFAULT_ROOT = Path(__file__).resolve().parent.parent
 REQUIRED = ["title", "type", "tags", "entities"]
 TYPES = {"concept", "entity", "roadmap", "synthesis", "overview"}
 SUBDIRS = {"concepts", "entities", "roadmaps", "syntheses"}
-SPECIAL = {"index.md", "log.md"}
+SPECIAL = {"index.md"}
 RAW_SUBDIRS = {"assets"}
 TAGS_BEGIN, TAGS_END = "<!-- tags:begin -->", "<!-- tags:end -->"
 TAG_ROW_RE = re.compile(r"^\|\s*`([a-z0-9][a-z0-9-]*)`\s*\|")
@@ -186,13 +186,12 @@ def main():
                 errors.append(f"{rel}: 死链 -> {target}")
         if WIKILINK_RE.search(CODE_RE.sub("", plain)):
             errors.append(f"{rel}: 有 [[wikilink]]（不允许）")
-        if name != "log.md":
-            for line in plain.splitlines():
-                m = TRACE_RE.search(line) or NAME_RE.search(NAME_ALLOW_RE.sub("", line))
-                if m:
-                    warns.append(f"{rel}: 疑似作者 / 来源 / 日期痕迹「{m.group(0)}」: {line.strip()[:60]}")
-            if re.search(r"\]\(https?://", plain):
-                warns.append(f"{rel}: 含外链（页面不放外链）")
+        for line in plain.splitlines():
+            m = TRACE_RE.search(line) or NAME_RE.search(NAME_ALLOW_RE.sub("", line))
+            if m:
+                warns.append(f"{rel}: 疑似作者 / 来源 / 日期痕迹「{m.group(0)}」: {line.strip()[:60]}")
+        if re.search(r"\]\(https?://", plain):
+            warns.append(f"{rel}: 含外链（页面不放外链）")
 
     # index 一致性：每页都要登记
     index = wiki / "index.md"
@@ -226,7 +225,7 @@ def main():
                     warns.append(f"{rr}: raw 头部不应写作者 / 来源 / 日期等元数据")
 
     print(f"LLM Wiki lint @ {root}")
-    print(f"页面 {len(articles)} 个（不含 index/log），实体 {len(entity_slugs)} 个，标签词表 {len(vocab)} 个，raw {len(raw_files)} 个")
+    print(f"页面 {len(articles)} 个（不含 index），实体 {len(entity_slugs)} 个，标签词表 {len(vocab)} 个，raw {len(raw_files)} 个")
     for e in errors:
         print(f"ERROR  {e}")
     for w in warns:
