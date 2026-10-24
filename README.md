@@ -10,7 +10,7 @@
 AGENTS.md          唯一规则来源：目录约定、frontmatter、查询/写入/体检流程、写入确认、PR 流程
 CLAUDE.md          Claude Code 入口（@AGENTS.md）
 raw/               原始资料底稿（一级目录，不分类；图片放 raw/assets/；文件名不带日期，头部不写作者和来源）
-wiki/              知识页：index.md 知识地图、log.md 写入日志、overview.md 概览
+wiki/              知识页：index.md 知识地图、log.md 历史写入日志（已停止追加）、overview.md 概览
   concepts/ entities/ roadmaps/ syntheses/   一页一个知识点或工具；头部的 tags / entities 用来找关联，正文不放站内链接
 apps/lemon-grove/  柠檬林站点的完整源码、依赖锁文件、测试与 GitHub 内容发布版本
 templates/         页面模板
@@ -26,7 +26,7 @@ skills/           可复用技能源码；每个技能一个子目录，skills/R
 ## 用法（在 Codex 或 Claude Code 里直接说）
 
 - 查询（只读）：「查知识库：RAG 我记了什么？」「我的知识库里有没有讲过 X」
-- 写入：「炼化一下：<内容或 URL>」「把这篇收录进知识库」。AI 会先列出计划，**你确认后**才会写入，然后开分支、提交并创建 PR（不会直接改 main，也不会自动合并）。
+- 写入：「炼化一下：<内容或 URL>」「把这篇收录进知识库」。AI 会先列出计划，**你确认后**才会写入，然后开分支、提交、创建 PR，并自动合并进 main（不会直接 push main）。
 - 体检：「知识库体检 / lint 一下」。先给报告，修复同样需要你确认，并走 PR。
 
 skill `llm-wiki` 装好后可在其他目录调用；它会根据当前目录或用户提供的路径定位知识库。技能清单和安装方式见 [skills/README.md](skills/README.md)。
@@ -38,7 +38,7 @@ skill `llm-wiki` 装好后可在其他目录调用；它会根据当前目录或
 ```bash
 python3 tools/lint.py                    # 头部四项 / 标签词表 / 实体 / 站内链接 / index 一致性 / 来源与日期痕迹
 python3 tools/related.py --tag verification   # 按标签找相关页面（也可以 --entity 或传一个页面路径）
-grep "^## \[" wiki/log.md | tail -5      # 最近 5 次写入
+gh pr list --state merged --limit 5      # 最近 5 次写入（记录在 PR 描述里）
 ```
 
 ## 技术绘图 Skills

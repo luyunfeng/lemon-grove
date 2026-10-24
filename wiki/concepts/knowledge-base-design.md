@@ -18,7 +18,7 @@ entities: [claude-code, codex]
 
 ## 目录结构
 - `raw/`：原始资料底稿，所有文档都放在一级目录，不分类；图片放 `raw/assets/`。正文只增不改，头部只有标题，不带任何元数据；wiki 页面不链接它。
-- `wiki/index.md`：知识地图，按领域分组，每页一行。`wiki/overview.md`：在学什么、掌握程度、待解问题。`wiki/log.md`：只记录写操作。
+- `wiki/index.md`：知识地图，按领域分组，每页一行。`wiki/overview.md`：在学什么、掌握程度、待解问题。`wiki/log.md`：历史写操作记录，已停止追加；新的写入记录写在 PR 描述里。
 - `wiki/concepts/`：概念、方法、原则，一个知识点一页。
 - `wiki/entities/`：具体工具、产品、项目，一个一页。某个实体关联了哪些页面，搜 `entities` 字段即可。
 - `wiki/roadmaps/`：按阶段组织的学习与实践路线。
@@ -33,11 +33,11 @@ entities: [claude-code, codex]
 ## 三条硬规则
 1. **写入先确认**：炼化、收录、lint 修复、改规则时，AI 先列出要写的内容、要改的文件、分支名和 PR 标题，等我明确同意后才写。
 2. **读取只读**：查询不改文件、不回写答案、不记 log、不做 git 写操作；值得沉淀的内容只提建议，由我另行发起写入。
-3. **只走 PR**：`main` 通过 PR 合入。每次写入都从最新的 `origin/main` 开 `wiki/<YYYYMMDD>-<slug>` 分支，提交后推送，再用 `gh pr create --base main` 建 PR。AI 不 push main，也不合并 PR，由我在网页上审阅后合并。
+3. **只走 PR**：`main` 通过 PR 合入。每次写入都从最新的 `origin/main` 开 `wiki/<YYYYMMDD>-<slug>` 分支，提交后推送，再用 `gh pr create --base main` 建 PR。PR 建好后由 AI 立即自动合并；AI 不 push main，也不 force push。把关点前移到写入前的计划确认。
 
 ## 日常用法
 - 查：「查知识库：X 我记了什么？」
-- 写：「炼化一下：<内容>」→ 审阅计划 → 回复「确认」→ 拿到 PR 链接 → 在网页上合并。
+- 写：「炼化一下：<内容>」→ 审阅计划 → 回复「确认」→ 拿到已合并的 PR 链接。
 - 体检：「知识库体检」→ 看报告 → 需要修复时再确认。
 - 新机器上安装 skill：见 `skills/llm-wiki/INSTALL.md`。
 
