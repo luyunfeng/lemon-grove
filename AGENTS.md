@@ -2,8 +2,8 @@
 
 > **本文件是本知识库唯一的规则来源。** 全局 skill `llm-wiki` 只负责找到（或克隆）本仓库并定位到这里；CLAUDE.md 通过 `@AGENTS.md` 引入本文件。规则有冲突时，以本文件为准。
 
-- 位置：本仓库可能克隆在任意目录。下文命令在相应仓库或工作树的根目录执行；所有写入使用独立任务工作树，流程见第 5 节。
-- 远端：`https://github.com/luyunfeng/lemon-grove.git`；`main` **只通过 PR 合入**
+- 位置：本仓库可能克隆在任意目录。下文命令在仓库根目录执行。可能有多个 Agent 同时在同一个目录里工作；所有写入直接在主工作区的 `main` 上完成，协作规矩见第 5 节。
+- 远端：`https://github.com/luyunfeng/lemon-grove.git`；`main` 是唯一的工作分支，Agent 直接提交并推送（不开分支、不建 PR、不用 worktree）
 - 语言：中文为主，专有名词保留英文（首次出现时可写作 `中文（English）`）
 
 ## 0. 硬性规则（优先于下文所有内容）
@@ -11,11 +11,11 @@
 1. **写入前先确认。** 任何写入请求（炼化、收录、ingest、整理、lint 修复、改 schema），第一步都是向用户说明：
    - 打算写什么内容（要点）；
    - 要新建或修改哪些文件（逐个列出路径，包括 raw、wiki 页、index.md）；
-   - 要用的分支名，以及 PR 标题。
+   - 提交信息的摘要行（`<类型>: <中文摘要>`）。
    然后**停下来等用户明确同意**（如"确认""可以""同意""写吧"）。没有得到明确同意就不创建、不修改任何文件，也不执行任何 git 写操作。用户要求调整时，改好计划再确认一次。在非交互模式（如 `codex exec`、`claude -p`）里，只输出计划就结束。
 2. **读取、查询严格只读。** 查询时：不改任何文件、不回写答案、不写 log、不执行任何 git 写操作（commit、push、pull、fetch、checkout、switch、stash 都不行）。只允许读文件、`rg`/`grep`、`git log`、`git status`、`git show`、`git diff`。如果某个答案值得沉淀，只能在回答末尾**建议**（例如"可以说『炼化一下这个结论』来收录"），由用户另行发起写入请求。
-3. **独立工作树写入，Git 只走 PR。** 所有文件变更、验证、提交和推送都在独立工作树的任务分支完成。`main` 只作为合并主线，不在其工作区编辑或提交任务变更。永远不要直接 push `main`，永远不要 `--force` 或改写已推送的历史，PR 建好后由 Agent 立即用 `gh pr merge` 自动合并，不等人工审阅（条件与命令见第 5 节）。合并后保留任务工作树和分支，不切回 `main`。流程见第 5 节。
-4. `raw/` 正文只增不改：已提交的 raw 正文不能修改或删除，需要更正时新增一份资料，并把更正后的认识写进 wiki。raw 的文件名和头部格式由本文件统一规定，规范调整时可以经确认后一次性整理（`git mv`），并写进 PR 描述的写入记录。
+3. **多 Agent 共用 `main`，只提交自己的文件。** 不用 worktree、不开任务分支、不建 PR：在主工作区的 `main` 上直接改、直接提交、直接 `git push origin main`。别的 Agent 可能正在同一目录改文件，所以只暂存、提交本轮计划里的文件，不碰别人的未提交改动；永远不要 `--force`，不改写已推送的历史。流程见第 5 节。
+4. `raw/` 正文只增不改：已提交的 raw 正文不能修改或删除，需要更正时新增一份资料，并把更正后的认识写进 wiki。raw 的文件名和头部格式由本文件统一规定，规范调整时可以经确认后一次性整理（`git mv`），并写进提交信息的写入记录。
 5. 不提交密钥、token、公司内部地址、个人环境路径、私人联系方式或公司敏感数据。脱敏修改 raw 正文需要用户明确批准例外，不能借普通收录改写已提交资料。公开资料中的作者、人物观点、机构与项目名称不是敏感信息，应在 raw 中保留；不能仅凭出现公司或人名进行脱敏。
 
 ## 1. 三层结构
@@ -24,7 +24,7 @@
 |---|---|---|---|
 | 原始资料 raw | `raw/` | 人投放，或 AI 经确认后代为保存 | 一级目录不分类；正文只增不改；只作底稿，wiki 不链接它 |
 | 知识页 wiki | `wiki/` | AI 经确认后维护，人阅读、把关 | 按知识点组织；关联靠头部的标签和实体来找，正文不放站内链接；index 保持最新 |
-| 规则 schema | `AGENTS.md`（CLAUDE.md 引用它） | 人与 AI 共同演进（改动同样要确认并走 PR） | 唯一规则来源 |
+| 规则 schema | `AGENTS.md`（CLAUDE.md 引用它） | 人与 AI 共同演进（改动同样要确认，按第 5 节提交） | 唯一规则来源 |
 
 ## 2. 目录约定
 
@@ -35,7 +35,7 @@ README.md                         简要用法
 raw/<slug>.md                     原始资料（文章、论文摘录、课程笔记、对话记录…），全部放在 raw/ 一级目录，不分类；文件名不带日期
 raw/assets/<slug>.<ext>           图片等附件（raw/ 下唯一允许的子目录）
 wiki/index.md                     知识地图：按领域分组，每页一行（链接 + 一句话）；wiki/ 内唯一允许放站内链接的页面
-wiki/log.md                       历史写入日志（已停止追加；新记录写在 PR 描述里，见第 6 节）
+wiki/log.md                       历史写入日志（已停止追加；新记录写在提交信息里，见第 6 节）
 wiki/overview.md                  概览：在学什么、掌握到什么程度、待解问题
 wiki/concepts/<slug>.md           概念页：一个知识点（概念、方法、原则）一页
 wiki/entities/<slug>.md           实体页：一个具体工具、产品或项目一页
@@ -61,7 +61,7 @@ skills/llm-wiki/SKILL.md          知识库定位入口；知识库规则仍只�
 
 - `skills/` 保存可复用技能源码，每个技能独立放在 `skills/<skill-name>/`；在 `skills/README.md` 登记，新加入的技能配套 `README.md`。
 - 技能包遵循宿主的文件格式，保留 `SKILL.md`、`README.md` 等标准文件名；不套用 wiki 的四字段 frontmatter 和知识页写法。包内文档可用相对链接引用自身资源，研究依据可保留公开来源链接；根目录 README 可链接技能清单。
-- 仓库中的技能源码通过本文件规定的确认和 PR 流程维护。安装副本或软链接使用完整技能目录，保持资源的相对路径；不得把凭据、个人机器路径、公司敏感材料或私人对话原文打包入库。
+- 仓库中的技能源码通过本文件规定的确认和提交流程维护。安装副本或软链接使用完整技能目录，保持资源的相对路径；不得把凭据、个人机器路径、公司敏感材料或私人对话原文打包入库。
 
 ## 3. 页面 frontmatter 与写法
 
@@ -82,7 +82,7 @@ entities: [claude-code, codex] # 这页涉及的实体，值是 wiki/entities/ �
 
 ### 3.2 标签词表（唯一来源，lint 从这里读取）
 
-标签一律用小写英文 kebab-case。**新标签必须先加进这张表（同一个 PR 里也行），才能在页面里使用**；能用已有标签表达的，不新增。
+标签一律用小写英文 kebab-case。**新标签必须先加进这张表（同一次提交里也行），才能在页面里使用**；能用已有标签表达的，不新增。
 
 <!-- tags:begin -->
 | 标签 | 说明 |
@@ -151,7 +151,7 @@ raw 文件只保留标题行和正文（见 `templates/raw.md`），不写作者
 
 ## 4. 操作
 
-每次操作开始时：进入仓库根目录，先读 `wiki/index.md`，再用 `gh pr list --state merged --limit 5` 看最近的写入记录（记录在 PR 描述里，见第 6 节）。
+每次操作开始时：进入仓库根目录，先读 `wiki/index.md`，再用 `git log -5 --format='%h %s'` 看最近的写入记录（详细记录在提交信息里，见第 6 节），用 `git status --short` 看看别的 Agent 正在改哪些文件。
 
 ### 4.1 Query（查询，只读）
 触发示例：查知识库、查 wiki、"我的知识库里关于 X 有什么"、"基于我的笔记对比 A 和 B"。
@@ -162,81 +162,87 @@ raw 文件只保留标题行和正文（见 `templates/raw.md`），不写作者
 
 ### 4.2 Ingest / 炼化 / 收录（写入）
 触发示例：炼化、收录、录入、记到知识库、存到 wiki。
-1. **确认（硬性规则 1）**：先读资料并分诊，判断是新建、更新、冲突还是无新增（先读 index，再按 3.3 用标签和实体找已有页面，再全文搜索关键词和同义词）。然后列出计划：raw 保存路径、要新建或更新的 wiki 页、index 的改动、分支名、PR 标题（写入记录写在 PR 描述里）。**等用户明确同意。**
-2. 同意后按第 5 节从最新的 `origin/main` 创建独立工作树和任务分支。
+1. **确认（硬性规则 1）**：先读资料并分诊，判断是新建、更新、冲突还是无新增（先读 index，再按 3.3 用标签和实体找已有页面，再全文搜索关键词和同义词）。然后列出计划：raw 保存路径、要新建或更新的 wiki 页、index 的改动、提交摘要（写入记录写在提交信息里）。**等用户明确同意。**
+2. 同意后按第 5 节在主工作区的 `main` 上直接写。
 3. 保存 raw：路径为 `raw/<slug>.md`，放在 raw/ 一级目录，不分类（重名时加一个能区分内容的简短后缀，不加日期）；图片放 `raw/assets/`，笔记里用 `assets/<文件名>` 引用。头部只写标题，不写作者、来源、链接和日期；正文保留原文，只清理格式噪音和敏感信息。
 4. **拆知识点，更新已有页面。** 把资料拆成一个个知识点，逐点对照已有页面：能并入的就改写进已有概念页或实体页；只有出现新的独立知识点或新工具时才新建页面。**不写资料摘要页，不按资料建页。** 写法遵守 3.1；数字和引述先在 raw 里核对。
 5. 级联更新：按 3.3 找出受影响的页面一并修改；新页和改过的页都要填好 `tags`（只用词表里的）和 `entities`。涉及新工具时先建实体页。
-6. 更新 `wiki/index.md`（新页放进对应领域分组），必要时更新 `wiki/overview.md`；写入记录写在 PR 描述里（格式见第 6 节），不再追加 `wiki/log.md`。
-7. 跑 `python3 tools/lint.py`，ERROR 必须为 0。然后按第 5 节提交、推分支、建 PR。
-8. 如果分诊结果是"无新增"：同样先确认，经同意后只保存 raw，记录写进 PR 描述，再走 PR。
+6. 更新 `wiki/index.md`（新页放进对应领域分组），必要时更新 `wiki/overview.md`；写入记录写在提交信息里（格式见第 6 节），不再追加 `wiki/log.md`。
+7. 跑 `python3 tools/lint.py`，ERROR 必须为 0。然后按第 5 节提交并推送 `main`。
+8. 如果分诊结果是"无新增"：同样先确认，经同意后只保存 raw，记录写进提交信息，按第 5 节提交推送。
 
 ### 4.3 Lint（体检）
 1. 只读检查：`python3 tools/lint.py`，检查头部四项是否齐全、标签是否都在词表里、entities 是否都有实体页、正文有没有站内链接、index 是否登记了所有页面且没有死链、目录白名单、raw 是否只有 assets/ 一个子目录、作者 / 来源 / 日期 / 人名痕迹、外链、raw 头部元数据和文件名日期。再加上判断类检查：页面间矛盾、过时结论、标签或实体漏填、被频繁提及却没有独立页的概念、资料缺口。
-2. 先把报告给用户看。如果需要修复（index 补漏、修死链等），按硬性规则 1 列出修复计划，**等用户同意后**再开分支修复。修复后走 PR，记录写在 PR 描述里。事实性问题只报告，不擅自修改。
+2. 先把报告给用户看。如果需要修复（index 补漏、修死链等），按硬性规则 1 列出修复计划，**等用户同意后**再修复。修复后按第 5 节提交推送，记录写在提交信息里。事实性问题只报告，不擅自修改。
 
-## 5. Git 与 PR 流程（所有写入都走这个流程）
+## 5. Git 流程：多 Agent 在 `main` 上直接协作（所有写入都走这个流程）
 
-分支命名：`wiki/<YYYYMMDD>-<英文主题-slug>`，例如 `wiki/20260926-rag-basics`。
+多个 Agent 可能同时在同一个仓库目录里干活。约定很简单：**大家都在主工作区的 `main` 上改，各自只提交自己的文件，直接推送 `origin/main`。** 不用 `git worktree`，不开任务分支，不建 PR，也不需要用户合并；推送成功，`main` 就是交付结果。
 
-### 工作树约定
+### 5.1 开工前
 
-- 新写入任务使用独立的 `git worktree` 和任务分支；编辑、验证、暂存、提交、推送及创建 PR 均在该任务工作树根目录执行。工作树放在主工作区之外，不嵌套在知识库目录中。
-- 主工作区保留 `main`，作为合并主线的工作区。创建任务时只更新远端引用和创建工作树，不切换主工作区的分支，也不改动其中的文件。
-- 检查和提交以当前任务工作树为准。新任务工作树必须干净；继续已有任务时先核对现有改动属于已确认范围，发现无关改动就停下来报告。主工作区或其他任务工作树有改动时，不覆盖、暂存、重置或清理那些改动。
-- 创建 PR 后保留当前任务工作树和分支，不为“回到 main”而切换分支；仅在用户明确要求清理时移除工作树或删除分支。继续同一任务时复用其工作树和分支。
+1. 在仓库根目录确认 `git branch --show-current` 输出 `main`。不是 `main` 时停下报告，不要切换分支（别的 Agent 或用户可能在用）。
+2. `git fetch origin`，再 `git merge --ff-only origin/main` 同步。失败（本地有未推送的提交，或远端改动和别人的未提交改动重叠）就先不同步，推送前按 5.4 处理。
+3. `git status --short` 看别人正在改哪些文件，和本轮计划比对：
+   - **共享文件**（`wiki/index.md`、`wiki/overview.md`、`AGENTS.md` 标签词表、`skills/README.md`）：可以和别人同时改，只做局部编辑，在别人已有改动的基础上追加。
+   - **其他文件**（某个 wiki 页、raw、脚本）已经有别人的未提交改动：不要同时改。先做计划里的其他部分，等对方提交后再改；一直没提交就在最终回复里说明。
 
-以下示例用于新任务；先将分支、工作树路径、提交摘要和描述文件的占位内容替换为已确认的值：
+### 5.2 干活时的规矩（防止互相踩）
+
+- 只改本轮计划里的文件。改之前重新读一遍最新内容，用局部编辑（Edit / 补丁），不要整文件覆盖共享文件。
+- 新建文件先确认路径不存在，避免和别的 Agent 撞名。
+- **禁止**会动到别人改动的命令：`git add -A`、`git add .`、`git commit -a`、`git stash`、`git reset`、`git restore`、`git checkout -- <文件>`、`git clean`、`git switch`、`git checkout <分支>`、`git rebase`、`git pull --rebase`、`--autostash`、`git worktree add`、`git commit --amend`（对已推送提交）。
+- git 报 `.git/index.lock` 已存在：说明别的 Agent 正在执行 git 命令。等 2–5 秒重试，累计约 1 分钟仍失败就报告；**不要删除 lock 文件**。
+
+### 5.3 提交与推送
 
 ```bash
-# 在已有仓库根目录执行准备步骤，不切换其分支
-task_branch='wiki/<YYYYMMDD>-<slug>'
-task_worktree='../knowledge-base-worktrees/<YYYYMMDD>-<slug>'
+python3 tools/lint.py                      # 本轮改动的文件必须 0 ERROR
+git status --short                         # 分清哪些是自己的文件
+git add -- <本轮新建的文件...>              # 新文件先登记；删除文件用 git rm -- <文件>
+git commit -m "<ingest|lint|wiki|schema>: <中文摘要>" -m "<写入记录，见第 6 节>" -- <本轮所有文件...>
+git show --stat HEAD                       # 核对提交里只有本轮文件
+git push origin main
+```
+
+- `git commit ... -- <文件列表>` 只提交列出的文件，即使暂存区里有别人暂存的内容也不会带上。文件列表必须逐个写出本轮新建、修改、删除的文件。
+- lint 的 ERROR 只要求本轮文件为 0。属于别的 Agent 未完成文件的 ERROR 不要去修，在最终回复里说明。
+- 共享文件里如果混有别人的未提交改动，会随你的提交一起进入 `main`，这是允许的，提交信息里注明“含其他 Agent 对 <文件> 的改动”。
+- 命令行未认证时使用 `gh auth login`；推送认证失败时保留本地提交，报告原因，不修改其他工具的认证配置。
+
+### 5.4 推送被拒（远端有新提交）
+
+```bash
 git fetch origin
-git worktree add --no-track -b "$task_branch" "$task_worktree" origin/main
-cd "$task_worktree"
-
-# 后续操作都在任务工作树根目录执行
-git status --short                     # 新任务工作树必须干净
-# …按已确认的计划写文件…
-python3 tools/lint.py                  # 0 ERROR
-git diff --stat                       # 核对改动与已确认范围一致
-git add -A
-git commit -m "<ingest|lint|wiki|schema>: <中文摘要>"
-git push -u origin HEAD
-gh pr create --base main --head "$task_branch" --title "<同 commit 摘要>" --body-file "<描述文件>"
-gh pr merge "$task_branch" --merge --match-head-commit "$(git rev-parse HEAD)"   # 自动合并，不加 --delete-branch
-gh pr view "$task_branch" --json state,mergeCommit   # 核对 state 为 MERGED
-# 完成后保留当前任务工作树和分支
+git merge --no-edit origin/main            # 不用 rebase，保留别人的工作区改动
+python3 tools/lint.py
+git push origin main
 ```
 
-- 使用 GitHub CLI `gh pr create` 或已授权的 GitHub 连接创建 PR；描述列出改动文件、要点及验证结果。
-- 命令行未认证时使用 `gh auth login`；认证失败时保留本地分支，报告原因，不修改其他工具的认证配置。
-- **自动合并（MR）**：PR 创建成功后，Agent 在同一任务里立即执行上面的 `gh pr merge ... --merge`，无需等待用户在网页上操作；用户在第 0 节确认计划时，即同意了提交后自动合并。合并后用 `gh pr view` 核对状态为 `MERGED`，**PR 合并成功才算本轮写入任务完成**，最终回复给出 PR 链接和合并结果。
-- 自动合并的前提，缺一不可：本轮计划已经用户确认；`python3 tools/lint.py` 为 0 ERROR；PR 由本轮任务创建、base 为 `main`、head 为本仓库的本轮任务分支、非 draft；`--match-head-commit` 与本地刚推送的 HEAD 一致（防止合并到别人后推的提交）。只合并本轮创建的 PR，不合并其他 PR。
-- 合并方式固定为 `--merge`（保留分支历史），不用 `--squash`、`--rebase`，不加 `--delete-branch`、`--admin`、`--auto`；不直接 push main，不 force push。
-- 合并失败时不绕过：
-  - 有冲突（`not mergeable` / `CONFLICTING`）：在任务工作树执行 `git fetch origin && git merge origin/main`，只按已确认的范围解决冲突，重跑 lint，提交并 `git push`，再执行一次 `gh pr merge`。冲突涉及计划外内容时停下报告。
-  - 权限、分支保护、认证或网络错误：保留 PR 和分支，如实报告错误原文，不改用 `--admin`、直接 push 等方式绕过，由用户决定。
-- 本仓库不使用 GitHub Actions 自动合并；合并只由 Agent 通过上述命令完成。
-- 查看 PR：`gh pr list`、`gh pr view <编号>`（只读）。
-- PR 合并后，下次新任务先 fetch，再从最新的 `origin/main` 创建独立工作树和任务分支。本地 `main` 仅用于接收已合并的结果：需要同步时，在主工作区干净的前提下以 fast-forward 同步；查询时不同步。
-- 同一轮写入只使用一个任务工作树、一个分支和一个 PR。推送或建 PR 失败时保留任务工作树与分支并报告原因。
-- 迁移资料时使用经过脱敏检查的内容快照；旧提交历史中的个人身份与公司信息不会随文件清理而消失，不能直接随快照上传。
+- merge 提示 “local changes would be overwritten”：是别的 Agent 的未提交改动和远端改动重叠。等对方提交后重试，不要 stash 或 reset。
+- 出现冲突：只在本轮文件范围内解决（两边内容都保留）。冲突落在别人的文件或计划外内容上时，`git merge --abort` 后报告。
+- 不 `--force`，不改写已推送的历史。
 
-## 6. 写入记录：写在 PR 描述里
+### 5.5 完成标准
 
-写入操作不再维护 `wiki/log.md`（历史文件保留只读）。每条写入的记录随 PR 交付：在 PR 描述末尾附一段「写入记录」，字段固定如下：
+- `git push` 成功，`git log origin/main --oneline -5` 能看到本轮提交，`git status --short` 里不再有本轮文件。
+- 最终回复给出提交 hash、改动文件和 lint 结果。
+- 多个 Agent 一起交付时，最后完成的 Agent 再跑一次 `python3 tools/lint.py` 并确认 `git status --short` 为空；有遗留就报告是哪些文件。
+
+## 6. 写入记录：写在提交信息里
+
+写入操作不再维护 `wiki/log.md`（历史文件保留只读）。每次写入的记录写在 commit message 的正文（第二个 `-m`）里，字段固定如下：
 
 ```
-- 类型: ingest | lint | wiki（手工整理）| schema（规则或 skill 变更）
-- 主题: 一句话说明
-- 新建: 文件路径列表（无则省略）
-- 更新: 文件路径列表
-- 验证: lint 结果等
+类型: ingest | lint | wiki（手工整理）| schema（规则或 skill 变更）
+主题: 一句话说明
+新建: 文件路径列表（无则省略）
+更新: 文件路径列表
+删除: 文件路径列表（无则省略）
+验证: lint 结果等
 ```
 
-查看最近写入用 `gh pr list --state merged --limit 5`。
+查看最近写入：`git log -5 --format='%h %s'`；看详细记录：`git log -5`。
 
 ## 7. 本库自身的设计说明
 见 [wiki/concepts/knowledge-base-design.md](wiki/concepts/knowledge-base-design.md)。

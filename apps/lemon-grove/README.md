@@ -4,7 +4,7 @@
 
 ## 内容更新
 
-知识库的内容维护和 PR 合入继续在 GitHub 完成。默认使用已连接的 GitHub 授权读取远端 `main`，固定 commit SHA 后把知识页同步为 `app/knowledge-publication.json`，随站点发布。打开网页即可阅读，无需另配站点读取凭据。这个文件是远端知识页的发布副本，不是独立编辑的内容源。
+知识库的内容维护直接提交到 GitHub 的 `main`。默认使用已连接的 GitHub 授权读取远端 `main`，固定 commit SHA 后把知识页同步为 `app/knowledge-publication.json`，随站点发布。打开网页即可阅读，无需另配站点读取凭据。这个文件是远端知识页的发布副本，不是独立编辑的内容源。
 
 - 展示 `wiki/concepts/*.md`、`wiki/entities/*.md`、`wiki/roadmaps/*.md`、`wiki/syntheses/*.md` 与 `wiki/overview.md`。
 - 从页面 frontmatter 读取 `title`、`type`、`tags`、`entities`；从 `wiki/index.md` 读取领域、简介和排列顺序。

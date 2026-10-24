@@ -4,7 +4,7 @@
 
 ## 概览
 - [知识库概览](overview.md) — 在学什么、掌握程度、待解问题
-- [操作日志（历史）](log.md) — 历史写操作记录，已停止追加；新记录见各 PR 描述
+- [操作日志（历史）](log.md) — 历史写操作记录，已停止追加；新记录见提交信息
 
 ## Agent 工程方法
 - [Agentic Engineering（智能体工程）](concepts/agentic-engineering.md) — Agent 成为主要执行者后，工程重心转向定义意图、设计验证、承担判断
