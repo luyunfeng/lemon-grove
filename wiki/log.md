@@ -100,3 +100,9 @@
 - 新建: wiki/concepts/code-review-at-agent-scale.md
 - 更新: wiki/entities/claude-code.md, wiki/concepts/understanding-artifacts.md, wiki/index.md, wiki/log.md
 - 分支: wiki/20261017-code-review-at-agent-scale
+
+## [2026-10-24] ingest | 多 Agent 编排：拆分理由、通信协议与汇总治理
+- 分诊: 更新为主
+- Raw: raw/why-multi-agent-split-communicate-aggregate.md
+- 更新: wiki/concepts/sub-agent-orchestration.md, wiki/concepts/agent-tool-interface.md, wiki/index.md
+- 分支: wiki/20261024-multi-agent-orchestration
