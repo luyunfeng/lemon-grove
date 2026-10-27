@@ -15,6 +15,7 @@
 - [目标驱动与计划驱动（Goal vs Plan）](concepts/goal-vs-plan.md) — 事前定步骤与事后验目标两种控制方式，各自适用的场景
 - [Spec 驱动开发与执行前校准（Vibe / Plan / Spec）](concepts/spec-driven-development.md) — 执行前校准的光谱 Vibe → Plan → Spec，以及从澄清到规格到任务的流水线
 - [子 Agent 编排（Sub-agents / Multi-Agent）](concepts/sub-agent-orchestration.md) — 用子 Agent 隔离上下文、分离实现与检查；拆分边界、通信、汇总与治理，模型编排、脚本编排、跨模型混合
+- [多 Agent 规模化的平台工程问题](concepts/multiagent-platform-problems.md) — 规模化前要先解决四类平台问题：Agent 负载的基础设施、身份与授权、安全与隔离、监控与熔断
 - [约束的强制分层（Rule Enforcement Layers）](concepts/rule-enforcement-layers.md) — 约束分建议、流程、硬拦截三层；能确定性检查的不靠模型记住
 - [Compound Engineering（复利工程）](concepts/compound-engineering.md) — 把每次工作沉淀成可复用资产，让下一次同类工作更容易
 - [提示词中的置信度](concepts/confidence-in-prompts.md) — 让模型输出置信度，用来自我校准、决策路由和聚焦人工验证
